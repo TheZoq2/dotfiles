@@ -1,0 +1,26 @@
+
+#! /bin/sh
+
+#Starting required stuff
+compton & #Transparent windows
+feh --bg-fill /home/frans/Pictures/wallpapers/city1.jpg #set background
+
+bspc config border_width        2
+bspc config window_gap         12
+
+bspc config split_ratio         0.52
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+bspc config focus_follows_pointer true
+
+./startup.py #Setup everything python based
+./pypanel.py #Create the panel
+
+#Monitor layout is handled by python script
+#bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc rule -a mplayer2 floating=on
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
