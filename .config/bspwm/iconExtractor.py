@@ -1,6 +1,13 @@
 import subprocess
 import ctypes
 from PIL import Image
+import style
+
+class IconNotFoundException(Exception):
+    def __init__(self, value):
+        self.value = value
+    def __str__(self):
+        return repr(self.value)
 
 icons = []
 class CachedIcon:
@@ -12,6 +19,7 @@ class CachedIcon:
 
 def getIcon(windowID):
     propOutput =  subprocess.check_output(["xprop", "-id", windowID, "-notype", "32c", "_NET_WM_ICON"], universal_newlines = True)
+
     
     #Strip all whitespace from the string
     stripped = propOutput.replace(" ", "")
@@ -22,7 +30,14 @@ def getIcon(windowID):
     pixelList = stripped.split(",")
     
     #Read the first 2 chars to find the size of the icon
-    iconSize = (int(pixelList[0]), int (pixelList[1]))
+    try:
+        iconSize = (int(pixelList[0]), int (pixelList[1]))
+
+        if(iconSize[0] > 129): #Openscad has a weird icon
+            raise ValueError
+    except ValueError:
+        #Something went wrong when interpreting icons, return the default path
+        raise IconNotFoundException("No icon for program found")
 
     pixelArray = []
 
@@ -57,7 +72,11 @@ def saveIcon(windowID, size, path):
             return i.filePath;
 
     #The icon needs to be created
-    icon = getIcon(windowID)
+    try:
+        icon = getIcon(windowID)
+    except IconNotFoundException:
+        icons.append(CachedIcon(windowID, (size), style.fallbackIcon))
+        return style.fallbackIcon
 
     if icon.size != size:
         icon = icon.resize(size, Image.LANCZOS)

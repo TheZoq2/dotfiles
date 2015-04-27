@@ -111,7 +111,7 @@ def main():
         monitor.setServerConnection(client)
 
     while True:
-        time.sleep(0.05)
+        time.sleep(0.1)
         globalInfoString = generateGlobalInfo()
         
         #Get the status string from bspwm

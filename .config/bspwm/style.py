@@ -7,6 +7,8 @@ dStatusFGDict = { util.DesktopStatus.EMPTY: "#ffaaaaaa", util.DesktopStatus.URUG
 
 dFocusedUnderline = "#FFAAAAFF"
 
+fallbackIcon = "media/default.png"
+
 BAR_HEIGHT = 20;
 BAR_PADDING = 5;
 ICON_SIZE = (BAR_HEIGHT, BAR_HEIGHT)
