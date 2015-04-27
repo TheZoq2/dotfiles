@@ -74,14 +74,26 @@ def createBarForMonitor(monitor):
     #Open the bar creation script
     subprocess.Popen(["./createPanel.sh", barPosCmd, style.BAR_BG])
 
+def getBatteryStats():
+    acpiOut = subprocess.check_output(["acpi", "--battery"], universal_newlines=True)
+    acpiOut = acpiOut[:-1] # Strip newline
+
+    acpiSplit = acpiOut.split(" ")
+    
+    return acpiSplit[3]
+    
 
 def generateGlobalInfo():
     infoFormated = Lemon.LemonTextFormat()
 
+    #battery
+    infoFormated.addText(getBatteryStats())
+    infoFormated.addText("  ")
     #fetch the time
     #time format (year, month, day, hour, minutes, seconds, miliseconds?)
 
     #timeString = "{0} {1}  {2}:{3}".format(cTimeTupple[1], monthName, cTimeTupple[4], cTimeTupple[5])
+    #batteryString = subprocess.check_output("acpi", "--battery", "|", "cut", "-d,", "-f2")
     timeString = time.strftime("%B %d  %H:%M")
 
     infoFormated.addText(timeString)
