@@ -11,3 +11,4 @@ class Desktop:
         return self.status
     def getFocused(self):
         return self.focused
+

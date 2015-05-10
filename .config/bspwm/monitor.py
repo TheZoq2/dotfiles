@@ -2,6 +2,7 @@ import subprocess
 from util import Vec2d
 from Lemon import LemonTextFormat
 import Lemon
+import style
 
 class Monitor:
     def __init__(self, name, size, pos):

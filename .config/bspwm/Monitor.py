@@ -95,6 +95,7 @@ class Monitor:
             lemonText.addParam("I", iconPath)
             lemonText.addText(" ")
 
+
         return lemonText.getText()
 
 
