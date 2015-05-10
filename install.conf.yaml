@@ -6,4 +6,5 @@
     ~/.config/bspwm: .config/bspwm
     ~/.config/sxhkd: .config/sxhkd
     ~/.config/lighthouse: .config/lighthouse
+    ~/.zshrc: .zshrc
 
