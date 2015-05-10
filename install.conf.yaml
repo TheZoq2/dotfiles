@@ -1,0 +1,9 @@
+- clean: ['~']
+
+- link:
+    ~/.vim: .vim/
+    ~/.vimrc: .vimrc
+    ~/.config/bspwm: .config/bspwm
+    ~/.config/sxhkd: .config/sxhkd
+    ~/.config/lighthouse: .config/lighthouse
+
