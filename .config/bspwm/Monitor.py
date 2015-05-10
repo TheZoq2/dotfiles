@@ -107,10 +107,10 @@ class Monitor:
         #Finding end of monitor. This is hard because new monitors start with 'm' or 'M' but monacle layout is
         #also indicated with an m. This means we have to find monitors in some other way. 
         #All montior names have a - in them which means we can look for those
-        monitorEnd = statusString.find("-", monitorStart + len(self.name))
+        #monitorEnd = statusString.find("-", monitorStart + len(self.name))
 
         #Get a substring of the monitor string
-        monitorString = statusString[monitorStart:monitorEnd]
+        monitorString = statusString[monitorStart:]
 
         #Find individual pieces
         monitorSplit = monitorString.split(":")
@@ -123,6 +123,9 @@ class Monitor:
         
         for mi in monitorInfo:
             dFocused = False
+        
+            if mi[0].lower() == "l":
+                break
 
             #Get the status of the monitor
             

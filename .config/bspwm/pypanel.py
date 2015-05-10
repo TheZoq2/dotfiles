@@ -15,51 +15,6 @@ import Lemon
 #Constants for configuration
 COMM_PORT = 6723
 
-def getDesktopsOnMonitor(statusString, monitorName):
-    desktopList = []
-
-    #Finding the start and end of the monitor status
-    monitorStart = statusString.find(monitorName)
-    #Finding end of monitor. This is hard because new monitors start with 'm' or 'M' but monacle layout is
-    #also indicated with an m. This means we have to find monitors in some other way. 
-    #All montior names have a - in them which means we can look for those
-    monitorEnd = statusString.find("-", monitorStart + len(monitorName))
-
-    #Get a substring of the monitor string
-    monitorString = statusString[monitorStart:monitorEnd]
-
-    #Find individual pieces
-    monitorSplit = monitorString.split(":")
-
-    #We now have an array with the current desktop layout on the monitor.
-    #The first element is the name of the monitor itself which we don't want to use. The last two elements
-    #are the layout and the start of the next monitor. Im not interested in those either
-    monitorInfo = monitorSplit[1:-2]
-    
-    for mi in monitorInfo:
-        dFocused = False
-
-        #Get the status of the monitor
-        
-        #the first character is the status of the desktop
-        desktopChar = mi[0]
-        lc = desktopChar.lower()
-
-        #finding the status of the desktop
-        dStatus = dStatusDict[lc]
-
-        if desktopChar.isupper():
-            dFocused = True
-        
-        #The rest of the string is the desktop name
-        dName = mi[1:]
-
-        #Adding the desktop to the list
-        desktopList.append(Desktop(dName, dStatus, dFocused))
-
-    return desktopList
-
-
 def createBarForMonitor(monitor):
     size = monitor.getSize()
     pos = monitor.getPos()
