@@ -11,6 +11,7 @@ import util
 import Monitor
 import style
 import Lemon
+import config
 
 #Constants for configuration
 COMM_PORT = 6723
@@ -86,11 +87,10 @@ def getBatteryStats():
 def generateGlobalInfo():
     infoFormated = Lemon.LemonTextFormat()
 
-    #battery
-    infoFormated.addText(getBatteryStats())
-    infoFormated.addText("  ")
-    #fetch the time
-    #time format (year, month, day, hour, minutes, seconds, miliseconds?)
+    #battery display
+    if config.DISPLAY_BATTERY:
+        infoFormated.addText(getBatteryStats())
+        infoFormated.addText("  ")
 
     #timeString = "{0} {1}  {2}:{3}".format(cTimeTupple[1], monthName, cTimeTupple[4], cTimeTupple[5])
     #batteryString = subprocess.check_output("acpi", "--battery", "|", "cut", "-d,", "-f2")
