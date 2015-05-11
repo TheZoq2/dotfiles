@@ -49,7 +49,7 @@ class Monitor:
 
         #Add active programs
         panelText.setRestCentered()
-        panelText.addText(self.createWindowString())
+        #panelText.addText(self.createWindowString())
 
         #Add global info
         #Right align
@@ -64,6 +64,7 @@ class Monitor:
         
         desktops = self.getDesktops(statusString)
         
+        desktopIndex = 1; #the current index of the desktop because you can't query 
         #Go through all the desktops and set the appropriate colors for them
         for d in desktops:
             color = style.dStatusColorDict[d.getStatus()]
@@ -73,12 +74,27 @@ class Monitor:
             if d.getFocused():
                 underline = style.dFocusedUnderline
                 hasUnderline = True
-
-            #Formating strings that contain { } is fun
-            #dString = "%{{F{3}}}%{{B{0}}}%{{+u}}%{{U{1}}}{2}%{{-u}} ".format(color, underline, d.getName(), fgColor)
+            
+            #Add the desktop info string
             panelText.addText(d.getName(), fgColor=fgColor, bgColor=color, underlineColor=underline, underline=hasUnderline)
+
+
+            #Getting all the windows on the desktop
+            desktopWindows = self.getWindowsOnDesktop(desktopIndex)
+            
+            #GOing through the windows
+            for window in desktopWindows:
+                #Getting an icon for the window
+                iconPath = iconExtractor.saveIcon(window, style.ICON_SIZE, util.ICON_SAVE_PATH)
+                
+                #Adding the icon to the window
+                #panelText.addText(" ")
+                panelText.addParam("I", iconPath)
+
             #add some padding
-            panelText.addText(" ")
+            panelText.addText("  ")
+
+            desktopIndex += 1
         
         return panelText.getText()
 
@@ -149,17 +165,13 @@ class Monitor:
         #Query bspc for windows on the focused desktop of the monitor
         fDesktop = subprocess.check_output(["bspc", "query", "-W", "-d", "{}:focused".format(self.name)], universal_newlines = True)
         
-        #Remove the last \n in the string
-        fDesktop = fDesktop[:-1]
+        return getWindowsFromWindowString(fDesktop)
 
-        #If there are no windows. Works based on window names being 0x...
-        if fDesktop.find("x") == -1:
-            return []
 
-        windows = fDesktop.split("\n")
-        
-        return windows
+    def getWindowsOnDesktop(self, desktopIndex):
+        windowStr = subprocess.check_output(["bspc", "query", "-W", "-d", "{}:^{}".format(self.name, desktopIndex)], universal_newlines = True)
 
+        return getWindowsFromWindowString(windowStr)
 
 
 def getMonitorSetup():
@@ -192,3 +204,16 @@ def getMonitorSetup():
             monitors.append(monitor)
 
     return monitors
+
+
+def getWindowsFromWindowString(windowString):
+    #Remove the last \n in the string
+    windowString = windowString[:-1]
+
+    #If there are no windows. Works based on window names being 0x...
+    if windowString.find("x") == -1:
+        return []
+
+    windows = windowString.split("\n")
+    
+    return windows
