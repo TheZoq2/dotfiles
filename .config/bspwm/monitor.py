@@ -43,8 +43,6 @@ class Monitor:
         panelText.addText(desktopString)
         panelText.addParam("B", BAR_BG)
 
-        #panelText.addParam("I", "/home/frans/Downloads/Test.png")
-
 
         #Add active programs
         panelText.setRestCentered()
