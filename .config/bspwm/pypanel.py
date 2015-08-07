@@ -27,6 +27,8 @@ def createBarForMonitor(monitor):
 
     barPosCmd = "{}x{}+{}+{}".format(size.x,size.y,pos.x,pos.y)
 
+    print(barPosCmd)
+
     #Open the bar creation script
     subprocess.Popen(["./createPanel.sh", barPosCmd, style.BAR_BG])
 

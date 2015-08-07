@@ -37,7 +37,7 @@ class Monitor:
 
     def sendFullPanelInfo(self, statusString, globalInfoString):
         desktopString = self.createDesktopString(statusString)
-        
+
         panelText = Lemon.LemonTextFormat()
 
         panelText.addText(desktopString)

@@ -48,3 +48,13 @@ URxvt*scrollWithBuffer: true
 
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
+
+URxvt*iso14755: False
+URxvt*iso14755_52: False
+
+rofi.modi: run
+rofi.font: snap 12
+rofi.fg: #000000
+rofi.bg: #ffffff
+rofi.hlfg: #ff0000
+rofi.hlbg: #aaaaaa
