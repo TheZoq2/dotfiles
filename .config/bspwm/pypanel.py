@@ -27,6 +27,8 @@ def createBarForMonitor(monitor):
 
     barPosCmd = "{}x{}+{}+{}".format(size.x,size.y,pos.x,pos.y)
 
+    print(barPosCmd)
+
     #Open the bar creation script
     subprocess.Popen(["./createPanel.sh", barPosCmd, style.BAR_BG])
 
@@ -44,14 +46,14 @@ def generateGlobalInfo():
 
     #battery display
     if config.DISPLAY_BATTERY:
-        infoFormated.addText(getBatteryStats())
+        infoFormated.addText(getBatteryStats(), fgColor = style.BAR_TEXT_COLOR)
         infoFormated.addText("  ")
 
     #timeString = "{0} {1}  {2}:{3}".format(cTimeTupple[1], monthName, cTimeTupple[4], cTimeTupple[5])
     #batteryString = subprocess.check_output("acpi", "--battery", "|", "cut", "-d,", "-f2")
     timeString = time.strftime("%B %d  %H:%M")
 
-    infoFormated.addText(timeString)
+    infoFormated.addText(timeString, fgColor = style.BAR_TEXT_COLOR)
 
     return infoFormated.getText()
 

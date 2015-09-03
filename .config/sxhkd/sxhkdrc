@@ -84,7 +84,8 @@ super + Return
     urxvt
 
 super + r
-	lighthouse | sh
+    rofi -show run -X
+	#lighthouse | sh
 
 # make sxhkd reload its configuration files:
 super + Escape

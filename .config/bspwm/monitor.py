@@ -38,14 +38,10 @@ class Monitor:
     def sendFullPanelInfo(self, statusString, globalInfoString):
         desktopString = self.createDesktopString(statusString)
 
-        print("Sending");
-        
         panelText = Lemon.LemonTextFormat()
 
         panelText.addText(desktopString)
         panelText.addParam("B", BAR_BG)
-
-        #panelText.addParam("I", "/home/frans/Downloads/Test.png")
 
 
         #Add active programs

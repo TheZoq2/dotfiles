@@ -205,7 +205,8 @@ def getMonitorSetup():
 
             monitor = Monitor(name, util.Vec2d(width,height), util.Vec2d(posX,posY))
             monitors.append(monitor)
-
+    
+    print(monitors.__len__());
     return monitors
 
 

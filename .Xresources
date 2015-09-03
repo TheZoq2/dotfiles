@@ -52,10 +52,18 @@ URxvt*scrollTtyKeypress: true
 !Fixing copy paste
 URxvt.perl-ext-common: default,clipboard
 
-URxvt.iso14755: False
-
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 URxvt.clipboard.copycmd:  xsel -ib
 URxvt.clipboard.pastecmd: xsel -ob
+
+URxvt*iso14755: False
+URxvt*iso14755_52: False
+
+rofi.modi: run
+rofi.font: snap 12
+rofi.fg: #000000
+rofi.bg: #ffffff
+rofi.hlfg: #ff0000
+rofi.hlbg: #aaaaaa
