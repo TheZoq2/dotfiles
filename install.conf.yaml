@@ -5,6 +5,7 @@
     ~/.vimrc: .vimrc
     ~/.config/bspwm: .config/bspwm
     ~/.config/sxhkd: .config/sxhkd
+    ~/.config/tint2: .config/tint2
     ~/.config/lighthouse: .config/lighthouse
     ~/.zshrc: .zshrc
     ~/.Xresources: .Xresources

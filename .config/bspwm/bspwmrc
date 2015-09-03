@@ -21,7 +21,8 @@ bspc config auto_cancel true
 #change working directory to allow relative paths in python and bash
 cd $CONFIG_DIR
 ./startup.py #Setup everything python based
-./pypanel.py #Create the panel
+#./pypanel.py #Create the panel
+
 
 #Monitor layout is handled by python script
 #bspc monitor -d I II III IV V VI VII VIII IX X
@@ -30,3 +31,13 @@ bspc rule -a mplayer2 floating=on
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+pkill tint2
+pkill xfce4-power-manager
+pkill volumeicon
+pkill nm-applet
+
+tint2 &
+xsetroot -cursor_name left_ptr
+xfce4-power-manager &
+volumeicon &
+nm-applet &
