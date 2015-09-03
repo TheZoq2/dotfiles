@@ -1,0 +1,2 @@
+
+DISPLAY_BATTERY = False

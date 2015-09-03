@@ -20,9 +20,9 @@ def createBarForMonitor(monitor):
     size = monitor.getSize()
     pos = monitor.getPos()
 
-    pos.x = pos.x + style.BAR_PADDING
+    pos.x = pos.x + style.BAR_PADDING_SIDES
     pos.y = pos.y + style.BAR_PADDING
-    size.x = size.x - style.BAR_PADDING * 2
+    size.x = size.x - style.BAR_PADDING_SIDES * 2
     size.y = style.BAR_HEIGHT
 
     barPosCmd = "{}x{}+{}+{}".format(size.x,size.y,pos.x,pos.y)

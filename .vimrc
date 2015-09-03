@@ -69,6 +69,8 @@ set background=dark " When set to "dark", Vim will try to use colors that look
  
 set mouse=a         " Enable the use of the mouse.
 
+"execute pathogen#infect()
+
 "Codefolding
 set foldmethod=syntax
 set foldnestmax=1
@@ -92,5 +94,23 @@ let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
 " Java autocomplete
-let g:EclimCompletionMethod = 'omnifunc'
+" let g:EclimCompletionMethod = 'omnifunc'
 
+let mapleader = "\<space>"
+
+map <Leader>k :tabn<Enter>
+map <Leader>j :tabp<Enter>
+map <Leader>e :tabe 
+
+map q: :q:
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()

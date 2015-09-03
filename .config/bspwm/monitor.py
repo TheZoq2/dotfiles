@@ -37,6 +37,8 @@ class Monitor:
 
     def sendFullPanelInfo(self, statusString, globalInfoString):
         desktopString = self.createDesktopString(statusString)
+
+        print("Sending");
         
         panelText = Lemon.LemonTextFormat()
 
@@ -71,13 +73,14 @@ class Monitor:
             hasUnderline = False;
             if d.getFocused():
                 underline = dFocusedUnderline
+                color = DESKTOP_FOCUSED
                 hasUnderline = True
 
             #Formating strings that contain { } is fun
             #dString = "%{{F{3}}}%{{B{0}}}%{{+u}}%{{U{1}}}{2}%{{-u}} ".format(color, underline, d.getName(), fgColor)
             panelText.addText(d.getName(), fgColor=fgColor, bgColor=color, underlineColor=underline, underline=hasUnderline)
             #add some padding
-            panelText.addText(" ")
+            panelText.addText(" ", bgColor = color)
         
         return panelText.getText()
 
