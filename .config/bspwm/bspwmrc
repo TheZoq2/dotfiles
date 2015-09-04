@@ -5,7 +5,8 @@ CONFIG_DIR="/home/frans/.config/bspwm"
 
 #Starting required stuff
 compton & #Transparent windows
-feh --bg-fill /home/frans/Pictures/wallpapers/city1.jpg #set background
+#feh --bg-fill /home/frans/Pictures/wallpapers/city1.jpg #set background
+feh --bg-fill --no-xinerama /home/frans/Pictures/wallpapers/tokyo.jpg #set background
 
 bspc config border_width        2
 bspc config window_gap         12
