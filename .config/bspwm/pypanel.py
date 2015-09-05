@@ -32,6 +32,9 @@ def createBarForMonitor(monitor):
     #Open the bar creation script
     subprocess.Popen(["./createPanel.sh", barPosCmd, style.BAR_BG])
 
+def createTintForMonitor(monitorIndex):
+    subprocess.Popen(["./createTint.sh", "{}".format(monitorIndex), "&"])
+
 def getBatteryStats():
     acpiOut = subprocess.check_output(["acpi", "--battery"], universal_newlines=True)
     acpiOut = acpiOut[:-1] # Strip newline
@@ -64,30 +67,36 @@ def waitForClient(listener):
 
 
 def main():
-    monitors = Monitor.getMonitorSetup();
 
-    subprocess.call(["mkdir", "-p", util.ICON_SAVE_PATH])
+    #subprocess.call(["mkdir", "-p", util.ICON_SAVE_PATH])
     
     #Starting the server that sends data to the panels
-    address = ("localhost", COMM_PORT)
-    listener = multiprocessing.connection.Listener(address)
+    #address = ("localhost", COMM_PORT)
+    #listener = multiprocessing.connection.Listener(address)
     
+    monitors = Monitor.getMonitorSetup();
+
+    monitorIndex = 1;
     for monitor in monitors:
-        createBarForMonitor(monitor)
-        #Waiting for the new monitor client to connect
-        client = waitForClient(listener)
-        
-        monitor.setServerConnection(client)
+        print(monitorIndex);
+#        #createBarForMonitor(monitor)
+        createTintForMonitor(monitorIndex);
+#        #Waiting for the new monitor client to connect
+#        #client = waitForClient(listener)
+#        
+#        #monitor.setServerConnection(client)
+        monitorIndex += 1
 
-    while True:
-        time.sleep(0.1)
-        globalInfoString = generateGlobalInfo()
+#    while True:
+#        time.sleep(0.1)
+#        globalInfoString = generateGlobalInfo()
+#        
+#        #Get the status string from bspwm
+#        statusString = subprocess.check_output(["bspc", "control", "--get-status"], universal_newlines = True)
+#
+#        for monitor in monitors:
+#            monitor.sendFullPanelInfo(statusString, globalInfoString)
         
-        #Get the status string from bspwm
-        statusString = subprocess.check_output(["bspc", "control", "--get-status"], universal_newlines = True)
-
-        for monitor in monitors:
-            monitor.sendFullPanelInfo(statusString, globalInfoString)
-        
+print("Starting main")
 main()
 
