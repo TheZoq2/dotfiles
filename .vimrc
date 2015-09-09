@@ -98,8 +98,8 @@ set completeopt-=preview
 
 let mapleader = "\<space>"
 
-map <Leader>k :tabn<Enter>
-map <Leader>j :tabp<Enter>
+map <Leader>l :tabn<Enter>
+map <Leader>h :tabp<Enter>
 map <Leader>e :tabe 
 
 map q: :q:
