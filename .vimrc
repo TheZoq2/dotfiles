@@ -101,6 +101,7 @@ let mapleader = "\<space>"
 map <Leader>k :tabn<Enter>
 map <Leader>j :tabp<Enter>
 map <Leader>e :tabe 
+map <Leader>r :%s//gci<Left><Left><Left><Left>
 
 map q: :q:
 
