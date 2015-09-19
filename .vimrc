@@ -2,6 +2,32 @@
 
 " For multi-byte character support (CJK support, for example):
 "set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
+" Setting up vundle
+set nocompatible 
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+"YCM
+Plugin 'Valloric/YouCompleteMe'
+
+"vimproc
+Plugin 'Shougo/vimproc.vim'
+"vebugger
+"depends on vimproc
+Plugin 'idanarye/vim-vebugger'
+
+
+call vundle#end()
+filetype plugin indent on
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
+
        
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
@@ -88,10 +114,19 @@ map <F3> :tabn
 map <C-c> "+y
 map <C-p> "+p
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                               Ycm stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
+
+let g:ycm_warning_symbol = '**'
+let g:ycm_confirm_extra_conf = 0
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 
 " Java autocomplete
 " let g:EclimCompletionMethod = 'omnifunc'
@@ -102,6 +137,22 @@ map <Leader>l :tabn<Enter>
 map <Leader>h :tabp<Enter>
 map <Leader>e :tabe 
 map <Leader>r :%s//gci<Left><Left><Left><Left>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                               Vebugger bindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Start vebugger
+"let g:vebugger_leader = '<Leader>d'
+"map <Leader>ds :VBGstartGDB 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                               Pyclewn
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pyclewn_args=""
+map <Leader>ds :Pyclewn gdb 
+map <Leader>dm :Cmapkeys<Enter>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 
 map q: :q:
 
