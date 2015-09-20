@@ -9,4 +9,5 @@
     ~/.config/lighthouse: .config/lighthouse
     ~/.zshrc: .zshrc
     ~/.Xresources: .Xresources
+    ~/.config/xfce4/terminal/: .config/xfce4/terminal
 
