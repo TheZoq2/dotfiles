@@ -148,11 +148,54 @@ map <Leader>r :%s//gci<Left><Left><Left><Left>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                               Pyclewn
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pyclewn_args=""
+let g:pyclewn_args="--window=usetab"
 map <Leader>ds :Pyclewn gdb 
 map <Leader>dm :Cmapkeys<Enter>
+map <Leader>dv :Cdbgvar 
+map <Leader>dr :Cdelvar var
+
+""""""Create debug windows in a new tabs
+function Pyclewn_CreateTabWindows(debugger)
+    split
+    edit (clewn)_variables
+    split
+    edit (clewn)_console
+    wincmd j
+    if a:debugger == "gdb"
+        split
+        let w:pyclewn_window = 1
+        wincmd w
+        edit (clewn)_threads
+        let w:pyclewn_window = 1
+        vsplit
+        edit (clewn)_breakpoints
+        let w:pyclewn_window = 1
+        vsplit
+        edit (clewn)_backtrace
+        let w:pyclewn_window = 1
+    endif
+endfunction
+
+function Pyclewn_GotoFrame(fname)
+    " Go to the fourth window loaded wih the buffer that was active
+    " when the ToggleDebugView() function was executed.
+    4wincmd j
+
+    exe "edit " . a:fname
+endfunction
+
+function Pyclewn_GotoBreakpoint(fname, lnum)
+    4wincmd j
+    exe "edit " . a:fname
+    if a:lnum != ""
+        call cursor(a:lnum, 0)
+    endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+
+"Resize windows when the host window is resized
+autocmd VimResized * wincmd =
 
 map q: :q:
 

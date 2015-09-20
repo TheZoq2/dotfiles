@@ -81,7 +81,8 @@ super + u
 #
 
 super + Return
-    urxvt
+    xfce4-terminal
+    #urxvt
 
 super + r
     rofi -show run -X
