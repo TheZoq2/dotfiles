@@ -18,6 +18,7 @@ autoload -U colors && colors
 
 #Aliases
 alias ls='ls --color=auto'
+alias fork='pwd | xfce4-terminal &'
 
 #Keybindings
 bindkey -sM vicmd '^[' '^G'
