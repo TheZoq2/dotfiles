@@ -22,7 +22,14 @@ Plugin 'Shougo/vimproc.vim'
 "vebugger
 "depends on vimproc
 Plugin 'idanarye/vim-vebugger'
+  
+"Vim-snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
+" Snippets for snipmate
+Plugin 'TheZoq2/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on
@@ -133,17 +140,20 @@ let g:ycm_confirm_extra_conf = 0
 
 let mapleader = "\<space>"
 
+"Tab stuff
 map <Leader>l :tabn<Enter>
 map <Leader>h :tabp<Enter>
 map <Leader>e :tabe 
+
+" Find and replace
 map <Leader>r :%s//gci<Left><Left><Left><Left>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                               Vebugger bindings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Start vebugger
-"let g:vebugger_leader = '<Leader>d'
-"map <Leader>ds :VBGstartGDB 
+" Snippet expand
+imap <C-j> <Plug>snipMateNextOrTrigger
+
+"JK to exit insert mode
+imap jk <Esc>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                               Pyclewn
