@@ -31,6 +31,11 @@ Plugin 'garbas/vim-snipmate'
 " Snippets for snipmate
 Plugin 'TheZoq2/vim-snippets'
 
+
+"Auto indent
+" Doesn't work with vundle. Install manually
+" Plugin 'jiangmiao/auto-pairs'
+
 call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
@@ -207,7 +212,7 @@ endfunction
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
 
-map q: :q:
+map q: :q:<Enter>
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
