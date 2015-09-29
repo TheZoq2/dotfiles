@@ -4,11 +4,11 @@
 CONFIG_DIR="/home/frans/.config/bspwm"
 
 #Starting required stuff
-compton & #Transparent windows
+compton --config ~/.config/compton/comptonrc & #Transparent windows
 #feh --bg-fill /home/frans/Pictures/wallpapers/city1.jpg #set background
-feh --bg-fill --no-xinerama /home/frans/Pictures/wallpapers/tokyo.jpg #set background
+feh --bg-fill --no-xinerama /home/frans/Pictures/wallpapers/dredsen.jpg #set background
 
-bspc config border_width        2
+bspc config border_width        1
 bspc config window_gap         6
 
 bspc config split_ratio         0.52
@@ -38,7 +38,7 @@ pkill volumeicon
 pkill nm-applet
 
 tint2 &
-xsetroot -cursor_name left_ptr
+#xsetroot -cursor_name left_ptr
 xfce4-power-manager &
 volumeicon &
 nm-applet &
