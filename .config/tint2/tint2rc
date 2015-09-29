@@ -9,7 +9,7 @@
 # Background 1
 rounded = 0
 border_width = 0
-background_color = #2d2d2d 100
+background_color = #2d2d2d 20
 border_color = #d8d8d8 0
 
 # Background 2
@@ -58,7 +58,7 @@ border_color = #888888 20
 # Panel
 panel_items = TBSC
 panel_size = %100 25
-panel_margin = 0 5
+panel_margin = 0 0
 panel_padding = 0 0 0
 panel_background_id = 1
 wm_menu = 0
