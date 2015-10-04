@@ -24,9 +24,12 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'idanarye/vim-vebugger'
   
 "Vim-snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
 
 " Snippets for snipmate
 Plugin 'TheZoq2/vim-snippets'
@@ -153,8 +156,13 @@ map <Leader>e :tabe
 " Find and replace
 map <Leader>r :%s//gci<Left><Left><Left><Left>
 
-" Snippet expand
-imap <C-j> <Plug>snipMateNextOrTrigger
+"" Snippet expand
+"imap <C-j> <Plug>snipMateNextOrTrigger
+
+"Ultisnips keys
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 "JK to exit insert mode
 imap jk <Esc>
