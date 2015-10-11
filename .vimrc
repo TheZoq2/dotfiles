@@ -34,10 +34,8 @@ Plugin 'SirVer/ultisnips'
 " Snippets for snipmate
 Plugin 'TheZoq2/vim-snippets'
 
-
-"Auto indent
-" Doesn't work with vundle. Install manually
-" Plugin 'jiangmiao/auto-pairs'
+" vim-airline: Statusbar and display of buffers
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
@@ -87,23 +85,10 @@ set autoindent      " Copy indent from current line when starting a new line
                     " (typing <CR> in Insert mode or when using the "o" or "O"
                     " command).
  
-set formatoptions=c,q,r,t " This is a sequence of letters which describes how
-                    " automatic formatting is to be done.
-                    "
-                    " letter    meaning when present in 'formatoptions'
-                    " ------    ---------------------------------------
-                    " c         Auto-wrap comments using textwidth, inserting
-                    "           the current comment leader automatically.
-                    " q         Allow formatting of comments with "gq".
-                    " r         Automatically insert the current comment leader
-                    "           after hitting <Enter> in Insert mode. 
-                    " t         Auto-wrap text using textwidth (does not apply
-                    "           to comments)
- 
 set ruler           " Show the line and column number of the cursor position,
                     " separated by a comma.
- 
-set background=dark " When set to "dark", Vim will try to use colors that look
+
+"set background=dark " When set to "dark", Vim will try to use colors that look
                     " good on a dark background. When set to "light", Vim will
                     " try to use colors that look good on a light background.
                     " Any other value is illegal.
@@ -123,12 +108,44 @@ syntax on
 set t_Co=256
 colorscheme badwolf
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                               Keybindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let mapleader = "\<space>"
+
 map <F4> :tabe
 map <F2> :tabp
 map <F3> :tabn
+
+"Copy paste from system clipboard
 map <C-c> "+y
 map <C-p> "+p
 
+"Tab stuff
+"map <Leader>l :tabn<Enter>
+"map <Leader>h :tabp<Enter>
+"map <Leader>e :tabe 
+
+
+
+"Buffer stuff
+map <Leader>l :bn<CR>
+map <Leader>h :bp<CR>
+map <Leader>e :e<Space>
+"Close a buffer with space-q
+map <Leader>q :bdelete<CR>
+
+" Find and replace
+map <Leader>r :%s//gci<Left><Left><Left><Left>
+map <Leader>s :nohlsearch<CR> 
+
+"JK to exit insert mode
+imap jk <Esc>
+imap kj <Esc>
+
+"Quit when q: is pressed aswell
+map q: :q<Enter>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                               Ycm stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -146,15 +163,7 @@ let g:ycm_confirm_extra_conf = 0
 " Java autocomplete
 " let g:EclimCompletionMethod = 'omnifunc'
 
-let mapleader = "\<space>"
 
-"Tab stuff
-map <Leader>l :tabn<Enter>
-map <Leader>h :tabp<Enter>
-map <Leader>e :tabe 
-
-" Find and replace
-map <Leader>r :%s//gci<Left><Left><Left><Left>
 
 "" Snippet expand
 "imap <C-j> <Plug>snipMateNextOrTrigger
@@ -164,8 +173,6 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
-"JK to exit insert mode
-imap jk <Esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -215,20 +222,21 @@ function Pyclewn_GotoBreakpoint(fname, lnum)
     endif
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                           Airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1 "Show the current buffers in a tab view
+"Font stuff
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
 
-map q: :q:<Enter>
-
-" vp doesn't replace paste buffer
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
-endfunction
-vmap <silent> <expr> p <sid>Repl()
