@@ -95,7 +95,7 @@ set ruler           " Show the line and column number of the cursor position,
  
 set mouse=a         " Enable the use of the mouse.
 
-"execute pathogen#infect()
+set hidden          "Allow unsaved buffers to be in the background
 
 "Codefolding
 set foldmethod=syntax
@@ -157,16 +157,6 @@ set completeopt-=preview
 let g:ycm_warning_symbol = '**'
 let g:ycm_confirm_extra_conf = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-" Java autocomplete
-" let g:EclimCompletionMethod = 'omnifunc'
-
-
-
-"" Snippet expand
-"imap <C-j> <Plug>snipMateNextOrTrigger
 
 "Ultisnips keys
 let g:UltiSnipsExpandTrigger="<c-j>"
