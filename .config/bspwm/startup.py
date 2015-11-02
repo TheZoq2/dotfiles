@@ -15,7 +15,7 @@ for s in screens:
 
     desktopList = []
     for i in range(desktopsPerScreen):
-        desktopList.append(str(i+1))
+        desktopList.append(str(i+1) + "_" + s.getName())
 
     callList = ["bspc", "monitor", s.getName(), "-d"] + desktopList
     #Reset the desktops

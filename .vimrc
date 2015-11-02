@@ -135,6 +135,8 @@ map <Leader>h :bp<CR>
 map <Leader>e :e<Space>
 "Close a buffer with space-q
 map <Leader>q :bdelete<CR>
+"Show buffer list and prompt for buffer id
+:nnoremap <Leader>o :buffers<CR>:buffer<Space>
 
 " Find and replace
 map <Leader>r :%s//gci<Left><Left><Left><Left>

@@ -76,11 +76,11 @@ def main():
     
     monitors = Monitor.getMonitorSetup();
 
+    #createTintForMonitor(0);
     monitorIndex = 1;
     for monitor in monitors:
         print(monitorIndex);
 #        #createBarForMonitor(monitor)
-        createTintForMonitor(monitorIndex);
 #        #Waiting for the new monitor client to connect
 #        #client = waitForClient(listener)
 #        
