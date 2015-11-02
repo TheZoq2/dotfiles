@@ -37,6 +37,9 @@ Plugin 'TheZoq2/vim-snippets'
 " vim-airline: Statusbar and display of buffers
 Plugin 'bling/vim-airline'
 
+"Vimtex
+Plugin 'xuhdev/vim-latex-live-preview'
+
 call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
