@@ -88,6 +88,9 @@ super + r
     rofi -show run -X
 	#lighthouse | sh
 
+super + space
+    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd

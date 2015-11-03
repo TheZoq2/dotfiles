@@ -130,6 +130,8 @@ map <C-p> "+p
 "map <Leader>h :tabp<Enter>
 "map <Leader>e :tabe 
 
+"Swedish layout is s tupid
+map Ö :
 
 
 "Buffer stuff
@@ -231,6 +233,9 @@ let g:airline_right_alt_sep = ''
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Latex stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:livepreview_previewer = 'zathura'
 
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
