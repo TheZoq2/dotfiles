@@ -91,6 +91,9 @@ super + r
 super + space
     (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us
 
+super + ctrl + p
+    /home/frans/.config/bspwm/lock
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
