@@ -75,6 +75,10 @@ let s:bwc.darkgravel     = ['242321', 235]
 let s:bwc.blackgravel    = ['1c1b1a', 233]
 let s:bwc.blackestgravel = ['141413', 232]
 
+"Comment color
+let s:bwc.commentColor = ['15572b', 35]
+let s:bwc.todoYellow = ['e7d00b', 226]
+
 " A color sampled from a highlight in a photo of a glass of Dale's Pale Ale on
 " my desk.
 let s:bwc.dalespale = ['fade3e', 221]
@@ -244,8 +248,8 @@ call s:HL('iCursor', 'coal', 'tardis', 'none')
 call s:HL('Special', 'plain')
 
 " Comments are slightly brighter than folds, to make 'headers' easier to see.
-call s:HL('Comment',        'gravel')
-call s:HL('Todo',           'snow', 'bg', 'bold')
+call s:HL('Comment',        'commentColor')
+call s:HL('Todo',           'todoYellow', 'bg', 'bold')
 call s:HL('SpecialComment', 'snow', 'bg', 'bold')
 
 " Strings are a nice, pale straw color.  Nothing too fancy.

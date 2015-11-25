@@ -146,6 +146,7 @@ def get_xdg_cmd(cmd):
 special = {
     "bat": (lambda x: get_process_output("acpi", "%s", "")),
     "vi": (lambda x: ("vim","urxvt -e vim")),
+    "kbd": (lambda x: ("Set keymap", "setxkbmap se")),
 }
 
 while 1:
