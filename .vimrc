@@ -109,7 +109,7 @@ filetype plugin indent on
 syntax on
 
 set t_Co=256
-colorscheme badwolf
+colorscheme atom-dark-256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                               Keybindings
@@ -157,7 +157,7 @@ map k gk
 imap jk <Esc>
 imap kj <Esc>
 
-set relativenumber
+"set relativenumber
 
 "Quit when q: is pressed aswell
 map q: :q<Enter>
@@ -241,9 +241,12 @@ let g:airline#extensions#tabline#enabled = 1 "Show the current buffers in a tab 
 "let g:airline#extensions#tabline#left_sep = ''
 "let g:airline#extensions#tabline#left_alt_sep = ''
 
+set laststatus=1
+
+let g:airline_theme = 'behelit'
 let g:airline_powerline_fonts = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Latex stuff
+"                                         Latex stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:livepreview_previewer = 'zathura'
 
