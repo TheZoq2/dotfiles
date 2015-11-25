@@ -143,6 +143,9 @@ map <Leader>q :bdelete<CR>
 "Show buffer list and prompt for buffer id
 :nnoremap <Leader>o :buffers<CR>:buffer<Space>
 
+map j gj
+map k gk
+
 " Find and replace
 map <Leader>r :%s//gci<Left><Left><Left><Left>
 map <Leader>s :nohlsearch<CR> 
@@ -153,6 +156,8 @@ map k gk
 "JK to exit insert mode
 imap jk <Esc>
 imap kj <Esc>
+
+set relativenumber
 
 "Quit when q: is pressed aswell
 map q: :q<Enter>

@@ -46,3 +46,4 @@ zle -N zle-keymap-select
 #Removing vi lag
 export KEYTIMEOUT=1
 
+export MAKEFLAGS="j5"
