@@ -49,7 +49,7 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi Search term=reverse cterm=NONE ctermbg=156 ctermfg=16 gui=NONE guibg=#B4EC85 guifg=#000000
     CSAHi MoreMsg term=bold cterm=bold ctermbg=bg ctermfg=155 gui=bold guibg=bg guifg=#A8FF60
     CSAHi ModeMsg term=bold cterm=bold ctermbg=bg ctermfg=155 gui=bold guibg=bg guifg=#A8FF60
-    CSAHi LineNr term=underline cterm=NONE ctermbg=235 ctermfg=59 gui=NONE guibg=#232526 guifg=#465457
+    CSAHi LineNr term=underline cterm=NONE ctermbg=234 ctermfg=59 gui=NONE guibg=#232526 guifg=#465457
     CSAHi LightLineRight_insert_0 term=NONE cterm=NONE ctermbg=117 ctermfg=23 gui=NONE guibg=#87dfff guifg=#005f5f
     CSAHi LightLineRight_insert_0_tabsel term=NONE cterm=NONE ctermbg=235 ctermfg=117 gui=NONE guibg=#262626 guifg=#87dfff
     CSAHi LightLineRight_insert_tabsel_0 term=NONE cterm=NONE ctermbg=117 ctermfg=235 gui=NONE guibg=#87dfff guifg=#262626
@@ -101,7 +101,7 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi vimSynMtchGroup term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
     CSAHi ColorColumn term=reverse cterm=NONE ctermbg=235 ctermfg=160 gui=NONE guibg=lightgray guifg=fg
     CSAHi MatchParen term=reverse cterm=NONE ctermbg=238 ctermfg=145 gui=NONE guibg=#444444 guifg=#B7B9B8
-    CSAHi Comment term=bold cterm=NONE ctermbg=bg ctermfg=244 gui=NONE guibg=bg guifg=#7C7C7C
+    CSAHi Comment term=bold cterm=NONE ctermbg=bg ctermfg=166 gui=NONE guibg=bg guifg=#7C7C7C
     CSAHi Constant term=underline cterm=NONE ctermbg=bg ctermfg=114 gui=NONE guibg=bg guifg=#99CC99
     CSAHi Special term=bold cterm=NONE ctermbg=234 ctermfg=81 gui=NONE guibg=bg guifg=#66D9EF
     CSAHi vimSynRegion term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
@@ -137,7 +137,7 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi Ignore term=NONE cterm=NONE ctermbg=234 ctermfg=244 gui=NONE guibg=bg guifg=#808080
     CSAHi Error term=reverse cterm=NONE ctermbg=16 ctermfg=155 gui=NONE guibg=#1E0010 guifg=#A8FF60
     CSAHi vimSyncLinecont term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
-    CSAHi String term=NONE cterm=NONE ctermbg=bg ctermfg=155 gui=NONE guibg=bg guifg=#A8FF60
+    CSAHi String term=NONE cterm=NONE ctermbg=bg ctermfg=214 gui=NONE guibg=bg guifg=#A8FF60
     CSAHi Character term=NONE cterm=NONE ctermbg=bg ctermfg=155 gui=NONE guibg=bg guifg=#A8FF60
     CSAHi Number term=NONE cterm=NONE ctermbg=bg ctermfg=114 gui=NONE guibg=bg guifg=#99CC99
     CSAHi Boolean term=NONE cterm=NONE ctermbg=bg ctermfg=114 gui=NONE guibg=bg guifg=#99CC99
