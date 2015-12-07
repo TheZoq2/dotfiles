@@ -157,7 +157,7 @@ map k gk
 imap jk <Esc>
 imap kj <Esc>
 
-"set relativenumber
+set relativenumber
 
 "Quit when q: is pressed aswell
 map q: :q<Enter>
