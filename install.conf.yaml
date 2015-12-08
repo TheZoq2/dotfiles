@@ -11,4 +11,5 @@
     ~/.Xresources: .Xresources
     ~/.config/xfce4/terminal: ./.config/xfce4/terminal
     ~/.config/compton: ./.config/compton
+    ~/.vimperatorrc: ./.vimperatorrc
 
