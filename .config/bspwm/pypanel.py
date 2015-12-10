@@ -68,34 +68,14 @@ def waitForClient(listener):
 
 def main():
 
-    #subprocess.call(["mkdir", "-p", util.ICON_SAVE_PATH])
-    
-    #Starting the server that sends data to the panels
-    #address = ("localhost", COMM_PORT)
-    #listener = multiprocessing.connection.Listener(address)
-    
     monitors = Monitor.getMonitorSetup();
 
     #createTintForMonitor(0);
     monitorIndex = 1;
     for monitor in monitors:
         print(monitorIndex);
-#        #createBarForMonitor(monitor)
-#        #Waiting for the new monitor client to connect
-#        #client = waitForClient(listener)
-#        
-#        #monitor.setServerConnection(client)
         monitorIndex += 1
 
-#    while True:
-#        time.sleep(0.1)
-#        globalInfoString = generateGlobalInfo()
-#        
-#        #Get the status string from bspwm
-#        statusString = subprocess.check_output(["bspc", "control", "--get-status"], universal_newlines = True)
-#
-#        for monitor in monitors:
-#            monitor.sendFullPanelInfo(statusString, globalInfoString)
         
 print("Starting main")
 main()

@@ -1,6 +1,6 @@
 "3.10.1 (created: 2015/08/25 00:41:59)
 
-set hintchars=jkhl
+set hintchars=12345
 set tabnumbers
 source! /home/frans/.vimperatorrc.local
 

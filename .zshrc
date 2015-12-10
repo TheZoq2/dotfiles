@@ -17,8 +17,9 @@ promptinit
 autoload -U colors && colors
 
 #Aliases
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias fork='pwd | xfce4-terminal &'
+alias r='~/.scripts/runAfterMake.sh'
 
 #Keybindings
 bindkey -sM vicmd '^[' '^G'
@@ -26,7 +27,7 @@ bindkey "^?" backward-delete-char
 bindkey -sM vicmd ':' '^G'
 
 #Colors
-PROMPT="%{$fg[green]%}%n %B%{$fg[blue]%}%5~ %{$fg_no_bold[green]%}$ %b%{$reset_color%}%"
+PROMPT="%{$fg[cyan]%}%n %B%{$fg[blue]%}%5~ %{$fg[red]%}$ %b%{$reset_color%}%"
 RPROMPT="${KEYMAP/vicmd/I} %m test"
 
 #Showing vi mode in right prompt
@@ -47,3 +48,24 @@ zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
 export MAKEFLAGS="j5"
+
+
+######################################################################
+#History stuff
+#Prevent duplicate history
+setopt HIST_IGNORE_DUPS
+
+#Don't add commands starting with space to history
+setopt HIST_IGNORE_SPACE
+
+# Save the time and how long a command ran
+setopt EXTENDED_HISTORY
+
+#Alias some commands to make them not show up in history
+alias cd=' cd'
+alias ls='ls --color=auto'
+
+#Use <C-r> to search for commands in history
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
+
