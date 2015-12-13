@@ -6,6 +6,7 @@ pkill xfce4-power-manager
 pkill volumeicon
 pkill nm-applet
 pkill compton;
+pkill redshift
 
 CONFIG_DIR="/home/frans/.config/bspwm"
 
@@ -44,6 +45,7 @@ tint2 &
 xfce4-power-manager &
 volumeicon &
 nm-applet &
+redshift &
 
 #Reset the working directory
 cd
