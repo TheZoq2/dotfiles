@@ -32,9 +32,6 @@ super + {o,i}
 super + y
 	bspc window -w last.manual
 
-super + m
-	bspc window -s biggest
-
 super + {_,shift + }{h,j,k,l}
     /home/frans/.config/bspwm/movement.py {focus,move} {left,down,up,right}
 	#bspc window -{f,s} {left,down,up,right}
@@ -42,9 +39,6 @@ super + {_,shift + }{h,j,k,l}
 
 super + {_,shift + }c
 	bspc window -f {next,prev}
-
-super + {comma,period}
-	bspc desktop -C {backward,forward}
 
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
