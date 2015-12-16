@@ -40,6 +40,9 @@ Plugin 'bling/vim-airline'
 "Vimtex
 Plugin 'xuhdev/vim-latex-live-preview'
 
+"Fish syntax highlight
+Plugin 'aliva/vim-fish'
+
 call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'

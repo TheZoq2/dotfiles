@@ -2,7 +2,7 @@
 FontName=DejaVu Sans Mono for Powerline 10
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
-MiscBordersDefault=TRUE
+MiscBordersDefault=FALSE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=80x24
