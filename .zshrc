@@ -1,3 +1,10 @@
+source "${HOME}/.config/zsh/zgenInit"
+
+PATH_COLOR="%F{126}"
+ARROW_COLOR="%F{196}"
+VI_I_COLOR="%F{28}"
+VI_N_COLOR="%F{124}"
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -27,17 +34,20 @@ bindkey "^?" backward-delete-char
 bindkey -sM vicmd ':' '^G'
 
 #Colors
-PROMPT="%{$fg[cyan]%}%n %B%{$fg[blue]%}%5~ %{$fg[red]%}$ %b%{$reset_color%}%"
+#PROMPT="%{$fg[250]%}%n %B%{$fg[red]%}%5~ %{$fg[red]%}$ %b%{$reset_color%}%"
+#PROMPT="%B%{$fg[38;5;126]%}%5~ %{$fg[red]%}$ %b%{$reset_color%}%"
 RPROMPT="${KEYMAP/vicmd/I} %m test"
+#PROMPT="%{\e[38;5;51m%} Yolo"
+PS1=$'${PATH_COLOR}%5~ %{\e[0m%}${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT} ${ARROW_COLOR}➔ '
 
 #Showing vi mode in right prompt
 function zle-line-init zle-keymap-select {
     ADDITIONAL_RPROMPT="%{$fg[yellow]%}%m%{$reset_color%} "
 
-    VIM_PROMPT="$ADDITIONAL_RPROMPT%{$fg_bold[yellow]%}[% C]% %{$reset_color%}"
-    VIM_INSERT_PROMPT="$ADDITIONAL_RPROMPT%{$fg_bold[yellow]%}[% I]% %{$reset_color%}"
+    VIM_PROMPT="${VI_N_COLOR}♦"
+    VIM_INSERT_PROMPT="${VI_I_COLOR}♦"
 
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}"
+    RPS1="$ADDITIONAL_RPROMPT"
     zle reset-prompt
 }
 

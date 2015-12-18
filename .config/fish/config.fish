@@ -70,3 +70,8 @@ set fish_greeting
 
 #Use vi mode
 fish_vi_mode
+
+#Aliases
+#alias ls='ls --color=auto'
+alias fork='pwd | xfce4-terminal &'
+alias r='~/.scripts/runAfterMake.sh'
