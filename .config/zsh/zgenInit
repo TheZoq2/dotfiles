@@ -1,0 +1,22 @@
+# load zgen
+source "${HOME}/.config/zsh/zgen/zgen.zsh"
+
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
+
+    # plugins
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load chrissicool/zsh-256color
+EOPLUGINS
+    # ^ can't indent this EOPLUGINS
+
+    # completions
+    zgen load zsh-users/zsh-completions src
+
+    # theme
+    zgen oh-my-zsh themes/arrow
+
+    # save all to init script
+    zgen save
+fi
