@@ -1,10 +1,5 @@
 source "${HOME}/.config/zsh/zgenInit"
 
-PATH_COLOR="%F{126}"
-ARROW_COLOR="%F{196}"
-VI_I_COLOR="%F{28}"
-VI_N_COLOR="%F{124}"
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -33,26 +28,46 @@ bindkey -sM vicmd '^[' '^G'
 bindkey "^?" backward-delete-char
 bindkey -sM vicmd ':' '^G'
 
-#Colors
-#PROMPT="%{$fg[250]%}%n %B%{$fg[red]%}%5~ %{$fg[red]%}$ %b%{$reset_color%}%"
-#PROMPT="%B%{$fg[38;5;126]%}%5~ %{$fg[red]%}$ %b%{$reset_color%}%"
-RPROMPT="${KEYMAP/vicmd/I} %m test"
-#PROMPT="%{\e[38;5;51m%} Yolo"
-PS1=$'${PATH_COLOR}%5~ %{\e[0m%}${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT} ${ARROW_COLOR}➔ '
+#Colors for use in the prompt
+#local NORMAL_COLOR
+local PATH_COLOR='%F{126}'
+local ARROW_COLOR='%F{196}'
+local VI_I_COLOR='%F{71}'
+local VI_N_COLOR='%F{9}'
 
-#Showing vi mode in right prompt
-function zle-line-init zle-keymap-select {
-    ADDITIONAL_RPROMPT="%{$fg[yellow]%}%m%{$reset_color%} "
+#The look of the VI mode indicator
+local VIM_PROMPT="${VI_N_COLOR}♦"
+local VIM_INSERT_PROMPT="${VI_I_COLOR}♦"
 
-    VIM_PROMPT="${VI_N_COLOR}♦"
-    VIM_INSERT_PROMPT="${VI_I_COLOR}♦"
+#Show hostname in the right prompt
+RPS1="%{$fg[yellow]%}%m%{$reset_color%}%"
 
-    RPS1="$ADDITIONAL_RPROMPT"
+function updateVim {
+    #Styling the VI prompt
+    VI_PROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}"
+
+    #Contents of the lefth prompt
+    PS1="${PATH_COLOR}%5~ ${VI_PROMPT} ${ARROW_COLOR}➔ %{$reset_color%}%"
+
     zle reset-prompt
 }
+#Function that runs every time the vi mode is changed and when a new line is started
+function zle-line-init zle-keymap-select 
+{
+    #Run autosuggestions
+    updateVim
+}
+function zle-keymap-select 
+{
+    updateVim
+}
+
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+# Accept suggestions without leaving insert mode
+bindkey '^F' vi-forward-word
 
 #Removing vi lag
 export KEYTIMEOUT=1
@@ -73,9 +88,12 @@ setopt EXTENDED_HISTORY
 
 #Alias some commands to make them not show up in history
 alias cd=' cd'
-alias ls='ls --color=auto'
+alias ls=' ls --color=auto'
 
 #Use <C-r> to search for commands in history
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
+
+# not just at the end
+setopt completeinword
 

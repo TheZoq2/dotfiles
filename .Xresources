@@ -63,7 +63,15 @@ URxvt*iso14755_52: False
 
 rofi.modi: run
 rofi.font: snap 12
-rofi.fg: #000000
-rofi.bg: #ffffff
-rofi.hlfg: #ff0000
-rofi.hlbg: #aaaaaa
+rofi.fg: #ffffff
+rofi.bg: #1c1c1c
+rofi.hlfg: #6bbf5a
+rofi.hlbg: #1c1c1c
+rofi.padding: 10
+rofi.x-offset: 0
+rofi.y-offset: 0
+rofi.hide-scrollbar: true
+!The colour of the border
+rofi.opacity: 90
+rofi.fuzzy: true
+rofi.bw: 0
