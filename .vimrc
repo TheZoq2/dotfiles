@@ -43,6 +43,9 @@ Plugin 'xuhdev/vim-latex-live-preview'
 "Fish syntax highlight
 Plugin 'aliva/vim-fish'
 
+"Rust syntax highligt
+Plugin 'wting/rust.vim'
+
 call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'

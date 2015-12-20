@@ -97,3 +97,4 @@ bindkey "^S" history-incremental-pattern-search-forward
 # not just at the end
 setopt completeinword
 
+export PATH=$PATH:~/bin/wallpaperManager
