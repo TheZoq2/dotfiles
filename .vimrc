@@ -46,6 +46,9 @@ Plugin 'aliva/vim-fish'
 "Rust syntax highligt
 Plugin 'wting/rust.vim'
 
+" Creating and modifying tables
+Plugin 'godlygeek/tabular'
+
 call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
@@ -153,7 +156,7 @@ map j gj
 map k gk
 
 " Find and replace
-map <Leader>r :%s//gci<Left><Left><Left><Left>
+map <Leader>r :%s//gc<Left><Left><Left>
 map <Leader>s :nohlsearch<CR> 
 
 map j gj
