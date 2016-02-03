@@ -160,7 +160,7 @@ map j gj
 map k gk
 
 " Find and replace
-map <Leader>r :%s//gci<Left><Left><Left><Left>
+map <Leader>r :%s//gc<Left><Left><Left>
 map <Leader>s :nohlsearch<CR> 
 
 map j gj
@@ -184,6 +184,8 @@ set completeopt-=preview
 
 let g:ycm_warning_symbol = '**'
 let g:ycm_confirm_extra_conf = 0
+
+let g:EclimCompletionMethod = 'omnifunc'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Ultisnips keys
