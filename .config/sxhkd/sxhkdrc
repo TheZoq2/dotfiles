@@ -62,7 +62,10 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} focused:^{1-9,10}
 
 super + button{1-3}
-	; bspc pointer -g {move,resize_side,resize_corner}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+super + !button{1-3}
+    bspc pointer --track %i %i
 
 super + @button{1-3}
 	bspc pointer -u
