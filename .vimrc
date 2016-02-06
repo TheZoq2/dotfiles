@@ -28,10 +28,10 @@ Plugin 'idanarye/vim-vebugger'
 "Plugin 'tomtom/tlib_vim'
 "Plugin 'garbas/vim-snipmate'
 
-" Track the engine.
+" Code snippets
 Plugin 'SirVer/ultisnips'
 
-" Snippets for snipmate
+" Snippets for ultisnips
 Plugin 'TheZoq2/vim-snippets'
 
 " vim-airline: Statusbar and display of buffers
@@ -40,14 +40,24 @@ Plugin 'bling/vim-airline'
 "Vimtex
 Plugin 'xuhdev/vim-latex-live-preview'
 
-"Fish syntax highlight
-Plugin 'aliva/vim-fish'
-
 "Rust syntax highligt
-Plugin 'wting/rust.vim'
+"Plugin 'wting/rust.vim'
+Plugin 'rust-lang/rust.vim'
 
 " Creating and modifying tables
 Plugin 'godlygeek/tabular'
+Plugin 'dhruvasagar/vim-table-mode'
+
+"Bracket autocompletion
+Plugin 'Raimondi/delimitMate'
+
+"Sublime-like multi cursor mode
+Plugin 'terryma/vim-multiple-cursors'
+
+
+"Colors
+Plugin 'atweiden/vim-colors-behelit'
+Plugin 'notpratheek/vim-luna'
 
 call vundle#end()
 filetype plugin indent on
@@ -118,7 +128,11 @@ filetype plugin indent on
 syntax on
 
 set t_Co=256
-colorscheme atom-dark-256
+"colorscheme atom-dark-256
+colorscheme luna-term
+
+"Autoreload files when changed externally
+set autoread
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                               Keybindings
@@ -170,6 +184,14 @@ set relativenumber
 
 "Quit when q: is pressed aswell
 map q: :q<Enter>
+
+
+let g:multi_cursor_use_default_mapping=0
+" Default mapping
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                               Ycm stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -263,4 +285,5 @@ let g:livepreview_previewer = 'zathura'
 
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
+
 
