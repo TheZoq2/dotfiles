@@ -44,7 +44,10 @@ Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'wting/rust.vim'
 Plugin 'rust-lang/rust.vim'
 
-" Creating and modifying tables
+"Ycm generator
+Plugin 'rdnetto/YCM-Generator.git'
+
+"Table formating
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
@@ -120,8 +123,8 @@ set mouse=a         " Enable the use of the mouse.
 set hidden          "Allow unsaved buffers to be in the background
 
 "Codefolding
-set foldmethod=syntax
-set foldnestmax=1
+set foldmethod=indent
+set foldnestmax=2
 set foldlevel=0
  
 filetype plugin indent on
@@ -153,7 +156,7 @@ map <C-p> "+p
 "map <Leader>h :tabp<Enter>
 "map <Leader>e :tabe 
 
-"Swedish layout is s tupid
+"Swedish layout is stupid
 map Ö :
 
 

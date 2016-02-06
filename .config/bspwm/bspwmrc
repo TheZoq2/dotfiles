@@ -12,7 +12,6 @@ CONFIG_DIR="/home/frans/.config/bspwm"
 
 #Starting required stuff
 compton --config ~/.config/compton/comptonrc & #Transparent windows
-#feh --bg-fill /home/frans/Pictures/wallpapers/city1.jpg #set background
 feh --bg-fill --no-xinerama /home/frans/Pictures/wallpapers/current.png #set background
 
 bspc config border_width        1
@@ -41,7 +40,6 @@ bspc rule -a Screenkey manage=off
 
 
 tint2 &
-#xsetroot -cursor_name left_ptr
 xfce4-power-manager &
 volumeicon &
 nm-applet &
