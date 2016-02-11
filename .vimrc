@@ -18,8 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 
 "vimproc
-Plugin 'Shougo/vimproc.vim'
-"vebugger
+Plugin 'Shougo/vimproc.vim' "vebugger
 "depends on vimproc
 Plugin 'idanarye/vim-vebugger'
   
@@ -52,7 +51,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
 "Bracket autocompletion
-Plugin 'Raimondi/delimitMate'
+Plugin 'cohama/lexima.vim'
 
 "Sublime-like multi cursor mode
 Plugin 'terryma/vim-multiple-cursors'
@@ -60,7 +59,7 @@ Plugin 'terryma/vim-multiple-cursors'
 
 "Colors
 Plugin 'atweiden/vim-colors-behelit'
-Plugin 'notpratheek/vim-luna'
+Plugin 'TheZoq2/vim-luna'
 
 call vundle#end()
 filetype plugin indent on
@@ -279,7 +278,7 @@ let g:airline#extensions#tabline#enabled = 1 "Show the current buffers in a tab 
 
 set laststatus=1
 
-let g:airline_theme = 'behelit'
+"let g:airline_theme = 'behelit'
 let g:airline_powerline_fonts = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                         Latex stuff
