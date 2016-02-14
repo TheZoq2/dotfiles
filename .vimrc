@@ -51,11 +51,13 @@ Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
 "Bracket autocompletion
-Plugin 'cohama/lexima.vim'
+"Plugin 'cohama/lexima.vim'
 
 "Sublime-like multi cursor mode
 Plugin 'terryma/vim-multiple-cursors'
 
+"Highlight first word occurences
+Plugin 'unblevable/quick-scope'
 
 "Colors
 Plugin 'atweiden/vim-colors-behelit'
