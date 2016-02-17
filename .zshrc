@@ -1,5 +1,5 @@
 source "${HOME}/.config/zsh/zgenInit"
-
+    
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -88,6 +88,7 @@ setopt EXTENDED_HISTORY
 
 #Alias some commands to make them not show up in history
 alias cd=' cd'
+alias sl=' ls --color=auto'
 alias ls=' ls --color=auto'
 
 #Use <C-r> to search for commands in history

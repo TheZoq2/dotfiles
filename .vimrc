@@ -17,16 +17,6 @@ Plugin 'VundleVim/Vundle.vim'
 "YCM
 Plugin 'Valloric/YouCompleteMe'
 
-"vimproc
-Plugin 'Shougo/vimproc.vim' "vebugger
-"depends on vimproc
-Plugin 'idanarye/vim-vebugger'
-  
-"Vim-snipmate
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
-
 " Code snippets
 Plugin 'SirVer/ultisnips'
 
@@ -51,7 +41,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
 "Bracket autocompletion
-"Plugin 'cohama/lexima.vim'
+Plugin 'cohama/lexima.vim'
 
 "Sublime-like multi cursor mode
 Plugin 'terryma/vim-multiple-cursors'
@@ -60,8 +50,11 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'unblevable/quick-scope'
 
 "Colors
-Plugin 'atweiden/vim-colors-behelit'
+"Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'
+
+"Nvim autoread 
+Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -96,12 +89,7 @@ set hlsearch        " When there is a previous search pattern, highlight all
  
 set incsearch       " While typing a search command, show immediately where the
                     " so far typed pattern matches.
- 
-"set ignorecase      " Ignore case in search patterns.
- 
-"set smartcase       " Override the 'ignorecase' option if the search pattern
-                    " contains upper case characters.
- 
+
 set backspace=2     " Influences the working of <BS>, <Del>, CTRL-W
                     " and CTRL-U in Insert mode. This is a list of items,
                     " separated by commas. Each item allows a way to backspace
@@ -137,6 +125,14 @@ colorscheme luna-term
 
 "Autoreload files when changed externally
 set autoread
+if has('nvim')
+    autocmd VimEnter * AutoreadLoop 
+endif
+
+"Prevent redraw during macros etc.
+set lazyredraw
+
+set wildmenu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                               Keybindings
@@ -160,6 +156,8 @@ map <C-p> "+p
 "Swedish layout is stupid
 map Ö :
 
+map J 10j
+map K 10k
 
 "Buffer stuff
 map <Leader>l :bn<CR>
