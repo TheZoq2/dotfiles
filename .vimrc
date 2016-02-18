@@ -56,6 +56,9 @@ Plugin 'TheZoq2/vim-luna'
 "Nvim autoread 
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
 
+"WIP Colortheme changer
+Plugin 'git@github.com:TheZoq2/neovim-colortheme-changer.git'
+
 call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
