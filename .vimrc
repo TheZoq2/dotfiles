@@ -126,7 +126,7 @@ colorscheme luna-term
 "Autoreload files when changed externally
 set autoread
 if has('nvim')
-    autocmd VimEnter * AutoreadLoop 
+    "autocmd VimEnter * AutoreadLoop 
 endif
 
 "Prevent redraw during macros etc.

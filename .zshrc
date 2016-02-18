@@ -91,6 +91,9 @@ alias cd=' cd'
 alias sl=' ls --color=auto'
 alias ls=' ls --color=auto'
 
+alias ovim='/usr/bin/vim'
+alias vim='nvim'
+
 #Use <C-r> to search for commands in history
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
