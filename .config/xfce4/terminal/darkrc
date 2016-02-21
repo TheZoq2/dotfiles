@@ -1,0 +1,25 @@
+[Configuration]
+FontName=DejaVu Sans Mono for Powerline 10
+MiscAlwaysShowTabs=FALSE
+MiscBell=FALSE
+MiscBordersDefault=FALSE
+MiscCursorBlinks=FALSE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscDefaultGeometry=80x24
+MiscInheritGeometry=FALSE
+MiscMenubarDefault=FALSE
+MiscMouseAutohide=FALSE
+MiscToolbarDefault=FALSE
+MiscConfirmClose=TRUE
+MiscCycleTabs=TRUE
+MiscTabCloseButtons=TRUE
+MiscTabCloseMiddleClick=TRUE
+MiscTabPosition=GTK_POS_TOP
+MiscHighlightUrls=TRUE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ColorCursor=
+ColorForeground=#c5c5c8c8c6c6
+ColorBackground=#1c1c1c1c1c1c
+ColorPalette=#28282a2a2e2e;#a5a542424242;#8989e2e24d4d;#dede93935f5f;#5959cbcbf2f2;#858567678f8f;#5e5e8d8d8787;#707078788080;#37373b3b4141;#c59e3e823e82;#a7a7e4e47e7e;#f45ad55549d2;#8181a2a2bebe;#b2b29494bbbb;#8a8abebeb7b7;#c5c5c8c8c6c6
+ScrollingLines=10000
+
