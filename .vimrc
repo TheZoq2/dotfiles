@@ -1,8 +1,3 @@
-" see: http://vimdoc.sourceforge.net/htmldoc/options.html for details
-
-" For multi-byte character support (CJK support, for example):
-"set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
 " Setting up vundle
 set nocompatible 
@@ -24,7 +19,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'TheZoq2/vim-snippets'
 
 " vim-airline: Statusbar and display of buffers
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 
 "Vimtex
 Plugin 'xuhdev/vim-latex-live-preview'
@@ -53,6 +48,7 @@ Plugin 'unblevable/quick-scope'
 "Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'
 Plugin 'TheZoq2/vim-github-colorscheme'
+Plugin 'NLKNguyen/papercolor-theme'
 
 "Nvim autoread 
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
@@ -133,6 +129,11 @@ set autoread
 if has('nvim')
     "autocmd VimEnter * AutoreadLoop 
 endif
+if has('nvim')
+    autocmd VimEnter * StartColorPoll 
+endif
+
+
 
 "Prevent redraw during macros etc.
 set lazyredraw
@@ -184,6 +185,8 @@ map j gj
 map k gk
 
 "JK to exit insert mode
+
+
 imap jk <Esc>
 imap kj <Esc>
 
@@ -285,11 +288,25 @@ set laststatus=1
 "let g:airline_theme = 'behelit'
 let g:airline_powerline_fonts = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                         Latex stuff
+"                                 Latex stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:livepreview_previewer = 'zathura'
 
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               Colemac stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"noremap n j
+"noremap e k
+"noremap h h
+"noremap i l
+"
+"noremap u i
+"noremap l u
+"
+"imap ii <ESC>
+"
+"
+"map <Leader>i :bn<Enter>
