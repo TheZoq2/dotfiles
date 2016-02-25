@@ -44,6 +44,9 @@ Plugin 'terryma/vim-multiple-cursors'
 "Highlight first word occurences
 Plugin 'unblevable/quick-scope'
 
+"Buffer list
+Plugin 'bling/vim-bufferline'
+
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'

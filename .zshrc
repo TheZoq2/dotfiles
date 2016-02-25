@@ -105,5 +105,5 @@ export PATH=$PATH:~/bin/wallpaperManager
 
 
 alias posr='pintos --qemu -v -- run'
-export PATH=$PATH:~/Documents/cpp/tddb68-labs/linux/pintos/src/utils
+export PATH=$PATH:~/Documents/cpp/tddb68-labs/pintos/utils
 
