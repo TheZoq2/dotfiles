@@ -44,6 +44,9 @@ Plugin 'terryma/vim-multiple-cursors'
 "Highlight first word occurences
 Plugin 'unblevable/quick-scope'
 
+"Buffer list
+Plugin 'bling/vim-bufferline'
+
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'
@@ -185,10 +188,8 @@ map j gj
 map k gk
 
 "JK to exit insert mode
-
-
 imap jk <Esc>
-imap kj <Esc>
+"imap kj <Esc>
 
 set relativenumber
 
@@ -196,6 +197,7 @@ set relativenumber
 map q: :q<Enter>
 
 
+"Multicursor plugin mappings
 let g:multi_cursor_use_default_mapping=0
 " Default mapping
 let g:multi_cursor_next_key='<C-d>'
