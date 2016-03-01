@@ -93,9 +93,10 @@ local VI_N_COLOR='%F{1}'
 local VIM_PROMPT="${VI_N_COLOR}♦"
 local VIM_INSERT_PROMPT="${VI_I_COLOR}♦"
 
+local GIT_PROMPT='%b$(git_super_status)'
 #Show hostname in the right prompt
 #RPS1="%{$fg[yellow]%}%m ${git_super_status}%{$reset_color%}%"
-RPS1='%{$fg[yellow]%}%m %b$(git_super_status) '
+RPS1="${GIT_PROMPT}%{$fg[blue]%}%m"
 function updateVim {
     #Styling the VI prompt
     VI_PROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}"
