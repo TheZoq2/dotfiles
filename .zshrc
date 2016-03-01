@@ -1,4 +1,32 @@
+#source "${HOME}/.config/zsh/antigen/antigen.zsh"
+
+###########################################################
+#                      Plugin stuff
+###########################################################
 source "${HOME}/.config/zsh/zgenInit"
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
+
+    # plugins
+    #zgen load chrissicool/zsh-256color
+
+    # completions
+    #zgen load zsh-users/zsh-completions src
+
+    #Command suggestions
+    #zgen load hchbaw/auto-fu.zsh
+
+    #Syntax highlighting
+    zgen load zsh-users/zsh-syntax-highlighting
+
+    #Git prompt stuff
+    zgen load olivierverdier/zsh-git-prompt
+
+    # save all to init script
+    zgen save
+fi
+###########################################################
     
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -11,7 +39,33 @@ zstyle :compinstall filename '/home/frans/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+
+#Fuzzy command line completion
+source /etc/profile.d/fzf.zsh
+
+##Completion stuff
+####################################################################
+zmodload zsh/complist 
+autoload -Uz compinit
+compinit
+zstyle :compinstall filename '${HOME}/.zshrc'
+
+
+zstyle ':completion:*:pacman:*' force-list always
+zstyle ':completion:*:*:pacman:*' menu yes select
+
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
+
+zstyle ':completion:*:*:killall:*' menu yes select
+zstyle ':completion:*:killall:*'   force-list always
+
+#- complete pacman-color the same as pacman
+compdef _pacman pacman-color=pacman
+
+#####################################################################
 
 #Loading stuff
 autoload -U promptinit
@@ -30,18 +84,18 @@ bindkey -sM vicmd ':' '^G'
 
 #Colors for use in the prompt
 #local NORMAL_COLOR
-local PATH_COLOR='%F{126}'
-local ARROW_COLOR='%F{196}'
-local VI_I_COLOR='%F{71}'
-local VI_N_COLOR='%F{9}'
+local PATH_COLOR='%F{5}'
+local ARROW_COLOR='%F{1}'
+local VI_I_COLOR='%F{2}'
+local VI_N_COLOR='%F{1}'
 
 #The look of the VI mode indicator
 local VIM_PROMPT="${VI_N_COLOR}♦"
 local VIM_INSERT_PROMPT="${VI_I_COLOR}♦"
 
 #Show hostname in the right prompt
-RPS1="%{$fg[yellow]%}%m%{$reset_color%}%"
-
+#RPS1="%{$fg[yellow]%}%m ${git_super_status}%{$reset_color%}%"
+RPS1='%{$fg[yellow]%}%m %b$(git_super_status) '
 function updateVim {
     #Styling the VI prompt
     VI_PROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}"
