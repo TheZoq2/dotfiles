@@ -41,7 +41,7 @@ autoload -Uz compinit
 compinit
 
 #Fuzzy command line completion
-source /etc/profile.d/fzf.zsh
+#source /etc/profile.d/fzf.zsh
 
 ##Completion stuff
 ####################################################################
@@ -82,6 +82,8 @@ bindkey -sM vicmd '^[' '^G'
 bindkey "^?" backward-delete-char
 bindkey -sM vicmd ':' '^G'
 
+#####################################################################
+ZSH_THEME_GIT_PROMPT_CACHE=true
 #Colors for use in the prompt
 #local NORMAL_COLOR
 local PATH_COLOR='%F{5}'
@@ -94,9 +96,10 @@ local VIM_PROMPT="${VI_N_COLOR}♦"
 local VIM_INSERT_PROMPT="${VI_I_COLOR}♦"
 
 local GIT_PROMPT='%b$(git_super_status)'
+
 #Show hostname in the right prompt
 #RPS1="%{$fg[yellow]%}%m ${git_super_status}%{$reset_color%}%"
-RPS1="${GIT_PROMPT}%{$fg[blue]%}%m"
+RPS1="${GIT_PROMPT}%{$fg[blue]%}%m%{$reset_color%}%"
 function updateVim {
     #Styling the VI prompt
     VI_PROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}"
@@ -120,6 +123,7 @@ function zle-keymap-select
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+#####################################################################
 
 # Accept suggestions without leaving insert mode
 bindkey '^F' vi-forward-word
