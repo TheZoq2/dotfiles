@@ -1,20 +1,3 @@
 # load zgen
 source "${HOME}/.config/zsh/zgen/zgen.zsh"
 
-# check if there's no init script
-if ! zgen saved; then
-    echo "Creating a zgen save"
-
-    # plugins
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load chrissicool/zsh-256color
-
-    # completions
-    zgen load zsh-users/zsh-completions src
-
-    #Command suggestions
-    #zgen load hchbaw/auto-fu.zsh
-
-    # save all to init script
-    zgen save
-fi
