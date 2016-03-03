@@ -47,11 +47,13 @@ Plugin 'unblevable/quick-scope'
 "Buffer list
 Plugin 'bling/vim-bufferline'
 
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
+
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'
 Plugin 'TheZoq2/vim-github-colorscheme'
-Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'TheZoq2/papercolor-theme'
 
 "Nvim autoread 
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
@@ -143,6 +145,7 @@ set lazyredraw
 
 set wildmenu
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Keybindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -204,6 +207,9 @@ let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
+let g:ctrlp_map = '<c-t>'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          Ycm stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
