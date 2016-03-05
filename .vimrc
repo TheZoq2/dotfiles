@@ -36,7 +36,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
 "Bracket autocompletion
-Plugin 'cohama/lexima.vim'
+"Plugin 'cohama/lexima.vim'
 
 "Sublime-like multi cursor mode
 Plugin 'terryma/vim-multiple-cursors'
