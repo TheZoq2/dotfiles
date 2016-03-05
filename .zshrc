@@ -41,7 +41,10 @@ autoload -Uz compinit
 compinit
 
 #Fuzzy command line completion
-source /etc/profile.d/fzf.zsh
+local FZF_PATH="/etc/profile.d/fzf.zsh"
+if [ -f ${FZF_PATH} ]; then
+    source ${FZF_PATH}
+fi
 
 ##Completion stuff
 ####################################################################
