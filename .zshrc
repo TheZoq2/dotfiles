@@ -41,7 +41,7 @@ autoload -Uz compinit
 compinit
 
 #Fuzzy command line completion
-#source /etc/profile.d/fzf.zsh
+source /etc/profile.d/fzf.zsh
 
 ##Completion stuff
 ####################################################################

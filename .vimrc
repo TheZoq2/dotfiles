@@ -139,7 +139,7 @@ endif
 
 
 "Prevent redraw during macros etc.
-set lazyredraw
+"set lazyredraw
 
 set wildmenu
 
