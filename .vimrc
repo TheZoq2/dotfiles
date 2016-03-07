@@ -47,7 +47,11 @@ Plugin 'unblevable/quick-scope'
 "Buffer list
 Plugin 'bling/vim-bufferline'
 
+"Fuzzy search
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
+
+"Openscad support
+Plugin 'choffee/openscad.vim'
 
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
