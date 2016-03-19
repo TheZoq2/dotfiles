@@ -36,7 +36,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
 "Bracket autocompletion
-Plugin 'cohama/lexima.vim'
+"Plugin 'cohama/lexima.vim'
 
 "Sublime-like multi cursor mode
 Plugin 'terryma/vim-multiple-cursors'
@@ -47,7 +47,11 @@ Plugin 'unblevable/quick-scope'
 "Buffer list
 Plugin 'bling/vim-bufferline'
 
+"Fuzzy search
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
+
+"Openscad support
+Plugin 'choffee/openscad.vim'
 
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
@@ -141,7 +145,7 @@ endif
 
 
 "Prevent redraw during macros etc.
-set lazyredraw
+"set lazyredraw
 
 set wildmenu
 
