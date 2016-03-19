@@ -79,6 +79,7 @@ autoload -U colors && colors
 #alias ls='ls --color=auto'
 alias fork='pwd | xfce4-terminal &'
 alias r='~/.scripts/runAfterMake.sh'
+alias :q=exit
 
 #Keybindings
 bindkey -sM vicmd '^[' '^G'
