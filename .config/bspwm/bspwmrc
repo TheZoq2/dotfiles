@@ -7,6 +7,7 @@ pkill volumeicon
 pkill nm-applet
 pkill compton;
 pkill redshift
+#wp k #Kill the wallpaper manager
 
 CONFIG_DIR="/home/frans/.config/bspwm"
 
@@ -30,20 +31,17 @@ cd $CONFIG_DIR
 ./startup.py #Setup everything python based
 ./pypanel.py #Create the panel
 
+xfce4-terminal
 
 #Monitor layout is handled by python script
 #bspc monitor -d I II III IV V VI VII VIII IX X
-
-bspc rule -a mplayer2 floating=on
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-
 
 tint2 &
 xfce4-power-manager &
 volumeicon &
 nm-applet &
 redshift &
+#python3 /home/frans/bin/wallpaperManager
 
 #Reset the working directory
 cd

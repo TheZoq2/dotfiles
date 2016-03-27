@@ -6,7 +6,7 @@ import sys
 def windowIsFocused():
     print("Checking window")
     try:
-        query = subprocess.check_output(["bspc", "query", "-W", "-w", "focused"])
+        query = subprocess.check_output(["bspc", "query", "-N", "-n", "focused"])
     except subprocess.CalledProcessError:
         query = "\n"
     
@@ -19,25 +19,22 @@ def windowIsFocused():
 
 def moveDir(direction):
     if getWindowExistsDir(direction):
-        subprocess.call(["bspc", "window", "focused", "-s", direction])
+        subprocess.call(["bspc", "node", "focused", "-s", direction])
     elif getMonitorExistsDir(direction):
-        subprocess.call(["bspc", "window", "focused", "-m", direction])
+        subprocess.call(["bspc", "node", "focused", "-m", direction])
 
 def focusDir(direction):
-    print("Testing")
     #If the currently focused desktop is empty
     if not windowIsFocused():
         #Focus on the next monitor
         subprocess.call(["bspc", "monitor", "focused", "-f", direction])
-
-        print("Running")
         
         #We don't want to do window stuff now
         return
 
     #If there is a window that can be focused
     if getWindowExistsDir(direction):
-        subprocess.call(["bspc", "window", "focused", "-f", direction])
+        subprocess.call(["bspc", "node", "focused", "-f", direction])
     elif getMonitorExistsDir(direction):
         subprocess.call(["bspc", "monitor", "focused", "-f", direction])
     
@@ -46,7 +43,7 @@ def focusDir(direction):
 
 def getWindowExistsDir(direction):
     try:
-        query = subprocess.check_output(["bspc", "query", "-W", "-w", direction], universal_newlines=True)
+        query = subprocess.check_output(["bspc", "query", "-N", "-n", direction], universal_newlines=True)
     except subprocess.CalledProcessError:
         #For some reason, query exits with statuscode 1 if it fails to locate a window
         query = "\n"

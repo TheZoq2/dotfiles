@@ -10,7 +10,7 @@ import iconExtractor
 import util
 import Monitor
 import style
-import Lemon
+#import Lemon
 import config
 
 #Constants for configuration
