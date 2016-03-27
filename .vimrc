@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 "YCM
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'initrc/eclim-vundle'
 
 " Code snippets
 Plugin 'SirVer/ultisnips'

@@ -39,6 +39,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 
+sxhkd &
 tint2 &
 xfce4-power-manager &
 volumeicon &
