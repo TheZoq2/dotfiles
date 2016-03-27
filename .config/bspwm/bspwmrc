@@ -1,12 +1,14 @@
 #! /bin/bash
 
 #Restart all our programs
+pkill sxhkd
 pkill tint2
 pkill xfce4-power-manager
 pkill volumeicon
 pkill nm-applet
 pkill compton;
 pkill redshift
+#wp k #Kill the wallpaper manager
 
 CONFIG_DIR="/home/frans/.config/bspwm"
 
@@ -28,23 +30,24 @@ bspc config auto_cancel true
 #change working directory to allow relative paths in python and bash
 cd $CONFIG_DIR
 ./startup.py #Setup everything python based
-./pypanel.py #Create the panel
+#./pypanel.py #Create the panel
 
 
 #Monitor layout is handled by python script
 #bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc rule -a mplayer2 floating=on
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-
-
-sxhkd &
 tint2 &
 xfce4-power-manager &
 volumeicon &
 nm-applet &
 redshift &
+#python3 /home/frans/bin/wallpaperManager
+setxkbmap us
 
 #Reset the working directory
 cd
+
+sxhkd &
+
+#Enable if something goes wrong
+#xfce4-terminal &

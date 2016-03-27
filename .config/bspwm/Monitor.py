@@ -1,5 +1,5 @@
 import subprocess
-import Lemon
+#import Lemon
 import style
 import util
 import Desktop
@@ -39,7 +39,7 @@ class Monitor:
     def sendFullPanelInfo(self, statusString, globalInfoString):
         desktopString = self.createDesktopString(statusString)
         
-        panelText = Lemon.LemonTextFormat()
+        #panelText = Lemon.LemonTextFormat()
 
         panelText.addText(desktopString)
         panelText.addParam("B", style.BAR_BG)
@@ -60,7 +60,7 @@ class Monitor:
 
 
     def createDesktopString(self, statusString):
-        panelText = Lemon.LemonTextFormat()
+        #panelText = Lemon.LemonTextFormat()
         
         desktops = self.getDesktops(statusString)
         
@@ -100,7 +100,7 @@ class Monitor:
 
 
     def createWindowString(self):
-        lemonText = Lemon.LemonTextFormat()
+        #lemonText = Lemon.LemonTextFormat()
 
         windows = self.getWindows()
         
