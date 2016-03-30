@@ -202,7 +202,7 @@ imap jk <Esc>
 set relativenumber
 
 "Quit when q: is pressed aswell
-map q: :q<Enter>
+map q: :q
 
 
 "Multicursor plugin mappings

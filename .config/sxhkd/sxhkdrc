@@ -2,21 +2,24 @@
 # bspwm hotkeys
 #
 
-super + alt + Escape
-	bspc quit
-
-
+#Close a node
 super + q
 	bspc node -c
-
-super + t
-	bspc desktop -l next
 
 super + b
 	bspc desktop -B
 
-super + {s,f}
-	bspc node -t {floating,fullscreen}
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# focus the node for the given path jump
+super + {comma,period}
+	bspc node -f @{parent,brother}
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 super + {grave,Tab}
 	bspc {node,desktop} -f last
@@ -24,10 +27,6 @@ super + {grave,Tab}
 super + apostrophe
 	bspc node -s last
 
-super + {o,i}
-	bspc control --record-history off; \
-	bspc node {older,newer} -f; \
-	bspc control --record-history on
 
 super + {_,shift + }{h,j,k,l}
     /home/frans/.config/bspwm/movement.py {focus,move} {west,south,north,east}
@@ -37,38 +36,53 @@ super + {_,shift + }{h,j,k,l}
 super + {_,shift + }c
 	bspc node -f {next,prev}
 
-#super + bracket{west,east}
-#	bspc desktop -f {prev,next}
-
+#Preselection stuff
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
-
-super + ctrl + {_,shift + }space
-	bspc {node -p cancel,desktop -c}
-
-super + alt + {h,j,k,l}
-	bspc node -r {west -10,south +10,north -10,east +10}
-
-super + alt + shift + {h,j,k,l}
-	bspc node -r {east -10,north +10,south -10,west +10}
-
+# cancel the preselection for the focused desktop
+super + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+#Resize preselection
 super + ctrl + {1-9}
-	bspc node -r 0.{1-9}
+	bspc node -o 0.{1-9}
 
+
+#
+# resize tiled/floating
+#
+
+# expand the tiled space in the given direction
+super + alt + {h,j,k,l}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+# contract the tiled space in the given direction
+super + alt + shift + {h,j,k,l}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+
+#Send nodes between desktops and focus other desktops
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} focused:^{1-9,10}
 
-#super + button{1-3}
-#	bspc pointer -g {move,resize_side,resize_corner}
-#
-#super + !button{1-3}
-#    bspc pointer --track %i %i
-#
-#super + @button{1-3}
-#	bspc pointer -u
- 
-super + u
-    scrot '%Y-%m-%d-%H%M%S.png' -e 'mv $f /home/frans/Pictures/screenshots'
+#Mouse stuff
+# start move/resize
+super + button{1-3}
+	; bspc pointer -g {move,resize_side,resize_corner}
+
+# end move/resize
+super + @button{1-3}
+	bspc pointer -u
+
+
+#super + x ; {1-9,0}
+#	bspc node -r 0.{1-9}
+super + x ; {1-9}
+    #bspc node -r 0.{1-9}
+    echo 0.{1-9}
+
+super + p ; {1-9}
+    bspc node -o 0.{1-9}
+    echo {1-9}
 
 #
 # wm independent hotkeys
