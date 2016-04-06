@@ -220,6 +220,8 @@ let g:ctrlp_map = '<c-t>'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
+let g:ycm_rust_src_path = '/usr/local/share/rust/rustc-1.7.0/src'
+
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
