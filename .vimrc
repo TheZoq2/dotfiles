@@ -204,6 +204,8 @@ set relativenumber
 "Quit when q: is pressed aswell
 map q: :q
 
+"Enable syntax highlighting for glsl
+au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 
 "Multicursor plugin mappings
 let g:multi_cursor_use_default_mapping=0
