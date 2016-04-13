@@ -170,3 +170,9 @@ export PATH=$PATH:~/bin/wallpaperManager
 alias posr='pintos --qemu -v -- run'
 export PATH=$PATH:~/Documents/cpp/tddb68-labs/pintos/utils
 
+######################################################################
+#                   SSH keygen stuff
+######################################################################
+
+envoy -t ssh-agent
+eval  "$(envoy -p)"
