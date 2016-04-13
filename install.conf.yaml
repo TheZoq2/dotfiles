@@ -16,4 +16,5 @@
     ~/.config/compton: ./.config/compton
     ~/.vimperatorrc: ./.vimperatorrc
     ~/.scripts: ./.scripts
+    ~/.ssh/config: ./.ssh/config
 

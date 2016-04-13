@@ -173,6 +173,7 @@ export PATH=$PATH:~/Documents/cpp/tddb68-labs/pintos/utils
 ######################################################################
 #                   SSH keygen stuff
 ######################################################################
+#Remember to do systemctl start/enable envoy@ssh-agent.socket
 
 envoy -t ssh-agent
 eval  "$(envoy -p)"
