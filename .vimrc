@@ -44,6 +44,8 @@ Plugin 'terryma/vim-multiple-cursors'
 
 "Highlight first word occurences
 Plugin 'unblevable/quick-scope'
+"Jumping around
+Plugin 'easymotion/vim-easymotion'
 
 "Buffer list
 Plugin 'bling/vim-bufferline'
@@ -177,6 +179,7 @@ map J 10j
 map K 10k
 
 "Buffer stuff
+map <Leader>b :buffers<CR>
 map <Leader>l :bn<CR>
 map <Leader>h :bp<CR>
 map <Leader>e :e<Space>
@@ -203,9 +206,6 @@ set relativenumber
 
 "Quit when q: is pressed aswell
 map q: :q
-
-"Enable syntax highlighting for glsl
-au BufNewFile,BufRead *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
 
 "Multicursor plugin mappings
 let g:multi_cursor_use_default_mapping=0
@@ -238,55 +238,6 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           Pyclewn
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pyclewn_args="--window=usetab"
-map <Leader>ds :Pyclewn gdb 
-map <Leader>dm :Cmapkeys<Enter>
-map <Leader>dv :Cdbgvar 
-map <Leader>dr :Cdelvar var
-
-""""""Create debug windows in a new tabs
-function Pyclewn_CreateTabWindows(debugger)
-    split
-    edit (clewn)_variables
-    split
-    edit (clewn)_console
-    wincmd j
-    if a:debugger == "gdb"
-        split
-        let w:pyclewn_window = 1
-        wincmd w
-        edit (clewn)_threads
-        let w:pyclewn_window = 1
-        vsplit
-        edit (clewn)_breakpoints
-        let w:pyclewn_window = 1
-        vsplit
-        edit (clewn)_backtrace
-        let w:pyclewn_window = 1
-    endif
-endfunction
-
-function Pyclewn_GotoFrame(fname)
-    " Go to the fourth window loaded wih the buffer that was active
-    " when the ToggleDebugView() function was executed.
-    4wincmd j
-
-    exe "edit " . a:fname
-endfunction
-
-function Pyclewn_GotoBreakpoint(fname, lnum)
-    4wincmd j
-    exe "edit " . a:fname
-    if a:lnum != ""
-        call cursor(a:lnum, 0)
-    endif
-endfunction
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -312,29 +263,22 @@ let g:livepreview_previewer = 'zathura'
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                               Colemac stuff
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"noremap n j
-"noremap e k
-"noremap h h
-"noremap i l
-"
-"noremap u i
-"noremap l u
-"
-"imap ii <ESC>
-"
-"
-"map <Leader>i :bn<Enter>
 
-if &term =~ "xterm\\|rxvt"
-  " use an orange cursor in insert mode
-  let &t_SI = "\<Esc>]12;orange\x7"
-  " use a red cursor otherwise
-  let &t_EI = "\<Esc>]12;red\x7"
-  silent !echo -ne "\033]12;red\007"
-  " reset cursor when vim exits
-  autocmd VimLeave * silent !echo -ne "\033]112\007"
-  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
-endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           easymotion stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"Disable default mapping
+let g:EasyMotion_do_mapping = 0
+
+"Make case insensitive
+let g:EasyMotion_smartcase = 1
+
+"Activate using space+f
+nmap <Leader><Leader> <Plug>(easymotion-overwin-f)
+
+"'Search' for space+g
+nmap <Leader>g <Plug>(easymotion-sn)
+map  <Leader>n <Plug>(easymotion-next)
+
