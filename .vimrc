@@ -61,6 +61,7 @@ Plugin 'choffee/openscad.vim'
 Plugin 'TheZoq2/vim-luna'
 Plugin 'TheZoq2/vim-github-colorscheme'
 Plugin 'TheZoq2/papercolor-theme'
+Plugin 'TheZoq2/badwolf'
 
 "Nvim autoread 
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
