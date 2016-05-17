@@ -43,12 +43,12 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'terryma/vim-multiple-cursors'
 
 "Highlight first word occurences
-Plugin 'unblevable/quick-scope'
+"Plugin 'unblevable/quick-scope'
 "Jumping around
 Plugin 'easymotion/vim-easymotion'
 
 "Buffer list
-Plugin 'bling/vim-bufferline'
+"Plugin 'bling/vim-bufferline'
 
 "Fuzzy search
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
@@ -179,7 +179,7 @@ map J 10j
 map K 10k
 
 "Buffer stuff
-map <Leader>b :buffers<CR>
+map <Leader>j :Buffers<CR>
 map <Leader>l :bn<CR>
 map <Leader>h :bp<CR>
 map <Leader>e :e<Space>
