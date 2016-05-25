@@ -91,6 +91,7 @@ set smarttab        " When on, a <Tab> in front of a line inserts blanks
 set showcmd         " Show (partial) command in status line.
 
 set number          " Show line numbers.
+set relativenumber
 
 "set showmatch       " When a bracket is inserted, briefly jump to the matching
                     " one. The jump is only done if the match can be seen on the
@@ -203,7 +204,6 @@ map k gk
 imap jk <Esc>
 "imap kj <Esc>
 
-set relativenumber
 
 "Quit when q: is pressed aswell
 map q: :q
