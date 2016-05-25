@@ -69,6 +69,7 @@ Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
 "WIP Colortheme changer
 Plugin 'git@github.com:TheZoq2/neovim-colortheme-changer.git'
 
+
 call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
@@ -263,7 +264,6 @@ let g:livepreview_previewer = 'zathura'
 
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           easymotion stuff
