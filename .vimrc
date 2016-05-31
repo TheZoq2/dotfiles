@@ -69,6 +69,7 @@ Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
 "WIP Colortheme changer
 Plugin 'git@github.com:TheZoq2/neovim-colortheme-changer.git'
 
+
 call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
@@ -91,6 +92,7 @@ set smarttab        " When on, a <Tab> in front of a line inserts blanks
 set showcmd         " Show (partial) command in status line.
 
 set number          " Show line numbers.
+set relativenumber
 
 "set showmatch       " When a bracket is inserted, briefly jump to the matching
                     " one. The jump is only done if the match can be seen on the
@@ -134,8 +136,10 @@ syntax on
 
 set t_Co=256
 "colorscheme atom-dark-256
-colorscheme luna-term
+"colorscheme luna-term
 "colorscheme github
+colorscheme PaperColor
+set background=dark
 
 "Autoreload files when changed externally
 set autoread
@@ -203,7 +207,6 @@ map k gk
 imap jk <Esc>
 "imap kj <Esc>
 
-set relativenumber
 
 "Quit when q: is pressed aswell
 map q: :q
@@ -263,7 +266,6 @@ let g:livepreview_previewer = 'zathura'
 
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           easymotion stuff
