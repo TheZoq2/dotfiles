@@ -88,6 +88,8 @@ bindkey -sM vicmd ':' '^G'
 
 #####################################################################
 ZSH_THEME_GIT_PROMPT_CACHE=true
+autoload -Uz colors && colors
+
 #Colors for use in the prompt
 #local NORMAL_COLOR
 local PATH_COLOR='%F{5}'

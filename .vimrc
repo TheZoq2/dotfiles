@@ -192,6 +192,8 @@ map <Leader>e :e<Space>
 map <Leader>q :bdelete<CR>
 "Show buffer list and prompt for buffer id
 :nnoremap <Leader>o :buffers<CR>:buffer<Space>
+"Switch to the last buffer
+map <Leader>k <C-^>
 
 map j gj
 map k gk
