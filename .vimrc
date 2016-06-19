@@ -19,6 +19,9 @@ Plugin 'SirVer/ultisnips'
 " Snippets for ultisnips
 Plugin 'TheZoq2/vim-snippets'
 
+"Bracket matching
+Plugin 'jiangmiao/auto-pairs.git'
+
 " vim-airline: Statusbar and display of buffers
 " Plugin 'bling/vim-airline'
 
