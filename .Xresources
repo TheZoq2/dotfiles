@@ -62,16 +62,20 @@ URxvt*iso14755: False
 URxvt*iso14755_52: False
 
 rofi.modi: run
-rofi.font: snap 12
-rofi.fg: #ffffff
-rofi.bg: #1c1c1c
-rofi.hlfg: #6bbf5a
-rofi.hlbg: #1c1c1c
-rofi.padding: 10
-rofi.x-offset: 0
-rofi.y-offset: 0
+rofi.font: snap 11
+rofi.padding: 8
 rofi.hide-scrollbar: true
 !The colour of the border
 rofi.opacity: 90
 rofi.fuzzy: true
 rofi.bw: 0
+rofi.separator-style: solid
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #1c1c1c, #273238, #1c1c1c
+rofi.color-normal: #1c1c1c, #c1c1c1, #1c1c1c, #48184f, #ffffff
+rofi.color-active: #1c1c1c, #80cbc4, #273238, #394249, #80cbc4
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
