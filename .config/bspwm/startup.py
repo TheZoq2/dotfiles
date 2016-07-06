@@ -23,4 +23,4 @@ for s in screens:
     print(callList)
 
 #Add padding to the top to make room for  the bar
-subprocess.call(["bspc", "config", "top_padding", str(style.BAR_HEIGHT + style.BAR_PADDING * 2)])
+#subprocess.call(["bspc", "config", "right_padding", str(style.BAR_HEIGHT + style.BAR_PADDING * 2)])

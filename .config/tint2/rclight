@@ -56,15 +56,15 @@ border_color = #888888 20
 
 #-------------------------------------
 # Panel
-panel_items = TBSC
+panel_items = STC
 panel_size = %100 25
 panel_margin = 0 0
 panel_padding = 0 0 0
 panel_background_id = 1
 wm_menu = 0
 panel_dock = 0
-panel_position = top center horizontal
-panel_layer = bottom
+panel_position = center right vertical
+panel_layer = normal
 panel_monitor = all
 autohide = 0
 autohide_show_timeout = 0.3
@@ -100,7 +100,7 @@ task_text = 0
 task_icon = 1
 task_centered = 1
 urgent_nb_of_blink = 20
-task_maximum_size = 40 40
+task_maximum_size = 25 25
 task_padding = 2 2 2
 task_font = Liberation Mono 06_55 7
 task_tooltip = 1
@@ -149,7 +149,7 @@ launcher_tooltip = 0
 
 #-------------------------------------
 # Clock
-time1_format = %d %b %H:%M
+time1_format =%H %M
 time2_format = 
 time1_font = Liberation Sans 10
 time1_timezone = 
