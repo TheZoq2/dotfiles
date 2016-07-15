@@ -20,7 +20,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'TheZoq2/vim-snippets'
 
 "Bracket matching
-Plugin 'jiangmiao/auto-pairs.git'
+"Plugin 'TheZoq2/auto-pairs'
 
 " vim-airline: Statusbar and display of buffers
 " Plugin 'bling/vim-airline'
@@ -225,6 +225,15 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 let g:ctrlp_map = '<c-t>'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        Auto pairs settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:AutoPairsCenterLine=0
+let g:AutoPairsMultilineClose=0
+
+let g:AutoPairsCRIndent = ['{', '[']
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          Ycm stuff
