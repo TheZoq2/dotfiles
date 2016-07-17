@@ -10,7 +10,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "YCM
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'oblitum/YouCompleteMe'
 Plugin 'initrc/eclim-vundle'
 
 " Code snippets
@@ -18,6 +19,7 @@ Plugin 'SirVer/ultisnips'
 
 " Snippets for ultisnips
 Plugin 'TheZoq2/vim-snippets'
+Plugin 'Raimondi/delimitMate'
 
 "Bracket matching
 "Plugin 'TheZoq2/auto-pairs'
@@ -39,9 +41,6 @@ Plugin 'rdnetto/YCM-Generator.git'
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
-"Bracket autocompletion
-"Plugin 'cohama/lexima.vim'
-
 "Sublime-like multi cursor mode
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -49,9 +48,6 @@ Plugin 'terryma/vim-multiple-cursors'
 "Plugin 'unblevable/quick-scope'
 "Jumping around
 Plugin 'easymotion/vim-easymotion'
-
-"Buffer list
-"Plugin 'bling/vim-bufferline'
 
 "Fuzzy search
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
@@ -93,6 +89,7 @@ set smarttab        " When on, a <Tab> in front of a line inserts blanks
                     " at the start of the line.
  
 set showcmd         " Show (partial) command in status line.
+set laststatus=1    " Only show statusbar if there is more than one window
 
 set number          " Show line numbers.
 set relativenumber
@@ -232,7 +229,11 @@ let g:AutoPairsCenterLine=0
 let g:AutoPairsMultilineClose=0
 
 let g:AutoPairsCRIndent = ['{', '[']
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        Delimitmate settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let delimitMate_expand_cr = 1
+let delimitMate_balance_matchpairs=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -256,23 +257,6 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                Airline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline#extensions#tabline#enabled = 1 "Show the current buffers in a tab view
-"Font stuff
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-
-"let g:airline#extensions#tabline#left_sep = ''
-"let g:airline#extensions#tabline#left_alt_sep = ''
-
-set laststatus=1
-
-"let g:airline_theme = 'behelit'
-let g:airline_powerline_fonts = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Latex stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
