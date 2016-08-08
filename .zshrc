@@ -41,9 +41,21 @@ autoload -Uz compinit
 compinit
 
 #Fuzzy command line completion
-local FZF_PATH="/etc/profile.d/fzf.zsh"
+local FZF_PATH="/usr/share/fzf/completion.zsh"
+local FZF_BINDING_PATH="/usr/share/fzf/key-bindings.zsh"
 if [ -f ${FZF_PATH} ]; then
     source ${FZF_PATH}
+    source ${FZF_BINDING_PATH}
+
+    #CD into a directory using fzf
+    function cf()
+    {
+
+        #Run fzf on the result of find for all folders
+        dir=`find -type d | fzf`
+
+        cd $dir
+    }
 fi
 
 ##Completion stuff
