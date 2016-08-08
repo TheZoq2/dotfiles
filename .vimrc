@@ -10,8 +10,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "YCM
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'oblitum/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'oblitum/YouCompleteMe'
 Plugin 'initrc/eclim-vundle'
 
 " Code snippets
@@ -74,11 +74,11 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
 
        
+set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
+
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
-set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
- 
-set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
+"set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
                     " Spaces are used in indents with the '>' and '<' commands
                     " and when 'autoindent' is on. To insert a real tab when
                     " 'expandtab' is on, use CTRL-V <Tab>.
@@ -125,6 +125,11 @@ set ruler           " Show the line and column number of the cursor position,
 set mouse=a         " Enable the use of the mouse.
 
 set hidden          "Allow unsaved buffers to be in the background
+
+"Tab handling and listing
+set noexpandtab
+set list
+set listchars=tab:¬-,trail:~,extends:>,precedes:<
 
 "Codefolding
 set foldmethod=indent
@@ -195,15 +200,12 @@ map <Leader>q :bdelete<CR>
 "Switch to the last buffer
 map <Leader>k <C-^>
 
-map j gj
-map k gk
-
 " Find and replace
 map <Leader>r :%s//gc<Left><Left><Left>
 map <Leader>s :nohlsearch<CR> 
 
-map j gj
-map k gk
+"map j gj
+"map k gk
 
 "JK to exit insert mode
 imap jk <Esc>
