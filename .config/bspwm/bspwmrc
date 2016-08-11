@@ -8,6 +8,7 @@ pkill volumeicon
 pkill nm-applet
 pkill compton;
 pkill redshift
+pkill wpmServer.py
 #wp k #Kill the wallpaper manager
 
 CONFIG_DIR="/home/frans/.config/bspwm"
@@ -46,11 +47,17 @@ nm-applet &
 redshift &
 #python3 /home/frans/bin/wallpaperManager
 setxkbmap us
+#Reload xresources
+xrdb ~/.XResources & 
+wpmServer.py &
 
 #Reset the working directory
 cd
+
 
 sxhkd &
 
 #Enable if something goes wrong
 #xfce4-terminal &
+
+
