@@ -55,6 +55,9 @@ Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 "Openscad support
 Plugin 'choffee/openscad.vim'
 
+"Elm support
+Plugin 'ElmCast/elm-vim.git'
+
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'
@@ -252,6 +255,11 @@ let g:ycm_warning_symbol = '**'
 let g:ycm_confirm_extra_conf = 0
 
 let g:EclimCompletionMethod = 'omnifunc'
+
+"Elm and future stuff
+let g:ycm_semantic_triggers = {
+     \ 'elm' : ['.'],
+     \}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Ultisnips keys
