@@ -64,6 +64,7 @@ Plugin 'TheZoq2/vim-luna'
 Plugin 'TheZoq2/vim-github-colorscheme'
 Plugin 'TheZoq2/papercolor-theme'
 Plugin 'TheZoq2/badwolf'
+Plugin 'bcicen/vim-vice'
 
 "Nvim autoread 
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
@@ -256,10 +257,14 @@ let g:ycm_confirm_extra_conf = 0
 
 let g:EclimCompletionMethod = 'omnifunc'
 
-"Elm and future stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"					Elm stuff
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_semantic_triggers = {
      \ 'elm' : ['.'],
      \}
+
+let g:elm_setup_keybindings = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Ultisnips keys
