@@ -24,11 +24,9 @@ Plugin 'Raimondi/delimitMate'
 "Bracket matching
 "Plugin 'TheZoq2/auto-pairs'
 
-" vim-airline: Statusbar and display of buffers
-" Plugin 'bling/vim-airline'
-
-"Vimtex
+"Latex preview
 Plugin 'xuhdev/vim-latex-live-preview'
+
 
 "Rust syntax highligt
 "Plugin 'wting/rust.vim'
