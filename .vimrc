@@ -14,6 +14,9 @@ Plugin 'Valloric/YouCompleteMe'
 "Plugin 'oblitum/YouCompleteMe'
 Plugin 'initrc/eclim-vundle'
 
+"Tag compilation and stuff
+Plugin 'ludovicchabant/vim-gutentags'
+
 " Code snippets
 Plugin 'SirVer/ultisnips'
 
@@ -47,8 +50,13 @@ Plugin 'terryma/vim-multiple-cursors'
 "Jumping around
 Plugin 'easymotion/vim-easymotion'
 
+"Incremental and fuzzy searching
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+
 "Fuzzy search
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
 "Openscad support
 Plugin 'choffee/openscad.vim'
@@ -162,6 +170,7 @@ endif
 "Prevent redraw during macros etc.
 "set lazyredraw
 
+set wildmode=longest,list,full
 set wildmenu
 
 
@@ -191,7 +200,8 @@ map J 10j
 map K 10k
 
 "Buffer stuff
-map <Leader>j :Buffers<CR>
+"map <Leader>j :Buffers<CR>
+map <Leader>j :CtrPBuffer<CR>
 map <Leader>l :bn<CR>
 map <Leader>h :bp<CR>
 map <Leader>e :e<Space>
@@ -225,7 +235,10 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
+"CtrlP stuff
 let g:ctrlp_map = '<c-t>'
+
+map <Leader>; :CtrlPCmdPalette<Cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        Auto pairs settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -289,10 +302,19 @@ let g:EasyMotion_do_mapping = 0
 "Make case insensitive
 let g:EasyMotion_smartcase = 1
 
-"Activate using space+f
+"Activate using space+space
 nmap <Leader><Leader> <Plug>(easymotion-overwin-f)
 
 "'Search' for space+g
 nmap <Leader>g <Plug>(easymotion-sn)
 map  <Leader>n <Plug>(easymotion-next)
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"							Incsearch config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+map <Leader>/ <Plug>(incsearch-fuzzy-/)
+map <Leader>? <Plug>(incsearch-fuzzy-?)
