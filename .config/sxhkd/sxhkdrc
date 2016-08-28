@@ -93,7 +93,7 @@ super + Return
     #urxvt
 
 super + r
-    rofi -show run -X
+    rofi -show run -X -matching fuzzy
 	#lighthouse | sh
 
 super + space
