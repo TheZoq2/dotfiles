@@ -201,7 +201,7 @@ map K 10k
 
 "Buffer stuff
 "map <Leader>j :Buffers<CR>
-map <Leader>j :CtrPBuffer<CR>
+map <Leader>j :CtrlPBuffer<CR>
 map <Leader>l :bn<CR>
 map <Leader>h :bp<CR>
 map <Leader>e :e<Space>
@@ -215,6 +215,8 @@ map <Leader>k <C-^>
 " Find and replace
 map <Leader>r :%s//gc<Left><Left><Left>
 map <Leader>s :nohlsearch<CR> 
+
+map <Leader>g :Ycm GoTo<CR>
 
 "map j gj
 "map k gk
