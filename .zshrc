@@ -52,9 +52,12 @@ if [ -f ${FZF_PATH} ]; then
     {
 
         #Run fzf on the result of find for all folders
-        dir=`find -type d | fzf`
+        #dir=`find -type d | fzf --tiebreak=length,begin`
+        dir=`find -type d | fzy`
 
-        cd $dir
+		if [[ -n $dir ]]; then
+        	cd $dir
+		fi
     }
 fi
 
