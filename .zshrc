@@ -62,7 +62,9 @@ if [ -f ${FZF_PATH} ]; then
 
 	function vf()
 	{
-		vim $(find . | fzf)
+		file=`find . | fzf`
+
+		nvim $file
 	}
 fi
 
