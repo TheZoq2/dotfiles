@@ -56,6 +56,11 @@ if [ -f ${FZF_PATH} ]; then
 
         cd $dir
     }
+
+	function vf()
+	{
+		vim $(find . | fzf)
+	}
 fi
 
 ##Completion stuff
