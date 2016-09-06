@@ -84,6 +84,10 @@ super + p ; {1-9}
     bspc node -o 0.{1-9}
     echo {1-9}
 
+#Ssh rofi prompt
+super + p ; s
+   rofi -show ssh -X -matching fuzzy -terminal "xfce4-terminal" -modi "ssh" -ssh-command "\{terminal\} --execute \{ssh-client\} \{host\}"
+
 #
 # wm independent hotkeys
 #
