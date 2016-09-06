@@ -14,9 +14,6 @@ Plugin 'Valloric/YouCompleteMe'
 "Plugin 'oblitum/YouCompleteMe'
 Plugin 'initrc/eclim-vundle'
 
-"Tag compilation and stuff
-Plugin 'ludovicchabant/vim-gutentags'
-
 " Code snippets
 Plugin 'SirVer/ultisnips'
 
@@ -204,7 +201,7 @@ map K 10k
 map <Leader>j :CtrlPBuffer<CR>
 map <Leader>l :bn<CR>
 map <Leader>h :bp<CR>
-map <Leader>e :e<Space>
+"map <Leader>e :e<Space>
 "Close a buffer with space-q
 map <Leader>q :bdelete<CR>
 "Show buffer list and prompt for buffer id
@@ -238,7 +235,7 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 "CtrlP stuff
-let g:ctrlp_map = '<c-t>'
+let g:ctrlp_map = '<Leader>e'
 
 map <Leader>; :CtrlPCmdPalette<Cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
