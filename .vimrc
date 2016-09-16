@@ -27,6 +27,9 @@ Plugin 'Raimondi/delimitMate'
 "Latex preview
 Plugin 'xuhdev/vim-latex-live-preview'
 
+"Git integration
+Plugin 'tpope/vim-fugitive'
+
 
 "Rust syntax highligt
 "Plugin 'wting/rust.vim'
