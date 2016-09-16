@@ -213,7 +213,7 @@ map <Leader>k <C-^>
 map <Leader>r :%s//gc<Left><Left><Left>
 map <Leader>s :nohlsearch<CR> 
 
-map <Leader>g :Ycm GoTo<CR>
+map <Leader>g :YcmCompleter GoTo<CR>
 
 "map j gj
 "map k gk
@@ -305,7 +305,7 @@ let g:EasyMotion_smartcase = 1
 nmap <Leader><Leader> <Plug>(easymotion-overwin-f)
 
 "'Search' for space+g
-nmap <Leader>g <Plug>(easymotion-sn)
+"nmap <Leader>g <Plug>(easymotion-sn)
 map  <Leader>n <Plug>(easymotion-next)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
