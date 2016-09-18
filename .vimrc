@@ -63,6 +63,7 @@ Plugin 'choffee/openscad.vim'
 
 "Elm support
 Plugin 'ElmCast/elm-vim.git'
+Plugin 'neovimhaskell/haskell-vim'
 
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
