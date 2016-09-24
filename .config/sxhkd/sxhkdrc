@@ -101,7 +101,7 @@ super + r
 	#lighthouse | sh
 
 super + space
-    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us
+    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us -variant altgr-intl
 
 super + ctrl + p
     /home/frans/.config/bspwm/lock
