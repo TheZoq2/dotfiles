@@ -57,7 +57,7 @@ if [ -f ${FZF_PATH} ]; then
         #Run fzf on the result of find for all folders
         #dir=`find -type d | fzf --tiebreak=length,begin`
         #dir=`find -type d | fzf`
-        dir=`find -type d | ~/build/fzf-0.15.0-alpha-linux_amd64`
+        dir=`find -type d | fzf`
 
 		if [[ -n $dir ]]; then
         	cd $dir
@@ -69,11 +69,6 @@ if [ -f ${FZF_PATH} ]; then
 		file=`find . | fzf`
 
 		nvim $file
-	}
-
-	function history()
-	{
-		`cat ~/.histfile | cut -d \; -f 2 | fzf`
 	}
 fi
 
