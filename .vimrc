@@ -60,6 +60,7 @@ Plugin 'choffee/openscad.vim'
 
 "Elm support
 Plugin 'ElmCast/elm-vim.git'
+"Haskell support
 Plugin 'neovimhaskell/haskell-vim'
 
 "Colors

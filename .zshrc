@@ -32,7 +32,10 @@ fi
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+#Turn on vi mode
 bindkey -v
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/frans/.zshrc'
@@ -53,6 +56,7 @@ if [ -f ${FZF_PATH} ]; then
 
         #Run fzf on the result of find for all folders
         #dir=`find -type d | fzf --tiebreak=length,begin`
+        #dir=`find -type d | fzf`
         dir=`find -type d | fzf`
 
 		if [[ -n $dir ]]; then
@@ -103,10 +107,6 @@ alias fork='pwd | xfce4-terminal &'
 alias r='~/.scripts/runAfterMake.sh'
 alias :q=exit
 
-#Keybindings
-bindkey -sM vicmd '^[' '^G'
-bindkey "^?" backward-delete-char
-bindkey -sM vicmd ':' '^G'
 
 #####################################################################
 ZSH_THEME_GIT_PROMPT_CACHE=true
@@ -154,10 +154,10 @@ zle -N zle-keymap-select
 #####################################################################
 
 # Accept suggestions without leaving insert mode
-bindkey '^F' vi-forward-word
+# bindkey '^F' vi-forward-word
 
 #Removing vi lag
-export KEYTIMEOUT=1
+#export KEYTIMEOUT=1
 
 export MAKEFLAGS="j5"
 
@@ -181,9 +181,6 @@ alias ls=' ls --color=auto'
 alias ovim='/usr/bin/vim'
 alias vim='nvim'
 
-#Use <C-r> to search for commands in history
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^S" history-incremental-pattern-search-forward
 
 # not just at the end
 setopt completeinword
@@ -220,3 +217,27 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     man "$@"
 }
+
+
+
+#####################################################################
+#Keybindings
+bindkey -sM vicmd '^[' '^G'
+bindkey "^?" backward-delete-char
+bindkey -sM vicmd ':' '^G'
+
+#Exit insert mode with jk
+bindkey -M viins -e jk \\e
+
+#Ctrl+k is up
+bindkey '^K' up-line-or-history
+bindkey '^J' down-line-or-history
+
+#Make home and end work
+bindkey '\e[OH' beginning-of-line
+bindkey '\e[OF' end-of-line
+bindkey -M viins 'jk' vi-cmd-mode
+
+#Use <C-r> to search for commands in history
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
