@@ -42,9 +42,6 @@ Plugin 'rdnetto/YCM-Generator.git'
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
-"Sublime-like multi cursor mode
-Plugin 'terryma/vim-multiple-cursors'
-
 "Highlight first word occurences
 "Plugin 'unblevable/quick-scope'
 "Jumping around
@@ -105,10 +102,6 @@ set laststatus=1    " Only show statusbar if there is more than one window
 set number          " Show line numbers.
 set relativenumber
 
-"set showmatch       " When a bracket is inserted, briefly jump to the matching
-                    " one. The jump is only done if the match can be seen on the
-                    " screen. The time to show the match can be set with
-                    " 'matchtime'.
  
 set hlsearch        " When there is a previous search pattern, highlight all
                     " its matches.
@@ -215,7 +208,7 @@ map <Leader>k <C-^>
 
 " Find and replace
 map <Leader>r :%s//gc<Left><Left><Left>
-map <Leader>s :nohlsearch<CR> 
+map <Leader>S :nohlsearch<CR> 
 
 map <Leader>g :YcmCompleter GoTo<CR>
 
