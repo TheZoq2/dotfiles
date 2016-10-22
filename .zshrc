@@ -128,7 +128,7 @@ local GIT_PROMPT='%b$(git_super_status)'
 local BG_COLOR="%{$reset_color%}"
 #If we are SSHd
 if [ -n $SSH_CLIENT ]; then
-	BG_COLOR='$bg[black]'
+	BG_COLOR='$bg[cyan]'
 fi
 
 
