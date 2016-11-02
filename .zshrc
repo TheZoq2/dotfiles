@@ -226,9 +226,6 @@ bindkey -sM vicmd '^[' '^G'
 bindkey "^?" backward-delete-char
 bindkey -sM vicmd ':' '^G'
 
-#Exit insert mode with jk
-bindkey -M viins -e jk \\e
-
 #Ctrl+k is up
 bindkey '^K' up-line-or-history
 bindkey '^J' down-line-or-history
@@ -236,8 +233,11 @@ bindkey '^J' down-line-or-history
 #Make home and end work
 bindkey '\e[OH' beginning-of-line
 bindkey '\e[OF' end-of-line
+
+#Exit insert mode with jk
 bindkey -M viins 'jk' vi-cmd-mode
 
 #Use <C-r> to search for commands in history
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
+
