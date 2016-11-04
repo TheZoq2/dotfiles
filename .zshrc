@@ -125,6 +125,16 @@ local VIM_INSERT_PROMPT="${VI_I_COLOR}♦"
 
 local GIT_PROMPT='%b$(git_super_status)'
 
+local BG_COLOR="%{$reset_color%}"
+#If we are SSHd
+if [ -z ${SSH_CLIENT+x} ]; then
+	#If $SSH_CLIENT is unset
+	BG_COLOR="%{$reset_color%}"
+else
+	BG_COLOR='$bg[cyan]'
+fi
+
+
 #Show hostname in the right prompt
 #RPS1="%{$fg[yellow]%}%m ${git_super_status}%{$reset_color%}%"
 RPS1="${GIT_PROMPT}%{$fg[blue]%}%m%{$reset_color%}%"
@@ -133,7 +143,7 @@ function updateVim {
     VI_PROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}"
 
     #Contents of the lefth prompt
-    PS1="${PATH_COLOR}%5~ ${VI_PROMPT} ${ARROW_COLOR}➔ %{$reset_color%}%"
+    PS1="${BG_COLOR}${PATH_COLOR}%5~ ${VI_PROMPT} ${ARROW_COLOR}➔ %{$reset_color%}%"
 
     zle reset-prompt
 }

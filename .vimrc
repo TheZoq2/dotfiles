@@ -63,6 +63,11 @@ Plugin 'ElmCast/elm-vim.git'
 "Haskell support
 Plugin 'neovimhaskell/haskell-vim'
 
+
+"Gdb integration
+Plugin 'vim-scripts/Conque-GDB'
+
+
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'
@@ -148,8 +153,9 @@ set t_Co=256
 "colorscheme atom-dark-256
 "colorscheme luna-term
 "colorscheme github
-colorscheme PaperColor
-set background=dark
+"colorscheme PaperColor
+colorscheme badwolf
+"set background=dark
 
 "Autoreload files when changed externally
 set autoread
