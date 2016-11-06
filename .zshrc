@@ -195,7 +195,7 @@ alias vim='nvim'
 # not just at the end
 setopt completeinword
 
-export PATH=$PATH:~/bin/wallpaperManager:~/bin
+export PATH=$PATH:~/bin/wallpaperManager:~/bin:~/.cargo/bin
 
 
 alias posr='pintos --qemu -v -- run'
@@ -209,9 +209,13 @@ export TERM=xterm-256color
 ######################################################################
 #Remember to do systemctl start/enable envoy@ssh-agent.socket
 
-envoy -t ssh-agent
-eval  "$(envoy -p)"
 
+#Fuzzy command line completion
+local ENVOY_PATH="/usr/bin/envoy"
+if [ -f ${ENVOY_PATH} ]; then
+	envoy -t ssh-agent
+	eval  "$(envoy -p)"
+fi
 
 #######################################################################
 #                   Colored manpages
@@ -236,8 +240,6 @@ bindkey -sM vicmd '^[' '^G'
 bindkey "^?" backward-delete-char
 bindkey -sM vicmd ':' '^G'
 
-#Exit insert mode with jk
-bindkey -M viins -e jk \\e
 
 #Ctrl+k is up
 bindkey '^K' up-line-or-history
