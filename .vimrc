@@ -67,10 +67,6 @@ Plugin 'ElmCast/elm-vim.git'
 Plugin 'neovimhaskell/haskell-vim'
 
 
-"Gdb integration
-Plugin 'vim-scripts/Conque-GDB'
-
-
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'
@@ -142,6 +138,8 @@ set ruler           " Show the line and column number of the cursor position,
 set mouse=a         " Enable the use of the mouse.
 
 set hidden          "Allow unsaved buffers to be in the background
+
+set cursorline		"Highlight the current line
 
 "Tab handling and listing
 set noexpandtab
@@ -224,7 +222,8 @@ map <Leader>k <C-^>
 map <Leader>r :%s//gc<Left><Left><Left>
 map <Leader>s :nohlsearch<CR> 
 
-map <Leader>g :YcmCompleter GoTo<CR>
+"map <Leader>g :YcmCompleter GoTo<CR>
+map <Leader>g <C-]>
 
 "map j gj
 "map k gk
