@@ -189,7 +189,13 @@ alias sl=' ls --color=auto'
 alias ls=' ls --color=auto'
 
 alias ovim='/usr/bin/vim'
-alias vim='nvim'
+
+VIM_PATH='/usr/bin/nvim'
+
+#Aliasing neovim if is installed
+if [ -f ${VIM_PATH} ]; then
+	alias vim='nvim'
+fi
 
 
 # not just at the end
