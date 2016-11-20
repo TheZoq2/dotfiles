@@ -80,13 +80,16 @@ super + x ; {1-9}
     #bspc node -r 0.{1-9}
     echo 0.{1-9}
 
-super + p ; {1-9}
+super + space ; {1-9}
     bspc node -o 0.{1-9}
     echo {1-9}
 
 #Ssh rofi prompt
 super + p ; s
    rofi -show ssh -X -matching fuzzy -terminal "xfce4-terminal" -modi "ssh" -ssh-command "\{terminal\} --execute \{ssh-client\} \{host\}"
+
+super + space ; {r,R}
+	bspc node @parent --rotate {90,270}
 
 #
 # wm independent hotkeys
@@ -100,8 +103,8 @@ super + r
     rofi -show run -X -matching fuzzy
 	#lighthouse | sh
 
-super + space
-    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us -variant altgr-intl
+#super + space
+#    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us -variant altgr-intl
 
 super + ctrl + p
     /home/frans/.config/bspwm/lock
