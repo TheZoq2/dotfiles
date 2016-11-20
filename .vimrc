@@ -67,6 +67,15 @@ Plugin 'ElmCast/elm-vim.git'
 Plugin 'neovimhaskell/haskell-vim'
 
 
+"Python linting
+Plugin 'nvie/vim-flake8.git'
+"Python syntax highlight
+Plugin 'hdima/python-syntax.git'
+
+Plugin 'git@github.com:tpope/vim-surround.git'
+
+
+
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
 Plugin 'TheZoq2/vim-luna'
@@ -327,3 +336,14 @@ map g/ <Plug>(incsearch-stay)
 
 map <Leader>/ <Plug>(incsearch-fuzzy-/)
 map <Leader>? <Plug>(incsearch-fuzzy-?)
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"							Python plugin config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:flake8_show_quickfix=0
+let g:flake8_show_in_gutter=1
+
+"Run check each write
+autocmd BufWritePost *.py call Flake8()
+
