@@ -61,8 +61,8 @@ super + alt + shift + {h,j,k,l}
 
 
 #Send nodes between desktops and focus other desktops
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} focused:^{1-9,10}
+super + {_,shift + ,ctrl}{1-9,0}
+	bspc {desktop -f,node -d,desktop -s} focused:^{1-9,10}
 
 #Mouse stuff
 # start move/resize
@@ -83,6 +83,9 @@ super + x ; {1-9}
 super + space ; {1-9}
     bspc node -o 0.{1-9}
     echo {1-9}
+
+super + w ; {1,2}
+	~/wacomSetup.sh {HDMI1,eDP1}
 
 #Ssh rofi prompt
 super + p ; s
