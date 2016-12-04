@@ -33,10 +33,7 @@ fade-out-step = 0.02; # Opacity change between steps while fading out. (default 
 # no-fading-openclose = true; # Avoid fade windows in/out when opening/closing.
 fade-exclude = [ ];   # Exclude conditions for fading.
 
-# Other
-#inactive-dim = 0.1;    # Dim inactive windows. (0.0 - 1.0, defaults to 0).
 mark-ovredir-focused = true;
-#detect-rounded-corners = true;
 
 # Rendering
 paint-on-overlay = true;

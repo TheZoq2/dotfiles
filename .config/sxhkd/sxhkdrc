@@ -7,7 +7,7 @@ super + q
 	bspc node -c
 
 super + b
-	bspc desktop -B
+	bspc node -B
 
 # alternate between the tiled and monocle layout
 super + m
@@ -103,8 +103,8 @@ super + r
     rofi -show run -X -matching fuzzy
 	#lighthouse | sh
 
-#super + space
-#    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us -variant altgr-intl
+#super + space ; k
+    #(setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us -variant altgr-intl
 
 super + ctrl + p
     /home/frans/.config/bspwm/lock
