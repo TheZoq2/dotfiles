@@ -219,8 +219,8 @@ map <Leader>S :nohlsearch<CR>
 
 map <Leader>g :YcmCompleter GoTo<CR>
 
-"map j gj
-"map k gk
+map j gj
+map k gk
 
 "JK to exit insert mode
 imap jk <Esc>
