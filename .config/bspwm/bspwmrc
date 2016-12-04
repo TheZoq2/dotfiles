@@ -9,6 +9,7 @@ pkill nm-applet
 pkill compton;
 pkill redshift
 pkill wpmServer.py
+pkill blueman-applet
 #wp k #Kill the wallpaper manager
 
 CONFIG_DIR="/home/frans/.config/bspwm"
@@ -51,6 +52,7 @@ setxkbmap us
 #Reload xresources
 xrdb ~/.XResources & 
 wpmServer.py &
+blueman-applet & 
 
 #Reset the working directory
 cd
