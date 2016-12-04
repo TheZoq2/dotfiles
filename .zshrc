@@ -191,13 +191,19 @@ alias sl=' ls --color=auto'
 alias ls=' ls --color=auto'
 
 alias ovim='/usr/bin/vim'
-alias vim='nvim'
+
+VIM_PATH='/usr/bin/nvim'
+
+#Aliasing neovim if is installed
+if [ -f ${VIM_PATH} ]; then
+	alias vim='nvim'
+fi
 
 
 # not just at the end
 setopt completeinword
 
-export PATH=$PATH:~/bin/wallpaperManager:~/bin
+export PATH=$PATH:~/bin/wallpaperManager:~/bin:~/.cargo/bin
 
 
 alias posr='pintos --qemu -v -- run'
@@ -211,9 +217,13 @@ export TERM=xterm-256color
 ######################################################################
 #Remember to do systemctl start/enable envoy@ssh-agent.socket
 
-envoy -t ssh-agent
-eval  "$(envoy -p)"
 
+#Fuzzy command line completion
+local ENVOY_PATH="/usr/bin/envoy"
+if [ -f ${ENVOY_PATH} ]; then
+	envoy -t ssh-agent
+	eval  "$(envoy -p)"
+fi
 
 #######################################################################
 #                   Colored manpages
