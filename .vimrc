@@ -218,6 +218,8 @@ map <Leader>S :nohlsearch<CR>
 "map <Leader>g :YcmCompleter GoTo<CR>
 map <Leader>g <C-]>
 
+map <Leader>tr :setl rnu!<CR>
+
 map j gj
 map k gk
 

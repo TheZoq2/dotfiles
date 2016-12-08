@@ -91,6 +91,9 @@ super + w ; {1,2}
 super + p ; s
    rofi -show ssh -X -matching fuzzy -terminal "xfce4-terminal" -modi "ssh" -ssh-command "\{terminal\} --execute \{ssh-client\} \{host\}"
 
+super + R
+	bspc node -R 90
+
 #
 # wm independent hotkeys
 #
@@ -98,6 +101,7 @@ super + p ; s
 super + Return
     xfce4-terminal
     #urxvt
+
 
 super + r
     rofi -show run -X -matching fuzzy

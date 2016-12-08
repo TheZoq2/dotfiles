@@ -48,7 +48,7 @@ volumeicon &
 nm-applet &
 redshift &
 #python3 /home/frans/bin/wallpaperManager
-setxkbmap us
+setxkbmap us -variant altgr-intl
 #Reload xresources
 xrdb ~/.XResources & 
 wpmServer.py &
