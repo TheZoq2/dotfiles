@@ -340,3 +340,12 @@ let g:flake8_show_in_gutter=1
 "Run check each write
 autocmd BufWritePost *.py call Flake8()
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"function! s:generate_tags()
+"    let cmd = ctags -R &
+"    call jobstart(cmd)
+"endfunction
+"
+"autocmd BufWrite *.[ch] :silent call s:generate_tags()
