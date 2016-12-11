@@ -63,6 +63,9 @@ Plugin 'ElmCast/elm-vim.git'
 "Haskell support
 Plugin 'neovimhaskell/haskell-vim'
 
+"GMPL syntax
+Plugin 'maelvalais/gmpl.vim'
+
 
 "Python linting
 Plugin 'nvie/vim-flake8.git'
@@ -70,6 +73,9 @@ Plugin 'nvie/vim-flake8.git'
 Plugin 'hdima/python-syntax.git'
 
 Plugin 'git@github.com:tpope/vim-surround.git'
+
+"github markdown support
+Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
 
 
 
@@ -345,9 +351,8 @@ autocmd BufWritePost *.py call Flake8()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"function! s:generate_tags()
-"    let cmd = ctags -R &
-"    call jobstart(cmd)
-"endfunction
-"
-"autocmd BufWrite *.[ch] :silent call s:generate_tags()
+"Use github flavoured markdown on md files by default
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
