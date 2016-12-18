@@ -17,4 +17,5 @@
     ~/.vimperatorrc: ./.vimperatorrc
     ~/.scripts: ./.scripts
     ~/.ssh/config: ./.ssh/config
+    ~/.inputrc: ./.inputrc
 
