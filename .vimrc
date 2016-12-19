@@ -356,3 +356,12 @@ augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
+
+"Generate tags on write in rust
+"setlocal tags=./rusty-tags.vi;/
+"function! s:rustyTags()
+"    let cmd = "rusty-tags vi --start-dir=" . expand('%:p:h') . "&"
+"    call jobstart(cmd)
+"endfunction
+"
+"autocmd BufWrite *.rs :silent call s:rustyTags()
