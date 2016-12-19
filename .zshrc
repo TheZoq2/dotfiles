@@ -189,6 +189,7 @@ setopt EXTENDED_HISTORY
 alias cd=' cd'
 alias sl=' ls --color=auto'
 alias ls=' ls --color=auto'
+alias blyat='git'
 
 alias ovim='/usr/bin/vim'
 
