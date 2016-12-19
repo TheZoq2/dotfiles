@@ -184,9 +184,13 @@ endif
 "Prevent redraw during macros etc.
 "set lazyredraw
 
+"Customize tab completion
 set wildmode=longest,list,full
 set wildmenu
 
+"Highlight lines that are longer than 85 characters
+highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+match OverLength /\%>85v.\+/
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Keybindings
@@ -346,7 +350,7 @@ let g:flake8_show_quickfix=0
 let g:flake8_show_in_gutter=1
 
 "Run check each write
-autocmd BufWritePost *.py call Flake8()
+"autocmd BufWritePost *.py call Flake8()
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
