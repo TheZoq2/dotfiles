@@ -189,8 +189,9 @@ set wildmode=longest,list,full
 set wildmenu
 
 "Highlight lines that are longer than 85 characters
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-match OverLength /\%>85v.\+/
+"highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+"match OverLength /\%>85v.\+/
+set colorcolumn=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Keybindings
@@ -327,6 +328,8 @@ let g:EasyMotion_smartcase = 1
 
 "Activate using space+space
 nmap <Leader><Leader> <Plug>(easymotion-overwin-f)
+nmap <Leader>l <Plug>(easymotion-lineforward)
+nmap <Leader>h <Plug>(easymotion-linebackward)
 
 "'Search' for space+g
 "nmap <Leader>g <Plug>(easymotion-sn)
