@@ -77,7 +77,8 @@ Plugin 'git@github.com:tpope/vim-surround.git'
 "github markdown support
 Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
 
-
+"Scala support
+Plugin 'derekwyatt/vim-scala'
 
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
@@ -263,6 +264,11 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:ctrlp_map = '<Leader>e'
 
 map <Leader>; :CtrlPCmdPalette<Cr>
+
+
+"Reload file when changes happen
+au CursorHold * if getcmdwintype() == '' | checktime | endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        Auto pairs settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
