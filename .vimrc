@@ -365,10 +365,5 @@ augroup markdown
 augroup END
 
 "Generate tags on write in rust
-"setlocal tags=./rusty-tags.vi;/
-"function! s:rustyTags()
-"    let cmd = "rusty-tags vi --start-dir=" . expand('%:p:h') . "&"
-"    call jobstart(cmd)
-"endfunction
-"
-"autocmd BufWrite *.rs :silent call s:rustyTags()
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
