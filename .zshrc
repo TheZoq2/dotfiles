@@ -122,8 +122,8 @@ local VI_I_COLOR='%F{2}'
 local VI_N_COLOR='%F{1}'
 
 #The look of the VI mode indicator
-local VIM_PROMPT="${VI_N_COLOR}♦"
-local VIM_INSERT_PROMPT="${VI_I_COLOR}♦"
+local VIM_PROMPT="%{${VI_N_COLOR}%}♦"
+local VIM_INSERT_PROMPT="%{${VI_I_COLOR}%}♦"
 
 local GIT_PROMPT='%b$(git_super_status)'
 
@@ -133,7 +133,7 @@ if [ -z ${SSH_CLIENT+x} ]; then
 	#If $SSH_CLIENT is unset
 	BG_COLOR="%{$reset_color%}"
 else
-	BG_COLOR='$bg[cyan]'
+	BG_COLOR='%{$bg[cyan]%}'
 fi
 
 
