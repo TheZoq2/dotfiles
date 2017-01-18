@@ -29,8 +29,8 @@ super + apostrophe
 
 
 super + {_,shift + }{h,j,k,l}
-    /home/frans/.config/bspwm/movement.py {focus,move} {west,south,north,east}
-	#bspc window -{f,s} {left,south,north,east}
+    /home/frans/.config/bspwm/movement.py {focus,move} {west,south,north,east} ; rspc stack focus_current
+    #bspc window -{f,s} {left,south,north,east}
     #~/.config/bspwm/movement.py {focus,move} {left,south,north,east}
 
 super + {_,shift + }c
@@ -47,6 +47,11 @@ super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 
+super + space ; s ; c
+	rspc stack create
+
+super + space ; s ; r
+	rspc stack remove
 #
 # resize tiled/floating
 #

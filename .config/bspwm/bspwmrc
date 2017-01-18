@@ -10,6 +10,7 @@ pkill compton;
 pkill redshift
 pkill wpmServer.py
 pkill blueman-applet
+pkill rspwm
 #wp k #Kill the wallpaper manager
 
 CONFIG_DIR="/home/frans/.config/bspwm"
@@ -32,6 +33,7 @@ bspc config focus_by_distance   true
 bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
 bspc config auto_cancel true
+bspc config normal_border_color "#000000"
 
 #change working directory to allow relative paths in python and bash
 cd $CONFIG_DIR
@@ -53,6 +55,7 @@ setxkbmap us -variant altgr-intl -option caps:ctrl_modifier
 xrdb ~/.XResources & 
 wpmServer.py &
 blueman-applet & 
+~/.cargo/bin/rspwm &
 
 #Reset the working directory
 cd
