@@ -4,6 +4,7 @@ import style
 import util
 import Desktop
 import iconExtractor
+import re
 
 class Monitor:
     def __init__(self, name, size, pos):
@@ -183,26 +184,27 @@ def getMonitorSetup():
     #Find monitor layout using xrandr
     xrandrResult = subprocess.check_output(["xrandr"], universal_newlines=True)
 
+    size_regex = re.compile("\d+x\d+\+\d+\+\d+")
+
     #Look for the usefull parts of that data
     xrandrSplit = xrandrResult.split("\n")
     for line in xrandrSplit:
-        if line.find(" connected") != -1:
-            #extracting the info we are interested in
-            #output format is: monitorName connected WxH+X+Y...
-            words = line.split(" ")
-            
-            name = words[0]
+        regex_match = size_regex.search(line);
+        if not regex_match == None:
+            space_split = line.split(" ");
+            name = space_split[0]
 
-            #Extracting the dimensions of the monitor
-            dim = words[2].split("+")
-            
-            sizeStr = dim[0].split("x")
-            width = int(sizeStr[0])
-            height = int(sizeStr[1])
+            (size_start, size_end) = regex_match.span();
 
-            posX = int(dim[1])
-            posY = int(dim[2])
+            size_string = line[size_start:size_end];
 
+            plus_split = size_string.split("+")
+            x_split = plus_split[0].split("x")
+
+            width = int(x_split[0])
+            height = int(x_split[1])
+            posX = int(plus_split[1])
+            posY = int(plus_split[2])
             monitor = Monitor(name, util.Vec2d(width,height), util.Vec2d(posX,posY))
             monitors.append(monitor)
     
