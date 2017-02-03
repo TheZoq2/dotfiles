@@ -205,6 +205,7 @@ fi
 setopt completeinword
 
 export PATH=$PATH:~/bin/wallpaperManager:~/bin:~/.cargo/bin
+export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
 
 alias posr='pintos --qemu -v -- run'
@@ -268,3 +269,7 @@ bindkey "^S" history-incremental-pattern-search-forward
 ################################################################################
 #					Expand .....
 ################################################################################
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

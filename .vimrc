@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 "YCM
 Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Shougo/neocomplete.vim'
 "Plugin 'oblitum/YouCompleteMe'
 Plugin 'initrc/eclim-vundle'
 
@@ -236,6 +237,7 @@ map <Leader>k <C-^>
 
 " Find and replace
 map <Leader>r :%s//gc<Left><Left><Left>
+vmap <Leader>r :s//gc<Left><Left><Left>
 map <Leader>S :nohlsearch<CR> 
 
 "map <Leader>g :YcmCompleter GoTo<CR>
@@ -315,6 +317,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Latex stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -375,3 +378,5 @@ augroup END
 "Generate tags on write in rust
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
+
+
