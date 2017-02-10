@@ -55,6 +55,12 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
+"File explorer
+Plugin 'scrooloose/nerdtree'
+
+"Add :Bdelete to close buffers without messing with window layout
+Plugin 'moll/vim-bbye.git'
+
 "Openscad support
 Plugin 'choffee/openscad.vim'
 
@@ -228,7 +234,7 @@ map <Leader>l :bn<CR>
 map <Leader>h :bp<CR>
 "map <Leader>e :e<Space>
 "Close a buffer with space-q
-map <Leader>q :bdelete<CR>
+map <Leader>q :Bdelete<CR>
 "Show buffer list and prompt for buffer id
 :nnoremap <Leader>o :buffers<CR>:buffer<Space>
 "Switch to the last buffer
@@ -249,6 +255,8 @@ map k gk
 "JK to exit insert mode
 imap jk <Esc>
 "imap kj <Esc>
+
+map <Leader>n :NERDTreeToggle<CR>
 
 
 "Quit when q: is pressed aswell
@@ -341,7 +349,7 @@ nmap <Leader>h <Plug>(easymotion-linebackward)
 
 "'Search' for space+g
 "nmap <Leader>g <Plug>(easymotion-sn)
-map  <Leader>n <Plug>(easymotion-next)
+"map  <Leader>n <Plug>(easymotion-next)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "							Incsearch config
