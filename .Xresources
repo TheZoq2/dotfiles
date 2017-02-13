@@ -79,3 +79,8 @@ rofi.color-window: #1c1c1c, #273238, #1c1c1c
 rofi.color-normal: #1c1c1c, #c1c1c1, #1c1c1c, #48184f, #ffffff
 rofi.color-active: #1c1c1c, #80cbc4, #273238, #394249, #80cbc4
 rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+
+
+
+! Cursor size
+Xcursor.size: 5
