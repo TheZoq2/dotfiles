@@ -75,6 +75,8 @@ Plugin 'maelvalais/gmpl.vim'
 
 "Coffeescript support
 Plugin 'kchmck/vim-coffee-script'
+"Slim support
+Plugin 'slim-template/vim-slim.git'
 
 
 "Python linting
@@ -89,6 +91,7 @@ Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
 
 "Scala support
 Plugin 'derekwyatt/vim-scala'
+
 
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
@@ -170,7 +173,11 @@ set foldnestmax=2
 set foldlevel=0
  
 filetype plugin indent on
+
 syntax on
+
+"filetype specific indentation
+autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
 
 set t_Co=256
 "colorscheme atom-dark-256
