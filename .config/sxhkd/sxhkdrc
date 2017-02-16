@@ -21,11 +21,11 @@ super + {comma,period}
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+super + grave
+	bspc node -f last.local
 
-super + apostrophe
-	bspc node -s last
+super + Tab
+    skippy-xd
 
 
 super + {_,shift + }{h,j,k,l}
@@ -52,6 +52,7 @@ super + space ; s ; c
 
 super + space ; s ; r
 	rspc stack remove
+
 #
 # resize tiled/floating
 #
