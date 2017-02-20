@@ -65,6 +65,19 @@ if [ -f ${FZF_PATH} ]; then
         	cd $dir
 		fi
     }
+    #CD into a directory using fzf
+    function ch()
+    {
+
+        #Run fzf on the result of find for all folders
+        #dir=`find -type d | fzf --tiebreak=length,begin`
+        #dir=`find -type d | fzf`
+        dir=`cat ~/.file_index | fzf`
+
+		if [[ -n $dir ]]; then
+        	cd $dir
+		fi
+    }
 
 	function vf()
 	{

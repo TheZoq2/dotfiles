@@ -76,6 +76,8 @@ Plugin 'maelvalais/gmpl.vim'
 "Coffeescript support
 Plugin 'kchmck/vim-coffee-script'
 
+Plugin 'tikhomirov/vim-glsl'
+
 
 "Python linting
 Plugin 'nvie/vim-flake8.git'
