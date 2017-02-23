@@ -153,6 +153,13 @@ else
 fi
 
 
+#Fuzzy tab completion
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
+
+
 #Show hostname in the right prompt
 #RPS1="%{$fg[yellow]%}%m ${git_super_status}%{$reset_color%}%"
 RPS1="${GIT_PROMPT}%{$fg[blue]%}%m%{$reset_color%}%  %*"
