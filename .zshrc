@@ -25,6 +25,9 @@ if ! zgen saved; then
 
 	zgen load Tarrasch/zsh-bd
 
+    zgen load bobthecow/git-flow-completion.git
+
+
     # save all to init script
     zgen save
 fi
@@ -152,7 +155,7 @@ fi
 
 #Show hostname in the right prompt
 #RPS1="%{$fg[yellow]%}%m ${git_super_status}%{$reset_color%}%"
-RPS1="${GIT_PROMPT}%{$fg[blue]%}%m%{$reset_color%}%"
+RPS1="${GIT_PROMPT}%{$fg[blue]%}%m%{$reset_color%}%  %*"
 function updateVim {
     #Styling the VI prompt
     VI_PROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}"
@@ -283,3 +286,5 @@ bindkey "^S" history-incremental-pattern-search-forward
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+z() { zeus $*; stty sane }
