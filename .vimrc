@@ -286,6 +286,8 @@ let g:ctrlp_map = '<Leader>e'
 
 map <Leader>; :CtrlPCmdPalette<Cr>
 
+let g:ctrlp_extensions=['tag']
+nnoremap <Leader>t :CtrlPTag<Cr>
 
 "Reload file when changes happen
 au CursorHold * if getcmdwintype() == '' | checktime | endif

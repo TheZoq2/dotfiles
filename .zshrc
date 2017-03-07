@@ -288,7 +288,7 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
-
+export EDITOR=nvim
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
