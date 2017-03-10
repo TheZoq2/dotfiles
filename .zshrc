@@ -162,7 +162,7 @@ zstyle ':completion:*' matcher-list '' \
 
 #Show hostname in the right prompt
 #RPS1="%{$fg[yellow]%}%m ${git_super_status}%{$reset_color%}%"
-RPS1="${GIT_PROMPT}%{$fg[blue]%}%m%{$reset_color%}%  %*"
+RPS1="${GIT_PROMPT}%{$fg[blue]%}%m%{$reset_color%}%"
 function updateVim {
     #Styling the VI prompt
     VI_PROMPT="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/$VIM_INSERT_PROMPT}"
@@ -288,7 +288,7 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
-
+export EDITOR=nvim
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

@@ -284,8 +284,15 @@ let g:multi_cursor_quit_key='<Esc>'
 "CtrlP stuff
 let g:ctrlp_map = '<Leader>e'
 
+
 map <Leader>; :CtrlPCmdPalette<Cr>
 
+"ctrlp configuration
+"Allow searching through tags with <space>t
+let g:ctrlp_extensions=['tag']
+nnoremap <Leader>t :CtrlPTag<Cr>
+"Use current working directory for starting ctrlp
+let g:ctrlp_working_path_mode = 'a'
 
 "Reload file when changes happen
 au CursorHold * if getcmdwintype() == '' | checktime | endif
