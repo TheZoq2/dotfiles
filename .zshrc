@@ -62,7 +62,7 @@ if [ -f ${FZF_PATH} ]; then
         #Run fzf on the result of find for all folders
         #dir=`find -type d | fzf --tiebreak=length,begin`
         #dir=`find -type d | fzf`
-        dir=`find -type d | fzf`
+        dir=`bfs -type d | fzf`
 
 		if [[ -n $dir ]]; then
         	cd $dir
@@ -84,7 +84,7 @@ if [ -f ${FZF_PATH} ]; then
 
 	function vf()
 	{
-		file=`find . | fzf`
+		file=`bfs . | fzf`
 
 		nvim $file
 	}
