@@ -185,9 +185,9 @@ set t_Co=256
 "colorscheme atom-dark-256
 "colorscheme luna-term
 "colorscheme github
-"colorscheme PaperColor
-colorscheme badwolf
-"set background=dark
+colorscheme PaperColor
+"colorscheme badwolf
+set background=dark
 
 "Autoreload files when changed externally
 set autoread
