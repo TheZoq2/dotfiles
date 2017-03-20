@@ -10,7 +10,7 @@ super + b
 	bspc node -B
 
 # alternate between the tiled and monocle layout
-super + m
+super + x
 	bspc desktop -l next
 
 # focus the node for the given path jump
