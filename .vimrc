@@ -77,6 +77,8 @@ Plugin 'maelvalais/gmpl.vim'
 Plugin 'kchmck/vim-coffee-script'
 "Slim support
 Plugin 'slim-template/vim-slim.git'
+"ruby linting
+Plugin 'ngmy/vim-rubocop'
 
 Plugin 'tikhomirov/vim-glsl'
 

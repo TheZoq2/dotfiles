@@ -12,6 +12,8 @@ super + b
 # alternate between the tiled and monocle layout
 super + x
 	bspc desktop -l next
+super + m
+	bspc desktop -l next
 
 # focus the node for the given path jump
 super + {comma,period}
