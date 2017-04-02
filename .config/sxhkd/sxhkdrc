@@ -10,6 +10,8 @@ super + b
 	bspc node -B
 
 # alternate between the tiled and monocle layout
+super + x
+	bspc desktop -l next
 super + m
 	bspc desktop -l next
 
