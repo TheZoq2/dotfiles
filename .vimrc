@@ -31,6 +31,8 @@ Plugin 'xuhdev/vim-latex-live-preview'
 "Git integration
 Plugin 'tpope/vim-fugitive'
 
+"Alignment
+Plugin 'junegunn/vim-easy-align'
 
 "Rust syntax highligt
 "Plugin 'wting/rust.vim'
@@ -105,11 +107,10 @@ Plugin 'derekwyatt/vim-scala'
 
 "Colors
 "Plugin 'atweiden/vim-colors-behelit'
-Plugin 'TheZoq2/vim-luna'
-Plugin 'TheZoq2/vim-github-colorscheme'
 Plugin 'TheZoq2/papercolor-theme'
 Plugin 'TheZoq2/badwolf'
-Plugin 'bcicen/vim-vice'
+Plugin 'TheZoq2/Papyrus'
+Plugin 'tyrannicaltoucan/vim-quantum'
 
 "Nvim autoread 
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
@@ -122,31 +123,25 @@ call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
 
-       
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
 
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
- 
+
 set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
                     " Spaces are used in indents with the '>' and '<' commands
                     " and when 'autoindent' is on. To insert a real tab when
                     " 'expandtab' is on, use CTRL-V <Tab>.
- 
-"set smarttab        " When on, a <Tab> in front of a line inserts blanks
-                    " according to 'shiftwidth'. 'tabstop' is used in other
-                    " places. A <BS> will delete a 'shiftwidth' worth of space
-                    " at the start of the line.
- 
+
 set showcmd         " Show (partial) command in status line.
 set laststatus=1    " Only show statusbar if there is more than one window
 
 set number          " Show line numbers.
 set relativenumber
 
- 
+
 set hlsearch        " When there is a previous search pattern, highlight all
                     " its matches.
- 
+
 set incsearch       " While typing a search command, show immediately where the
                     " so far typed pattern matches.
 
@@ -197,6 +192,11 @@ colorscheme PaperColor
 "colorscheme badwolf
 set background=dark
 
+"set background=dark
+set termguicolors
+"let g:quantum_black=1
+"colorscheme quantum
+
 "Autoreload files when changed externally
 set autoread
 if has('nvim')
@@ -219,6 +219,8 @@ set wildmenu
 "highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "match OverLength /\%>85v.\+/
 set colorcolumn=80
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Keybindings
@@ -277,6 +279,10 @@ imap jk <Esc>
 
 map <Leader>n :NERDTreeToggle<CR>
 
+
+" EasyAlign mapings
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 "Quit when q: is pressed aswell
 map q: :q
