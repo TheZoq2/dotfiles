@@ -87,7 +87,7 @@ Plugin 'kchmck/vim-coffee-script'
 "Slim support
 Plugin 'slim-template/vim-slim.git'
 "ruby linting
-Plugin 'ngmy/vim-rubocop'
+"Plugin 'ngmy/vim-rubocop'
 
 Plugin 'tikhomirov/vim-glsl'
 
@@ -190,7 +190,7 @@ set t_Co=256
 "colorscheme github
 colorscheme PaperColor
 "colorscheme badwolf
-set background=dark
+set background=light
 
 "set background=dark
 set termguicolors
