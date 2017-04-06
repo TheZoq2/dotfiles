@@ -42,6 +42,10 @@ Plugin 'rdnetto/YCM-Generator.git'
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
+
+" Show bars to highlight indentation
+" Plugin 'Yggdroot/indentLine'
+
 "Highlight first word occurences
 "Plugin 'unblevable/quick-scope'
 "Jumping around
@@ -58,6 +62,9 @@ Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
 "File explorer
 Plugin 'scrooloose/nerdtree'
+"Fancy icons
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 
 "Add :Bdelete to close buffers without messing with window layout
@@ -177,7 +184,7 @@ set t_Co=256
 "colorscheme github
 colorscheme PaperColor
 "colorscheme badwolf
-set background=dark
+set background=light
 
 "set background=dark
 set termguicolors
@@ -371,6 +378,17 @@ let g:flake8_show_in_gutter=1
 "Run check each write
 "autocmd BufWritePost *.py call Flake8()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       Nerdtree config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let g:NERDTreeFileExtensionHighlightFullName = 1
+"let g:NERDTreeExactMatchHighlightFullName = 1
+"let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '-'
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
