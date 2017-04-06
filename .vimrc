@@ -22,9 +22,6 @@ Plugin 'SirVer/ultisnips'
 Plugin 'TheZoq2/vim-snippets'
 Plugin 'Raimondi/delimitMate'
 
-"Bracket matching
-"Plugin 'TheZoq2/auto-pairs'
-
 "Latex preview
 Plugin 'xuhdev/vim-latex-live-preview'
 
@@ -58,45 +55,41 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
+
 "File explorer
 Plugin 'scrooloose/nerdtree'
+
 
 "Add :Bdelete to close buffers without messing with window layout
 Plugin 'moll/vim-bbye.git'
 
+
+"Language plugins
 "Openscad support
 Plugin 'choffee/openscad.vim'
-
 "Elm support
 Plugin 'ElmCast/elm-vim.git'
 "Haskell support
 Plugin 'neovimhaskell/haskell-vim'
-
 "GMPL syntax
 Plugin 'maelvalais/gmpl.vim'
-
 "Coffeescript support
 Plugin 'kchmck/vim-coffee-script'
 "Slim support
 Plugin 'slim-template/vim-slim.git'
 "ruby linting
 Plugin 'ngmy/vim-rubocop'
-
+"Glsl
 Plugin 'tikhomirov/vim-glsl'
-
-
 "Python linting
 Plugin 'nvie/vim-flake8.git'
 "Python syntax highlight
 Plugin 'hdima/python-syntax.git'
-
-Plugin 'git@github.com:tpope/vim-surround.git'
+"Scala support
+Plugin 'derekwyatt/vim-scala'
 
 "github markdown support
 Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
-
-"Scala support
-Plugin 'derekwyatt/vim-scala'
 
 
 "Colors
@@ -281,26 +274,6 @@ nmap ga <Plug>(EasyAlign)
 "Quit when q: is pressed aswell
 map q: :q
 
-"Multicursor plugin mappings
-let g:multi_cursor_use_default_mapping=0
-" Default mapping
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
-"CtrlP stuff
-let g:ctrlp_map = '<Leader>e'
-
-
-map <Leader>; :CtrlPCmdPalette<Cr>
-
-"ctrlp configuration
-"Allow searching through tags with <space>t
-let g:ctrlp_extensions=['tag']
-nnoremap <Leader>t :CtrlPTag<Cr>
-"Use current working directory for starting ctrlp
-let g:ctrlp_working_path_mode = 'a'
 
 "Reload file when changes happen
 au CursorHold * if getcmdwintype() == '' | checktime | endif
@@ -411,4 +384,20 @@ augroup END
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           Ctrl P mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"CtrlP stuff
+let g:ctrlp_map = '<Leader>e'
+
+
+map <Leader>; :CtrlPCmdPalette<Cr>
+
+"ctrlp configuration
+"Allow searching through tags with <space>t
+let g:ctrlp_extensions=['tag']
+nnoremap <Leader>t :CtrlPTag<Cr>
+"Use current working directory for starting ctrlp
+let g:ctrlp_working_path_mode = 'a'
 
