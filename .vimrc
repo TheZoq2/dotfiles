@@ -94,6 +94,8 @@ Plugin 'nvie/vim-flake8.git'
 Plugin 'hdima/python-syntax.git'
 "Scala support
 Plugin 'derekwyatt/vim-scala'
+"TOML
+Plugin 'cespare/vim-toml'
 
 "github markdown support
 Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
