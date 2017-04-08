@@ -59,6 +59,8 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
+"Shifting function arguments
+Plugin 'PeterRincker/vim-argumentative'
 
 "File explorer
 Plugin 'scrooloose/nerdtree'
