@@ -47,7 +47,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 
 
 " Show bars to highlight indentation
-" Plugin 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
 
 "Highlight first word occurences
 "Plugin 'unblevable/quick-scope'
@@ -87,7 +87,7 @@ Plugin 'kchmck/vim-coffee-script'
 "Slim support
 Plugin 'slim-template/vim-slim.git'
 "ruby linting
-"Plugin 'ngmy/vim-rubocop'
+Plugin 'ngmy/vim-rubocop'
 
 Plugin 'tikhomirov/vim-glsl'
 
