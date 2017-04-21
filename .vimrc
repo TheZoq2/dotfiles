@@ -10,7 +10,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "YCM
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'autozimu/LanguageClient-neovim'
+Plugin 'Shougo/deoplete.nvim'
+"Plugin 'roxma/nvim-completion-manager'
 "Plugin 'Shougo/neocomplete.vim'
 "Plugin 'oblitum/YouCompleteMe'
 Plugin 'initrc/eclim-vundle'
@@ -34,6 +37,7 @@ Plugin 'junegunn/vim-easy-align'
 "Rust syntax highligt
 "Plugin 'wting/rust.vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer.git'
 
 "Ycm generator
 Plugin 'rdnetto/YCM-Generator.git'
@@ -424,3 +428,27 @@ nnoremap <Leader>t :CtrlPTag<Cr>
 "Use current working directory for starting ctrlp
 let g:ctrlp_working_path_mode = 'a'
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       Deoplete config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:deoplete#enable_at_startup = 1
+
+"Rust
+let g:racer_cmd = "~/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+
+"autocmd FileType rust call deoplete#initialize()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       Language server config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
