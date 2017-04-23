@@ -88,6 +88,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'slim-template/vim-slim.git'
 "ruby linting
 Plugin 'ngmy/vim-rubocop'
+Plugin 'vim-ruby/vim-ruby'
 
 "Glsl
 Plugin 'tikhomirov/vim-glsl'
