@@ -9,13 +9,13 @@
 # Background 1
 rounded = 0
 border_width = 0
-background_color = #ffffff 20
+background_color = #000000 40
 border_color = #d8d8d8 0
 
 # Background 2
 rounded = 1
 border_width = 0
-background_color = #2d2d2d 100
+background_color = #ffffff 100
 border_color = #d8d8d8 0
 
 # Background 3
@@ -36,7 +36,7 @@ border_width = 1
 background_color = #000000 0
 border_color = #000000 0
 
-# Background 6
+# Background 6j
 rounded = 0
 border_width = 1
 background_color = #005E2F 30

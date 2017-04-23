@@ -1,5 +1,8 @@
 #! /bin/bash
 
+OLD_PATH=$PATH
+PATH=$PATH:$HOME/bin/:$HOME/.cargo/bin
+
 #Restart all our programs
 pkill sxhkd
 pkill tint2
@@ -24,7 +27,7 @@ feh --bg-fill /home/frans/Pictures/wallpapers/current.png #set background
 bspc config border_width        1
 bspc config window_gap         4
 bspc config right_padding 27
-bspc config left_padding 3
+bspc config left_padding 3 
 bspc config top_padding 3
 
 bspc config split_ratio         0.50
@@ -56,8 +59,9 @@ setxkbmap us -variant altgr-intl -option caps:ctrl_modifier
 xrdb ~/.XResources & 
 wpmServer.py &
 blueman-applet & 
-~/.cargo/bin/rspwm &
+/home/frans/.cargo/bin/rspwm &
 touchegg &
+autostart &
 
 #Reset the working directory
 cd
@@ -67,5 +71,7 @@ sxhkd &
 
 #Enable if something goes wrong
 #xfce4-terminal &
+
+PATH=$OLD_PATH
 
 
