@@ -34,11 +34,6 @@ Plugin 'tpope/vim-fugitive'
 "Alignment
 Plugin 'junegunn/vim-easy-align'
 
-"Rust syntax highligt
-"Plugin 'wting/rust.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer.git'
-
 "Ycm generator
 Plugin 'rdnetto/YCM-Generator.git'
 
@@ -106,6 +101,14 @@ Plugin 'cespare/vim-toml'
 
 "github markdown support
 Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
+
+
+"Deoplete language support plugins
+"Rust
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer.git'
+"Ruby
+Plugin 'fishbullet/deoplete-ruby.git'
 
 
 "Colors
@@ -434,6 +437,9 @@ let g:ctrlp_working_path_mode = 'a'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:deoplete#enable_at_startup = 1
+
+"Always ignore case when matching
+let g:deoplete#enable_ignore_case = 1
 
 "Rust
 let g:racer_cmd = "~/.cargo/bin/racer"
