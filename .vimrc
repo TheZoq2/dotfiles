@@ -347,6 +347,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:livepreview_previewer = 'zathura'
 
+" Neovim seems to autoload a latex plugin which conceals certain symbols
+autocmd FileType tex set conceallevel=0
+
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
 

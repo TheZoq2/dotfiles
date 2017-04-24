@@ -1,4 +1,13 @@
-#! /bin/bash
+#!/bin/bash
+
+IS_TABLET=0
+
+if [ $1 = "tablet" ]; then 
+    IS_TABLET=1
+    echo "Starting tablet mode"; 
+else 
+    echo "Starting desktop mode"; 
+fi
 
 OLD_PATH=$PATH
 PATH=$PATH:$HOME/bin/:$HOME/.cargo/bin
@@ -6,6 +15,7 @@ PATH=$PATH:$HOME/bin/:$HOME/.cargo/bin
 #Restart all our programs
 pkill sxhkd
 pkill tint2
+pkill xfce4-panel
 pkill xfce4-power-manager
 pkill volumeicon
 pkill nm-applet
@@ -24,11 +34,21 @@ compton --config ~/.config/compton/comptonrc & #Transparent windows
 #feh --bg-fill --no-xinerama /home/frans/Pictures/wallpapers/current.png #set background
 feh --bg-fill /home/frans/Pictures/wallpapers/current.png #set background
 
+RIGHT_PADDING=27
+BOTTOM_PADDING=3
+if [ $IS_TABLET -eq 1 ]; then
+    RIGHT_PADDING=3
+    BOTTOM_PADDING=45
+fi
+
+echo "Bottom padding ${BOTTOM_PADDING}, right padding: ${RIGHT_PADDING}"
+
 bspc config border_width        1
 bspc config window_gap         4
-bspc config right_padding 27
+bspc config right_padding $RIGHT_PADDING
 bspc config left_padding 3 
 bspc config top_padding 3
+bspc config bottom_padding $BOTTOM_PADDING
 
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true
@@ -48,7 +68,12 @@ cd $CONFIG_DIR
 #Monitor layout is handled by python script
 #bspc monitor -d I II III IV V VI VII VIII IX X
 
-tint2 &
+if [ $IS_TABLET -eq 1 ]; then
+    xfce4-panel --disable-wm-check &
+else
+    tint2 &
+fi
+
 xfce4-power-manager &
 volumeicon &
 nm-applet &
