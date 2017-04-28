@@ -43,7 +43,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 
 
 " Show bars to highlight indentation
-Plugin 'Yggdroot/indentLine'
+" Plugin 'Yggdroot/indentLine'
 
 "Highlight first word occurences
 "Plugin 'unblevable/quick-scope'

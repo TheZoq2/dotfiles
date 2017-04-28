@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export MOZ_USE_XINPUT2=1
+
 IS_TABLET=0
 
 if [ $1 = "tablet" ]; then 
