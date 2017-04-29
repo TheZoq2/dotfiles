@@ -43,7 +43,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 
 
 " Show bars to highlight indentation
-Plugin 'Yggdroot/indentLine'
+" Plugin 'Yggdroot/indentLine'
 
 "Highlight first word occurences
 "Plugin 'unblevable/quick-scope'
@@ -347,6 +347,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 "                                 Latex stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:livepreview_previewer = 'zathura'
+
+" Neovim seems to autoload a latex plugin which conceals certain symbols
+autocmd FileType tex set conceallevel=0
 
 "Resize windows when the host window is resized
 autocmd VimResized * wincmd =
