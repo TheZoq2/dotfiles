@@ -18,4 +18,5 @@
     ~/.scripts: ./.scripts
     ~/.ssh/config: ./.ssh/config
     ~/.inputrc: ./.inputrc
+    ~/.gdbinit: ./.gdbinit
 
