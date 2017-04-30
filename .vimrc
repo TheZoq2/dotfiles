@@ -448,6 +448,8 @@ let g:deoplete#enable_ignore_case = 1
 let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
+autocmd FileType rust setlocal laststatus=2
+
 "autocmd FileType rust call deoplete#initialize()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -461,3 +463,4 @@ let g:LanguageClient_serverCommands = {
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
+
