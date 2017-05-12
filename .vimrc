@@ -44,6 +44,7 @@ Plugin 'dhruvasagar/vim-table-mode'
 
 " Show bars to highlight indentation
 " Plugin 'Yggdroot/indentLine'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 "Highlight first word occurences
 "Plugin 'unblevable/quick-scope'
@@ -110,6 +111,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer.git'
 "Ruby
 Plugin 'fishbullet/deoplete-ruby.git'
+"Python
+Plugin 'zchee/deoplete-jedi'
 
 
 "Colors
@@ -190,6 +193,8 @@ syntax on
 
 "filetype specific indentation
 autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType slim setlocal expandtab shiftwidth=2 softtabstop=2
 
 set t_Co=256
 "colorscheme atom-dark-256
@@ -464,4 +469,12 @@ let g:LanguageClient_serverCommands = {
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
+
+
+
+"Indentline config
+let g:indent_guides_auto_colors=0
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
 
