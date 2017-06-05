@@ -126,6 +126,10 @@ alias r='~/.scripts/runAfterMake.sh'
 alias :q=exit
 alias rg='rg --colors path:fg:green'
 alias f='bfs | rg'
+alias g=git
+alias m=make
+alias l=ls
+alias c=cd
 
 
 #####################################################################
