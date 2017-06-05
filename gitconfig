@@ -1,0 +1,13 @@
+[user]
+	name = TheZoq2
+	email = frans.skarman@gmail.com
+[push]
+	default = matching
+[alias]
+	pso = push origin
+	plo = pull origin
+	c = commit
+	a = add
+	s = status
+	pl = pull
+	ps = push
