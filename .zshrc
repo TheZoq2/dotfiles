@@ -130,6 +130,7 @@ alias g=git
 alias m=make
 alias l=ls
 alias c=cd
+alias v=vim
 
 
 #####################################################################
