@@ -86,7 +86,6 @@ Plugin 'kchmck/vim-coffee-script'
 "Slim support
 Plugin 'slim-template/vim-slim.git'
 "ruby linting
-Plugin 'ngmy/vim-rubocop'
 Plugin 'vim-ruby/vim-ruby'
 
 "Glsl
@@ -110,6 +109,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer.git'
 "Ruby
 Plugin 'fishbullet/deoplete-ruby.git'
+"Elm
+Plugin 'pbogut/deoplete-elm'
 
 
 "Colors
@@ -330,9 +331,6 @@ let g:EclimCompletionMethod = 'omnifunc'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "					Elm stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_semantic_triggers = {
-     \ 'elm' : ['.'],
-     \}
 
 let g:elm_setup_keybindings = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
