@@ -244,6 +244,7 @@ export PATH=$PATH:~/Documents/cpp/tddb68-labs/pintos/utils
 #Enable 256 bit colors over ssh
 export TERM=xterm-256color
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 ######################################################################
 #                   SSH keygen stuff
 ######################################################################
