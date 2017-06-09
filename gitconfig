@@ -11,3 +11,5 @@
 	s = status
 	pl = pull
 	ps = push
+	co = checkout
+	b = branch

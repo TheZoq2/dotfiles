@@ -129,9 +129,8 @@ alias f='bfs | rg'
 alias g=git
 alias m=make
 alias l=ls
-alias c=cd
 alias v=vim
-
+alias c=cargo
 
 #####################################################################
 ZSH_THEME_GIT_PROMPT_CACHE=true
