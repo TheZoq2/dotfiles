@@ -259,6 +259,8 @@ map Ö :
 
 map J 10j
 map K 10k
+map <C-j> :join<Cr>
+map <C-k> k:join<Cr>
 
 "Buffer stuff
 "map <Leader>j :Buffers<CR>
