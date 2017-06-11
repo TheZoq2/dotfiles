@@ -2,6 +2,7 @@
 
 import subprocess
 import sys
+import pdb
 
 def windowIsFocused():
     print("Checking window")
