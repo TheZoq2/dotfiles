@@ -130,7 +130,8 @@ alias g=git
 alias m=make
 alias l=ls
 alias v=vim
-alias c=cargo
+alias c=cd
+alias ca=cargo
 
 #####################################################################
 ZSH_THEME_GIT_PROMPT_CACHE=true
