@@ -2,7 +2,7 @@
 	name = TheZoq2
 	email = frans.skarman@gmail.com
 [push]
-	default = current
+	default = matching
 [alias]
 	pso = push origin
 	plo = pull origin
@@ -13,4 +13,3 @@
 	ps = push
 	co = checkout
 	b = branch
-	lol = log --oneline
