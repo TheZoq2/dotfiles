@@ -354,7 +354,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Latex stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:livepreview_previewer = 'zathura'
+let g:livepreview_previewer = 'evince'
 
 " Neovim seems to autoload a latex plugin which conceals certain symbols
 autocmd FileType tex set conceallevel=0
