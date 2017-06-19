@@ -130,7 +130,10 @@ alias g=git
 alias m=make
 alias l=ls
 alias v=vim
-alias c=cargo
+alias c=cd
+alias ca=cargo
+alias p3=python3
+alias p2=python2
 
 #####################################################################
 ZSH_THEME_GIT_PROMPT_CACHE=true
