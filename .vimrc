@@ -41,7 +41,7 @@ Plugin 'rdnetto/YCM-Generator.git'
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
-" Surrounding thigns with things
+" Mappings on surroud things
 Plugin 'tpope/vim-surround'
 
 
