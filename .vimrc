@@ -41,6 +41,9 @@ Plugin 'rdnetto/YCM-Generator.git'
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
 
+" Surrounding thigns with things
+Plugin 'tpope/vim-surround'
+
 
 " Show bars to highlight indentation
 " Plugin 'Yggdroot/indentLine'
