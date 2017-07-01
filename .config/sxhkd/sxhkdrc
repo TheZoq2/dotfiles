@@ -102,6 +102,10 @@ super + p ; s
 super + space ; {r,R}
 	bspc node --rotate {90,270}
 
+
+super + space ; {d,D}
+    ~/.config/bspwm/configure_padding {normal,df}
+
 #
 # wm independent hotkeys
 #
