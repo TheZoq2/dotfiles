@@ -2,14 +2,21 @@
 
 export MOZ_USE_XINPUT2=1
 
-IS_TABLET=0
+if [ $1 = "tablet" ]; then
+    echo 'export IS_TABLET=1' > /tmp/wm_settings
 
-if [ $1 = "tablet" ]; then 
-    IS_TABLET=1
-    echo "Starting tablet mode"; 
+    echo 'export RIGHT_PADDING=3' >> /tmp/wm_settings
+    echo 'export BOTTOM_PADDING=45' >> /tmp/wm_settings
+    echo 'export REST_PADDING=3' >> /tmp/wm_settings
 else 
-    echo "Starting desktop mode"; 
+    echo 'export IS_TABLET=0' > /tmp/wm_settings
+
+    echo 'export RIGHT_PADDING=27' >> /tmp/wm_settings
+    echo 'export BOTTOM_PADDING=3' >> /tmp/wm_settings
+    echo 'export REST_PADDING=3' >> /tmp/wm_settings
 fi
+
+source /tmp/wm_settings
 
 OLD_PATH=$PATH
 PATH=$PATH:$HOME/bin/:$HOME/.cargo/bin
@@ -21,7 +28,7 @@ pkill xfce4-panel
 pkill xfce4-power-manager
 pkill volumeicon
 pkill nm-applet
-pkill compton;
+# pkill compton;
 pkill redshift
 pkill wpmServer.py
 pkill blueman-applet
@@ -32,26 +39,17 @@ pkill touchegg
 CONFIG_DIR="/home/frans/.config/bspwm"
 
 #Starting required stuff
-compton --config ~/.config/compton/comptonrc & #Transparent windows
+# compton --config ~/.config/compton/comptonrc & #Transparent windows
 #feh --bg-fill --no-xinerama /home/frans/Pictures/wallpapers/current.png #set background
 #feh --bg-fill /home/frans/Pictures/wallpapers/current.png #set background
 ./wallpaper
-
-RIGHT_PADDING=27
-BOTTOM_PADDING=3
-if [ $IS_TABLET -eq 1 ]; then
-    RIGHT_PADDING=3
-    BOTTOM_PADDING=45
-fi
 
 echo "Bottom padding ${BOTTOM_PADDING}, right padding: ${RIGHT_PADDING}"
 
 bspc config border_width        1
 bspc config window_gap         4
-bspc config right_padding $RIGHT_PADDING
-bspc config left_padding 3 
-bspc config top_padding 3
-bspc config bottom_padding $BOTTOM_PADDING
+
+~/.config/bspwm/configure_padding
 
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true

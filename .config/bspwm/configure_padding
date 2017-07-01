@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Read the current setings
+source /tmp/wm_settings
+
+# Check if the user has requested fullscreen mode
+if [ $1 = "df" ]; then
+    export RIGHT_PADDING=0
+    export BOTTOM_PADDING=0
+    export REST_PADDING=0
+fi
+
+echo $RIGHT_PADDING
+
+
+# Tell bspc about the updates
+bspc config right_padding $RIGHT_PADDING
+bspc config left_padding $REST_PADDING
+bspc config top_padding $REST_PADDING
+bspc config bottom_padding $BOTTOM_PADDING
