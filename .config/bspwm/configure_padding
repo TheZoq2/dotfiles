@@ -3,11 +3,17 @@
 # Read the current setings
 source /tmp/wm_settings
 
+BORDER_WIDTH=1
+PADDING=3
+
 # Check if the user has requested fullscreen mode
 if [ $1 = "df" ]; then
-    export RIGHT_PADDING=0
-    export BOTTOM_PADDING=0
-    export REST_PADDING=0
+    RIGHT_PADDING=0
+    BOTTOM_PADDING=0
+    REST_PADDING=0
+
+    BORDER_WIDTH=3
+    PADDING=0
 fi
 
 
@@ -16,5 +22,8 @@ bspc config right_padding $RIGHT_PADDING
 bspc config left_padding $REST_PADDING
 bspc config top_padding $REST_PADDING
 bspc config bottom_padding $BOTTOM_PADDING
+
+bspc config border_width $BORDER_WIDTH
+bspc config window_gap $PADDING
 
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" $(xdo id -n tint2)
