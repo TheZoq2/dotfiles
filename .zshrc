@@ -211,9 +211,6 @@ export MAKEFLAGS="j5"
 #Prevent duplicate history
 setopt HIST_IGNORE_DUPS
 
-#Don't add commands starting with space to history
-setopt HIST_IGNORE_SPACE
-
 # Save the time and how long a command ran
 setopt EXTENDED_HISTORY
 
