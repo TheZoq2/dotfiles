@@ -1,6 +1,12 @@
-#Dotfiles
+# Dotfiles
 
 My configs for various programs.
+
+- Bspwm
+- Vim
+- xfce4terminal
+- tint2
+- xfce4panel for better touch support
 
 Requirements
 ==

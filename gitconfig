@@ -13,3 +13,6 @@
 	ps = push
 	co = checkout
 	b = branch
+	lol = log --oneline
+	l = log
+	r = remote
