@@ -134,6 +134,7 @@ alias c=cd
 alias ca=cargo
 alias p3=python3
 alias p2=python2
+alias ovim='/usr/bin/vim'
 
 #####################################################################
 ZSH_THEME_GIT_PROMPT_CACHE=true
@@ -217,13 +218,6 @@ setopt HIST_IGNORE_SPACE
 # Save the time and how long a command ran
 setopt EXTENDED_HISTORY
 
-#Alias some commands to make them not show up in history
-alias cd=' cd'
-alias sl=' ls --color=auto'
-alias ls=' ls --color=auto'
-alias blyat='git'
-
-alias ovim='/usr/bin/vim'
 
 VIM_PATH='/usr/bin/nvim'
 
@@ -241,25 +235,13 @@ export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 #export PATH=$PATH:~/.config/bspwm
 
 
-alias posr='pintos --qemu -v -- run'
-export PATH=$PATH:~/Documents/cpp/tddb68-labs/pintos/utils
-
 #Enable 256 bit colors over ssh
 export TERM=xterm-256color
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 ######################################################################
-#                   SSH keygen stuff
+#                   RSA key stuff
 ######################################################################
-#Remember to do systemctl start/enable envoy@ssh-agent.socket
-
-
-#Fuzzy command line completion
-local ENVOY_PATH="/usr/bin/envoy"
-if [ -f ${ENVOY_PATH} ]; then
-	envoy -t ssh-agent
-	eval  "$(envoy -p)"
-fi
 
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
