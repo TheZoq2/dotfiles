@@ -90,6 +90,17 @@ if [ -f ${FZF_PATH} ]; then
 	}
 fi
 
+# Replacing commands with alternatives if they are installed
+function ls()
+{
+    exa_not_installed=$(which exa 2>/dev/null | grep -v "not found" | wc -l)
+    if [ ${exa_not_installed} -eq 0 ]; then
+        /bin/ls --color=auto
+    else
+        exa
+    fi
+}
+
 ##Completion stuff
 ####################################################################
 zmodload zsh/complist 
@@ -118,6 +129,9 @@ compdef _pacman pacman-color=pacman
 autoload -U promptinit
 promptinit
 autoload -U colors && colors
+
+# Use surperior alternatives for commands if available
+
 
 #Aliases
 #alias ls='ls --color=auto'
@@ -197,12 +211,6 @@ function zle-keymap-select
 zle -N zle-line-init
 zle -N zle-keymap-select
 #####################################################################
-
-# Accept suggestions without leaving insert mode
-# bindkey '^F' vi-forward-word
-
-#Removing vi lag
-#export KEYTIMEOUT=1
 
 export MAKEFLAGS="j5"
 
