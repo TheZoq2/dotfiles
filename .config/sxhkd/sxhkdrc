@@ -120,7 +120,10 @@ super + r
 	#lighthouse | sh
 
 super + space ; k
-    (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap se || setxkbmap us -variant altgr-intl -option caps:ctrl_modifier
+    (setxkbmap -query | grep -q "layout:\s\+us") && keyboard
+
+super + space ; n ; c
+    notify-send "$(date '+%a %d-%b -- %H:%M')" ""
 
 super + ctrl + p
     /home/frans/.config/bspwm/lock
