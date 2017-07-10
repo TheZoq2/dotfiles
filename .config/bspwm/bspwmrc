@@ -49,7 +49,7 @@ echo "Bottom padding ${BOTTOM_PADDING}, right padding: ${RIGHT_PADDING}"
 bspc config border_width        1
 bspc config window_gap         4
 
-configure_padding
+~/.config/bspwm/configure_padding
 
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true
