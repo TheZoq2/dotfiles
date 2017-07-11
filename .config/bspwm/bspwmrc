@@ -1,5 +1,22 @@
 #!/bin/bash
 
+# Runs a program unless that program is already running
+function conditional_run {
+    local program_name=$1
+
+    ps_result=$(ps aux \
+        | grep "${program_name}" \
+        | grep -v "grep" \
+        | wc -l
+        )
+    if [ $ps_result -eq 0 ]; then
+        echo "Running $program_name"
+        `$program_name` &
+    else
+        echo "$program_name already running"
+    fi
+}
+
 export MOZ_USE_XINPUT2=1
 
 if [ $1 = "tablet" ]; then
@@ -22,18 +39,18 @@ OLD_PATH=$PATH
 PATH=$PATH:$HOME/bin/:$HOME/.cargo/bin
 
 #Restart all our programs
-pkill sxhkd
-pkill tint2
-pkill xfce4-panel
-pkill xfce4-power-manager
-pkill volumeicon
-pkill nm-applet
-# pkill compton;
-pkill redshift
-pkill wpmServer.py
-pkill blueman-applet
-pkill rspwm
-pkill touchegg
+# pkill sxhkd
+# pkill tint2
+# pkill xfce4-panel
+# pkill xfce4-power-manager
+# pkill volumeicon
+# pkill nm-applet
+# # pkill compton;
+# pkill redshift
+# pkill wpmServer.py
+# pkill blueman-applet
+# pkill rspwm
+# pkill touchegg
 #wp k #Kill the wallpaper manager
 
 CONFIG_DIR="/home/frans/.config/bspwm"
@@ -46,7 +63,7 @@ CONFIG_DIR="/home/frans/.config/bspwm"
 
 echo "Bottom padding ${BOTTOM_PADDING}, right padding: ${RIGHT_PADDING}"
 
-bspc config border_width        1
+bspc config border_width       1
 bspc config window_gap         4
 
 ~/.config/bspwm/configure_padding
@@ -72,32 +89,32 @@ cd $CONFIG_DIR
 if [ $IS_TABLET -eq 1 ]; then
     xfce4-panel --disable-wm-check &
 else
+    pkill tint2
     tint2 &
 fi
 
-xfce4-power-manager &
-volumeicon &
-nm-applet &
-redshift &
-#python3 /home/frans/bin/wallpaperManager
+# Reload xresources
+xrdb ~/.Xresources
+# Run autostart configured in ~/bin
+autostart
+# Set the keyboard layout
 setxkbmap us -variant altgr-intl -option caps:ctrl_modifier
-#Reload xresources
-xrdb ~/.XResources & 
-wpmServer.py &
-blueman-applet & 
-/home/frans/.cargo/bin/rspwm &
-touchegg &
-autostart &
-xfce4-clipman &
+
+conditional_run xfce4-power-manager
+conditional_run volumeicon
+conditional_run nm-applet
+conditional_run redshift
+conditional_run blueman-applet
+conditional_run /home/frans/.cargo/bin/rspwm
+conditional_run touchegg
+conditional_run xfce4-clipman
+conditional_run sxhkd
 
 # Move tint2 behind fullscreen windows
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" $(xdo id -n tint2)
 
 #Reset the working directory
 cd
-
-
-sxhkd &
 
 #Enable if something goes wrong
 #xfce4-terminal &
