@@ -106,6 +106,9 @@ super + space ; {r,R}
 super + space ; {d,D}
     ~/.config/bspwm/configure_padding {normal,df}
 
+super + space ; {j,k}
+    xdotool mousemove 1000 {1500, -500}
+
 #
 # wm independent hotkeys
 #
