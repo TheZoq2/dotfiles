@@ -44,6 +44,9 @@ Plugin 'dhruvasagar/vim-table-mode'
 " Mappings on surroud things
 Plugin 'tpope/vim-surround'
 
+" Asyncronous linting
+Plugin 'w0rp/ale'
+
 
 " Show bars to highlight indentation
 " Plugin 'Yggdroot/indentLine'
@@ -94,8 +97,6 @@ Plugin 'vim-ruby/vim-ruby'
 
 "Glsl
 Plugin 'tikhomirov/vim-glsl'
-"Python linting
-Plugin 'nvie/vim-flake8.git'
 "Python syntax highlight
 Plugin 'hdima/python-syntax.git'
 "Scala support
@@ -392,15 +393,6 @@ map g/ <Plug>(incsearch-stay)
 map <Leader>/ <Plug>(incsearch-fuzzy-/)
 map <Leader>? <Plug>(incsearch-fuzzy-?)
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"							Python plugin config
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:flake8_show_quickfix=0
-let g:flake8_show_in_gutter=1
-
-"Run check each write
-"autocmd BufWritePost *.py call Flake8()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Nerdtree config
