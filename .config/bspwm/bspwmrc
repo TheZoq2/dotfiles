@@ -86,10 +86,11 @@ cd $CONFIG_DIR
 #Monitor layout is handled by python script
 #bspc monitor -d I II III IV V VI VII VIII IX X
 
+pkill tint2
+pkill xfce4-panel
 if [ $IS_TABLET -eq 1 ]; then
     xfce4-panel --disable-wm-check &
 else
-    pkill tint2
     tint2 &
 fi
 
@@ -108,13 +109,14 @@ conditional_run blueman-applet
 conditional_run /home/frans/.cargo/bin/rspwm
 conditional_run touchegg
 conditional_run xfce4-clipman
-conditional_run sxhkd
 
 # Move tint2 behind fullscreen windows
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" $(xdo id -n tint2)
 
 #Reset the working directory
 cd
+
+conditional_run sxhkd
 
 #Enable if something goes wrong
 #xfce4-terminal &
