@@ -2,7 +2,7 @@
 	name = TheZoq2
 	email = frans.skarman@gmail.com
 [push]
-	default = matching
+	default = simple
 [alias]
 	pso = push origin
 	plo = pull origin
