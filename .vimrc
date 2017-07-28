@@ -43,6 +43,8 @@ Plugin 'dhruvasagar/vim-table-mode'
 
 " Mappings on surroud things
 Plugin 'tpope/vim-surround'
+" Case coercion
+Plugin 'tpope/tpope-vim-abolish'
 
 " Asyncronous linting
 Plugin 'w0rp/ale'
@@ -64,6 +66,7 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 "Fuzzy search
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
+
 
 "Shifting function arguments
 Plugin 'PeterRincker/vim-argumentative'
@@ -105,7 +108,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'cespare/vim-toml'
 
 "github markdown support
-Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
+" Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
 
 
 "Deoplete language support plugins
@@ -409,10 +412,10 @@ let g:DevIconsEnableFoldersOpenClose = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Use github flavoured markdown on md files by default
-augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
+" augroup markdown
+"     au!
+"     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+" augroup END
 
 "Generate tags on write in rust
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
@@ -473,3 +476,10 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       ALE lint config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_linters = {
+\   'ghmarkdown': ['mdl'],
+\}
