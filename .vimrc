@@ -199,11 +199,6 @@ filetype plugin indent on
 
 syntax on
 
-"filetype specific indentation
-autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
-autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
-autocmd FileType slim setlocal expandtab shiftwidth=2 softtabstop=2
-
 set t_Co=256
 "colorscheme atom-dark-256
 "colorscheme luna-term
@@ -420,6 +415,7 @@ let g:DevIconsEnableFoldersOpenClose = 1
 "Generate tags on write in rust
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
+autocmd BufWrite *.elm :silent! exec "!ctags -R src"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           Linter (ale) config
