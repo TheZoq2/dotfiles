@@ -45,6 +45,8 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'tpope/vim-surround'
 " Case coercion
 Plugin 'tpope/tpope-vim-abolish'
+" Repeating plugin commands
+Plugin 'tpope/vim-repeat'
 
 " Asyncronous linting
 Plugin 'w0rp/ale'
