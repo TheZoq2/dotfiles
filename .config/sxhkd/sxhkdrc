@@ -34,7 +34,8 @@ super + Tab
 super + {h,j,k,l}
     d={west,south,north,east}; \
     bspc node --focus $d || \
-    bspc monitor --focus $d
+    bspc monitor --focus $d ; \
+    rspc stack focus_current
 
 
 super + shift + {h,j,k,l}
