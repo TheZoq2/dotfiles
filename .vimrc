@@ -52,7 +52,7 @@ Plugin 'w0rp/ale'
 
 " Show bars to highlight indentation
 " Plugin 'Yggdroot/indentLine'
-Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'nathanaelkane/vim-indent-guides'
 
 "Highlight first word occurences
 "Plugin 'unblevable/quick-scope'
@@ -97,6 +97,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'slim-template/vim-slim.git'
 "ruby linting
 Plugin 'vim-ruby/vim-ruby'
+"sxkhd highlighting
+Plugin 'baskerville/vim-sxhkdrc'
 
 "Glsl
 Plugin 'tikhomirov/vim-glsl'
