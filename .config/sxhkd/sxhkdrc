@@ -2,9 +2,6 @@
 # bspwm hotkeys
 #
 
-~super
-    notify-send "test" ""
-
 
 #Close a node
 super + q
