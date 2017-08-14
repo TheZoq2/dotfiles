@@ -2,6 +2,7 @@
 # bspwm hotkeys
 #
 
+
 #Close a node
 super + q
 	bspc node -c
@@ -10,8 +11,6 @@ super + b
 	bspc node -B
 
 # alternate between the tiled and monocle layout
-super + x
-	bspc desktop -l next
 super + m
 	bspc desktop -l next
 
@@ -29,14 +28,19 @@ super + grave
 super + Tab
     skippy-xd
 
+super + {h,j,k,l}
+    d={west,south,north,east}; \
+    bspc node --focus $d || \
+    bspc monitor --focus $d ; \
+    rspc stack focus_current
 
-super + {_,shift + }{h,j,k,l}
-    /home/frans/.config/bspwm/movement.py {focus,move} {west,south,north,east} ; rspc stack focus_current
-    #bspc window -{f,s} {left,south,north,east}
-    #~/.config/bspwm/movement.py {focus,move} {left,south,north,east}
 
-super + {_,shift + }c
-	bspc node -f {next,prev}
+super + shift + {h,j,k,l}
+  d={west,south,north,east}; \
+  bspc node --to-node "${d}.!automatic" || \
+  bspc node $d --to-node 'focused.!automatic' || \
+  bspc node --swap $d || \
+  bspc node --to-monitor $d
 
 #Preselection stuff
 super + ctrl + {h,j,k,l}
@@ -82,11 +86,6 @@ super + @button{1-3}
 	bspc pointer -u
 
 
-#super + x ; {1-9,0}
-#	bspc node -r 0.{1-9}
-super + x ; {1-9}
-    #bspc node -r 0.{1-9}
-    echo 0.{1-9}
 
 super + space ; {1-9}
     bspc node -o 0.{1-9}
@@ -105,9 +104,6 @@ super + space ; {r,R}
 
 super + space ; {d,D}
     ~/.config/bspwm/configure_padding {normal,df}
-
-super + space ; {j,k}
-    xdotool mousemove 1000 {1500, -500}
 
 #
 # wm independent hotkeys

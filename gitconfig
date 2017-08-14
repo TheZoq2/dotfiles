@@ -16,3 +16,4 @@
 	lol = log --oneline
 	l = log
 	r = remote
+	m = merge
