@@ -152,6 +152,7 @@ alias l=ls
 alias v=vim
 alias c=cd
 alias ca=cargo
+alias xa=xargo
 alias p3=python3
 alias p2=python2
 alias ovim='/usr/bin/vim'
