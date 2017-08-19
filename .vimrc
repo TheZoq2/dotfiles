@@ -16,7 +16,7 @@ Plugin 'Shougo/deoplete.nvim'
 "Plugin 'roxma/nvim-completion-manager'
 "Plugin 'Shougo/neocomplete.vim'
 "Plugin 'oblitum/YouCompleteMe'
-Plugin 'initrc/eclim-vundle'
+" Plugin 'initrc/eclim-vundle'
 
 " Code snippets
 Plugin 'SirVer/ultisnips'
@@ -35,7 +35,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/vim-easy-align'
 
 "Ycm generator
-Plugin 'rdnetto/YCM-Generator.git'
+" Plugin 'rdnetto/YCM-Generator.git'
 
 "Table formating
 Plugin 'godlygeek/tabular'
