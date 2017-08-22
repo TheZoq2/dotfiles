@@ -20,9 +20,9 @@ Plugin 'Shougo/deoplete.nvim'
 
 " Code snippets
 Plugin 'SirVer/ultisnips'
-
-" Snippets for ultisnips
 Plugin 'TheZoq2/vim-snippets'
+
+" Bracket auto completion
 Plugin 'Raimondi/delimitMate'
 
 "Latex preview
@@ -327,19 +327,30 @@ let delimitMate_balance_matchpairs=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          Ycm stuff
+"                          Completion tings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
-let g:ycm_rust_src_path = '/usr/local/share/rust/rustc-1.7.0/src'
-
-let g:ycm_add_preview_to_completeopt = 0
+" Prevent completion information popup
 set completeopt-=preview
 
-let g:ycm_warning_symbol = '**'
-let g:ycm_confirm_extra_conf = 0
+" Map ctrl+space to autocomplete or omnicomplete instead of <Nul>
+function! Auto_complete_string()
+    if pumvisible()
+        return "\<C-n>"
+    else
+        return "\<C-x>\<C-o>\<C-r>=Auto_complete_opened()\<CR>"
+    end
+endfunction
 
-let g:EclimCompletionMethod = 'omnifunc'
+function! Auto_complete_opened()
+    if pumvisible()
+        return "\<Down>"
+    end
+    return ""
+endfunction
+
+inoremap <expr> <Nul> Auto_complete_string()
+inoremap <expr> <C-Space> Auto_complete_string()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "					Elm stuff
