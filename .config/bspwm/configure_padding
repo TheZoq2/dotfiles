@@ -3,7 +3,7 @@
 # Read the current setings
 source /tmp/wm_settings
 
-BORDER_WIDTH=1
+BORDER_WIDTH=3
 PADDING=3
 
 # Check if the user has requested fullscreen mode

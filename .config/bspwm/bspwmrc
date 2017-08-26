@@ -63,7 +63,7 @@ CONFIG_DIR="/home/frans/.config/bspwm"
 
 echo "Bottom padding ${BOTTOM_PADDING}, right padding: ${RIGHT_PADDING}"
 
-bspc config border_width       1
+bspc config border_width       3
 bspc config window_gap         4
 
 ~/.config/bspwm/configure_padding
