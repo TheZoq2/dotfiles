@@ -105,6 +105,16 @@ super + space ; {r,R}
 super + space ; {d,D}
     ~/.config/bspwm/configure_padding {normal,df}
 
+# Volume keys
+# XF86AudioRaiseVolume
+#     amixer set Master 2%+
+# 
+# XF86AudioLowerVolume
+#     amixer set Master 2%-
+# 
+# XF86AudioMute
+#     amixer -D pulse set Master 1+ toggle
+
 #
 # wm independent hotkeys
 #
