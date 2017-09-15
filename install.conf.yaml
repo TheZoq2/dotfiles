@@ -20,4 +20,5 @@
     ~/.inputrc: ./.inputrc
     ~/.gdbinit: ./.gdbinit
     ~/.gitconfig: ./gitconfig
+    ~/.jupyter: ./.jupyter
 
