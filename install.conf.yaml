@@ -9,6 +9,7 @@
     ~/.config/sxhkd: .config/sxhkd
     ~/.config/tint2: .config/tint2
     ~/.config/lighthouse: .config/lighthouse
+    ~/.config/libinput-gestures.conf: .config/libinput-gestures.conf
     ~/.zshrc: .zshrc
     ~/.config/zsh: ./.config/zsh
     ~/.Xresources: .Xresources

@@ -23,7 +23,7 @@ if [ $1 = "tablet" ]; then
     echo 'export IS_TABLET=1' > /tmp/wm_settings
 
     echo 'export RIGHT_PADDING=3' >> /tmp/wm_settings
-    echo 'export BOTTOM_PADDING=45' >> /tmp/wm_settings
+    echo 'export BOTTOM_PADDING=3' >> /tmp/wm_settings
     echo 'export REST_PADDING=3' >> /tmp/wm_settings
 else 
     echo 'export IS_TABLET=0' > /tmp/wm_settings
@@ -92,7 +92,8 @@ cd $CONFIG_DIR
 pkill tint2
 pkill xfce4-panel
 if [ $IS_TABLET -eq 1 ]; then
-    xfce4-panel --disable-wm-check &
+    #xfce4-panel --disable-wm-check &
+    echo "tablet mode, no sys tray"
 else
     tint2 &
 fi

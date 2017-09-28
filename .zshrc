@@ -156,6 +156,7 @@ alias xa=xargo
 alias p3=python3
 alias p2=python2
 alias ovim='/usr/bin/vim'
+alias jpn='jupyter notebook'
 
 #####################################################################
 ZSH_THEME_GIT_PROMPT_CACHE=true
@@ -305,3 +306,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 z() { zeus $*; stty sane }
+
+
+CARGO_INCREMENTAL=1
