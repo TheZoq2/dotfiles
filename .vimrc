@@ -444,6 +444,7 @@ autocmd BufWrite *.elm :silent! exec "!ctags -R src"
 "                           Linter (ale) config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
+\   'rust': [],
 \   'ghmarkdown': ['mdl'],
 \}
 
