@@ -125,6 +125,7 @@ Plugin 'fishbullet/deoplete-ruby.git'
 Plugin 'pbogut/deoplete-elm'
 "Python
 Plugin 'zchee/deoplete-jedi'
+Plugin 'zchee/deoplete-clang'
 
 
 "Colors
@@ -436,8 +437,10 @@ autocmd BufWrite *.elm :silent! exec "!ctags -R src"
 "                           Linter (ale) config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
-\   'rust': [],
+\   'ghmarkdown': ['mdl'],
 \}
+
+let g:ale_cpp_clangcheck_options='-std=c++14 -Wall'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           Ctrl P mappings
@@ -471,6 +474,10 @@ let g:racer_experimental_completer = 1
 
 autocmd FileType rust setlocal laststatus=2
 
+
+let g:deoplete#sources#clang#libclang_path="/usr/lib/libclang.so"
+let g:deoplete#sources#clang#clang_header="/usr/include/clang"
+
 "autocmd FileType rust call deoplete#initialize()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -492,11 +499,3 @@ let g:indent_guides_auto_colors=0
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       ALE lint config
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_linters = {
-\   'ghmarkdown': ['mdl'],
-\}
