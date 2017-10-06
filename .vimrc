@@ -51,6 +51,9 @@ Plugin 'tpope/vim-repeat'
 " Asyncronous linting
 Plugin 'w0rp/ale'
 
+" Autodetect indentation
+Plugin 'luochen1990/indent-detector.vim'
+
 " Statusbar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
