@@ -51,6 +51,9 @@ Plugin 'tpope/vim-repeat'
 " Asyncronous linting
 Plugin 'w0rp/ale'
 
+" Statusbar
+Plugin 'vim-airline/vim-airline'
+
 
 " Show bars to highlight indentation
 " Plugin 'Yggdroot/indentLine'
@@ -469,7 +472,11 @@ let g:deoplete#enable_ignore_case = 1
 let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                      Statusline config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType rust setlocal laststatus=2
+
 
 "autocmd FileType rust call deoplete#initialize()
 
