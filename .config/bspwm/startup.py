@@ -7,7 +7,7 @@ import style
 #Locate screens
 screens = Monitor.getMonitorSetup()
 
-desktopsPerScreen = 7
+desktopsPerScreen = 9
 
 for s in screens:
     #s.name = s.name.replace("\n", "")
