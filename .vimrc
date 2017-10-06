@@ -51,9 +51,6 @@ Plugin 'tpope/vim-repeat'
 " Asyncronous linting
 Plugin 'w0rp/ale'
 
-" Autodetect indentation
-Plugin 'tpope/vim-sleuth'
-
 " Statusbar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -153,15 +150,6 @@ call vundle#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
 
-set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
-
-set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
-
-set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
-                    " Spaces are used in indents with the '>' and '<' commands
-                    " and when 'autoindent' is on. To insert a real tab when
-                    " 'expandtab' is on, use CTRL-V <Tab>.
-
 set showcmd         " Show (partial) command in status line.
 
 set number          " Show line numbers.
@@ -200,6 +188,16 @@ set cursorline		"Highlight the current line
 "Tab handling and listing
 set list
 set listchars=tab:¬-,trail:~,extends:>,precedes:<
+
+" Indentation settings
+set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
+set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
+set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
+                    " Spaces are used in indents with the '>' and '<' commands
+                    " and when 'autoindent' is on. To insert a real tab when
+                    " 'expandtab' is on, use CTRL-V <Tab>.
+command Tabs set noexpandtab
+command Spacess set expandtab
 
 "Codefolding
 set foldmethod=indent
