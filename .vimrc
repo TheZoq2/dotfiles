@@ -160,7 +160,6 @@ set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
                     " 'expandtab' is on, use CTRL-V <Tab>.
 
 set showcmd         " Show (partial) command in status line.
-set laststatus=1    " Only show statusbar if there is more than one window
 
 set number          " Show line numbers.
 set relativenumber
@@ -486,7 +485,28 @@ let g:deoplete#sources#clang#clang_header="/usr/include/clang"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      Statusline config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType rust setlocal laststatus=2
+set laststatus=2    " Only show statusbar if there is more than one window
+
+" Symbol dictionary
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.column = '➔'
+
+let g:airline_section_z = '%3p%% %4L %{g:airline_symbols.column}%3c'
+
+set noshowmode
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Language server config
