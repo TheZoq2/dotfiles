@@ -508,6 +508,9 @@ let g:airline_symbols.column = '➔'
 
 let g:airline_section_z = '%3p%% %4L %{g:airline_symbols.column}%3c'
 
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
+
 set noshowmode
 
 
