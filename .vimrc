@@ -1,6 +1,6 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setting up vundle
-set nocompatible 
+set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -53,6 +53,7 @@ Plugin 'w0rp/ale'
 
 " Statusbar
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 
 " Show bars to highlight indentation
@@ -138,7 +139,7 @@ Plugin 'TheZoq2/badwolf'
 Plugin 'TheZoq2/Papyrus'
 Plugin 'tyrannicaltoucan/vim-quantum'
 
-"Nvim autoread 
+"Nvim autoread
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
 
 "WIP Colortheme changer
@@ -175,11 +176,11 @@ set backspace=2     " Influences the working of <BS>, <Del>, CTRL-W
                     " and CTRL-U in Insert mode. This is a list of items,
                     " separated by commas. Each item allows a way to backspace
                     " over something.
- 
+
 set autoindent      " Copy indent from current line when starting a new line
                     " (typing <CR> in Insert mode or when using the "o" or "O"
                     " command).
- 
+
 set ruler           " Show the line and column number of the cursor position,
                     " separated by a comma.
 
@@ -187,7 +188,7 @@ set ruler           " Show the line and column number of the cursor position,
                     " good on a dark background. When set to "light", Vim will
                     " try to use colors that look good on a light background.
                     " Any other value is illegal.
- 
+
 set mouse=a         " Enable the use of the mouse.
 
 set hidden          "Allow unsaved buffers to be in the background
@@ -202,7 +203,7 @@ set listchars=tab:¬-,trail:~,extends:>,precedes:<
 set foldmethod=indent
 set foldnestmax=2
 set foldlevel=0
- 
+
 filetype plugin indent on
 
 syntax on
@@ -223,10 +224,10 @@ set termguicolors
 "Autoreload files when changed externally
 set autoread
 if has('nvim')
-    "autocmd VimEnter * AutoreadLoop 
+    "autocmd VimEnter * AutoreadLoop
 endif
 if has('nvim')
-    autocmd VimEnter * StartColorPoll 
+    autocmd VimEnter * StartColorPoll
 endif
 
 
@@ -262,10 +263,11 @@ map <C-p> "+p
 "Tab stuff
 "map <Leader>l :tabn<Enter>
 "map <Leader>h :tabp<Enter>
-"map <Leader>e :tabe 
+"map <Leader>e :tabe
 
 "Swedish layout is stupid
 map Ö :
+map ; :
 
 map J 10j
 map K 10k
@@ -288,7 +290,7 @@ map <Leader>k <C-^>
 " Find and replace
 map <Leader>r :%s//gc<Left><Left><Left>
 vmap <Leader>r :s//gc<Left><Left><Left>
-map <Leader>S :nohlsearch<CR> 
+map <Leader>S :nohlsearch<CR>
 
 "map <Leader>g :YcmCompleter GoTo<CR>
 map <Leader>g <C-]>
