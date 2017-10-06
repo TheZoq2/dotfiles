@@ -52,7 +52,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'w0rp/ale'
 
 " Autodetect indentation
-Plugin 'luochen1990/indent-detector.vim'
+Plugin 'tpope/vim-sleuth'
 
 " Statusbar
 Plugin 'vim-airline/vim-airline'
