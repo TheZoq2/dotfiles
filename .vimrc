@@ -51,6 +51,9 @@ Plugin 'tpope/vim-repeat'
 " Asyncronous linting
 Plugin 'w0rp/ale'
 
+" Statusbar
+Plugin 'vim-airline/vim-airline'
+
 
 " Show bars to highlight indentation
 " Plugin 'Yggdroot/indentLine'
@@ -472,13 +475,16 @@ let g:deoplete#enable_ignore_case = 1
 let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
-autocmd FileType rust setlocal laststatus=2
-
 
 let g:deoplete#sources#clang#libclang_path="/usr/lib/libclang.so"
 let g:deoplete#sources#clang#clang_header="/usr/include/clang"
 
 "autocmd FileType rust call deoplete#initialize()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                      Statusline config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType rust setlocal laststatus=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Language server config
