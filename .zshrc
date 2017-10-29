@@ -155,6 +155,8 @@ alias ca=cargo
 alias xa=xargo
 alias p3=python3
 alias p2=python2
+alias ip3=ipython3
+alias ip2=ipython2
 alias ovim='/usr/bin/vim'
 alias jpn='jupyter notebook'
 
