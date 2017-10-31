@@ -7,6 +7,7 @@ require([
   // Swap j/k and gj/gk (Note that <Plug> mappings)
   CodeMirror.Vim.map("j", "<Plug>(vim-binding-gj)", "normal");
   CodeMirror.Vim.map("k", "<Plug>(vim-binding-gk)", "normal");
+  CodeMirror.Vim.map(";", ":", "normal");
 });
 
 // Configure Jupyter Keymap
