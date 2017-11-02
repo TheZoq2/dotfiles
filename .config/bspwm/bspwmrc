@@ -22,9 +22,9 @@ export MOZ_USE_XINPUT2=1
 if [ $1 = "tablet" ]; then
     echo 'export IS_TABLET=1' > /tmp/wm_settings
 
-    echo 'export RIGHT_PADDING=3' >> /tmp/wm_settings
-    echo 'export BOTTOM_PADDING=3' >> /tmp/wm_settings
-    echo 'export REST_PADDING=3' >> /tmp/wm_settings
+    echo 'export RIGHT_PADDING=0' >> /tmp/wm_settings
+    echo 'export BOTTOM_PADDING=0' >> /tmp/wm_settings
+    echo 'export REST_PADDING=0' >> /tmp/wm_settings
 else 
     echo 'export IS_TABLET=0' > /tmp/wm_settings
 
@@ -79,6 +79,7 @@ bspc config normal_border_color "#000000"
 bspc config pointer_modifier mod4
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_corner
+bspc config sinngle_monocle true
 
 #change working directory to allow relative paths in python and bash
 cd $CONFIG_DIR
@@ -105,6 +106,9 @@ autostart
 # Set the keyboard layout
 setxkbmap us -variant altgr-intl -option caps:ctrl_modifier
 
+#Reset the working directory
+cd
+
 conditional_run xfce4-power-manager
 conditional_run volumeicon
 conditional_run nm-applet
@@ -113,14 +117,11 @@ conditional_run blueman-applet
 conditional_run /home/frans/.cargo/bin/rspwm
 conditional_run touchegg
 conditional_run xfce4-clipman
+conditional_run sxhkd
 
 # Move tint2 behind fullscreen windows
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" $(xdo id -n tint2)
 
-#Reset the working directory
-cd
-
-conditional_run sxhkd
 
 #Enable if something goes wrong
 #xfce4-terminal &
