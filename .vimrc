@@ -9,14 +9,9 @@ call vundle#begin()
 "Vundle
 Plugin 'VundleVim/Vundle.vim'
 
-"YCM
-"Plugin 'Valloric/YouCompleteMe'
+" Autocompletion
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'Shougo/deoplete.nvim'
-"Plugin 'roxma/nvim-completion-manager'
-"Plugin 'Shougo/neocomplete.vim'
-"Plugin 'oblitum/YouCompleteMe'
-" Plugin 'initrc/eclim-vundle'
 
 " Code snippets
 Plugin 'SirVer/ultisnips'
@@ -33,9 +28,6 @@ Plugin 'tpope/vim-fugitive'
 
 "Alignment
 Plugin 'junegunn/vim-easy-align'
-
-"Ycm generator
-" Plugin 'rdnetto/YCM-Generator.git'
 
 "Table formating
 Plugin 'godlygeek/tabular'
@@ -60,8 +52,6 @@ Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'Yggdroot/indentLine'
 " Plugin 'nathanaelkane/vim-indent-guides'
 
-"Highlight first word occurences
-"Plugin 'unblevable/quick-scope'
 "Jumping around
 Plugin 'easymotion/vim-easymotion'
 
@@ -444,6 +434,7 @@ autocmd BufWrite *.elm :silent! exec "!ctags -R src"
 let g:ale_linters = {
 \   'rust': ['rls'],
 \   'ghmarkdown': ['mdl'],
+\   'haskell': ['stack-ghc-mod', 'hdevtools', 'hlint', 'stack-build', 'stack-ghc'],
 \}
 
 let g:ale_cpp_clangcheck_options='-std=c++14 -Wall'
