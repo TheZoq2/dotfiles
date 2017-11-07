@@ -1,4 +1,4 @@
 set background=dark
-let g:papyrus_variant="dark"
+let g:papyrus_variant="blue"
 colorscheme Papyrus
 AirlineTheme minimalist
