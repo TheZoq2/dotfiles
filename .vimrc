@@ -304,6 +304,9 @@ nmap ga <Plug>(EasyAlign)
 "Quit when q: is pressed aswell
 map q: :q
 
+map <Leader>i :call LanguageClient_textDocument_hover()<CR>
+map gd :call LanguageClient_textDocument_definition()<CR>
+
 
 "Reload file when changes happen
 au CursorHold * if getcmdwintype() == '' | checktime | endif
@@ -516,10 +519,3 @@ let g:LanguageClient_serverCommands = {
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
-
-
-"Indentline config
-let g:indent_guides_auto_colors=0
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_guide_size=1
-let g:indent_guides_start_level=2
