@@ -22,4 +22,5 @@
     ~/.gdbinit: ./.gdbinit
     ~/.gitconfig: ./gitconfig
     ~/.jupyter: ./.jupyter
+    ~/.gitignore_global: ./.gitignore_global
 

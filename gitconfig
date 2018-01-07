@@ -17,3 +17,5 @@
 	l = log
 	r = remote
 	m = merge
+[core]
+	excludesfile = /home/frans/.gitignore_global

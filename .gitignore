@@ -1,3 +1,12 @@
 #vim
 *.sw*
 *__pycache__*
+
+# Generated files
+.config/tint2/tint2rc
+.config/xfce4/terminal/terminalrc
+
+# Vim things
+.vim/autoload
+.vim/bundle
+
