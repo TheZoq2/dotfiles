@@ -306,6 +306,7 @@ map q: :q
 
 map <Leader>i :call LanguageClient_textDocument_hover()<CR>
 map gd :call LanguageClient_textDocument_definition()<CR>
+map <Leader>lr :call LanguageClient_textDocument_rename()<CR>
 
 
 "Reload file when changes happen
