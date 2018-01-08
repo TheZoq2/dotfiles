@@ -57,9 +57,9 @@ sleep 4
 bspc node -f "east"
 bspc node -p south
 notify-send 'Stacks dont have to be horizontal'
-sleep 1
-xfce4-terminal --working-directory $WD -x htop &
 sleep 0.3
+xfce4-terminal --working-directory $WD -x htop &
+sleep 1
 bspc node -f "@brother"
 bspc node -f "@1"
 bspc node -p north
@@ -127,6 +127,11 @@ sleep 1
 clear
 # Go back to the default workspace
 bspc desktop -f "focused:^4"
+
+echo "https://github.com/TheZoq2/BspwmStackableWindows"
+
+sleep 5
+clear
 
 
 #xfce4-terminal --working-directory $WD
