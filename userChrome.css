@@ -1,0 +1,5 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+/* The above line should appear only once in userChrome.css */
+
+#contentAreaContextMenu{ margin: 2px 0 0 2px }
+
