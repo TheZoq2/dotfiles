@@ -3,3 +3,7 @@
 
 #contentAreaContextMenu{ margin: 2px 0 0 2px }
 
+#tabbrowser-tabs {
+    background-color: #0e002d !important;
+}
+
