@@ -29,6 +29,9 @@ Plugin 'tpope/vim-fugitive'
 "Alignment
 Plugin 'junegunn/vim-easy-align'
 
+" Spliting and merging multi-line things
+Plugin 'FooSoft/vim-argwrap'
+
 "Table formating
 Plugin 'godlygeek/tabular'
 Plugin 'dhruvasagar/vim-table-mode'
@@ -307,6 +310,9 @@ map q: :q
 map <Leader>i :call LanguageClient_textDocument_hover()<CR>
 map gd :call LanguageClient_textDocument_definition()<CR>
 map <Leader>lr :call LanguageClient_textDocument_rename()<CR>
+
+" Wrap or unwrap arguments
+nnoremap <silent> gS :ArgWrap<CR>
 
 
 "Reload file when changes happen
