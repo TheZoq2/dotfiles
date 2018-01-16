@@ -10,12 +10,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Autocompletion
-Plugin 'autozimu/LanguageClient-neovim'
-Plugin 'Shougo/deoplete.nvim'
+" Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-completion-manager'
 
-" Code snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'TheZoq2/vim-snippets'
+"Language client plugins
+Plugin 'prabirshrestha/async.vim'
+"Plugin 'prabirshrestha/vim-lsp'
+Plugin 'autozimu/LanguageClient-neovim'
 
 " Bracket auto completion
 Plugin 'Raimondi/delimitMate'
@@ -131,6 +132,13 @@ Plugin 'TheZoq2/papercolor-theme'
 Plugin 'TheZoq2/badwolf'
 Plugin 'TheZoq2/Papyrus'
 Plugin 'tyrannicaltoucan/vim-quantum'
+
+
+" Code snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'TheZoq2/vim-snippets'
+
+
 
 "Nvim autoread
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
@@ -526,3 +534,10 @@ let g:LanguageClient_serverCommands = {
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
