@@ -20,6 +20,7 @@ Plugin 'autozimu/LanguageClient-neovim'
 
 " Bracket auto completion
 Plugin 'Raimondi/delimitMate'
+" Plugin 'cohama/lexima.vim'
 
 "Latex preview
 Plugin 'xuhdev/vim-latex-live-preview'
@@ -116,7 +117,7 @@ Plugin 'cespare/vim-toml'
 "Deoplete language support plugins
 "Rust
 Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer.git'
+" Plugin 'racer-rust/vim-racer.git'
 "Ruby
 Plugin 'fishbullet/deoplete-ruby.git'
 "Elm
@@ -143,7 +144,7 @@ Plugin 'TheZoq2/vim-snippets'
 "Nvim autoread
 Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
 
-"WIP Colortheme changer
+" Colortheme changer
 Plugin 'git@github.com:TheZoq2/neovim-colortheme-changer.git'
 
 
@@ -327,17 +328,11 @@ nnoremap <silent> gS :ArgWrap<CR>
 au CursorHold * if getcmdwintype() == '' | checktime | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                        Auto pairs settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:AutoPairsCenterLine=0
-let g:AutoPairsMultilineClose=0
-
-let g:AutoPairsCRIndent = ['{', '[']
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        Delimitmate settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let delimitMate_expand_cr = 1
-let delimitMate_balance_matchpairs=1
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_balance_matchpairs=1
+let g:delimitMate_nesting_quotes = ['"', '`']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -492,6 +487,18 @@ let g:deoplete#sources#clang#libclang_path="/usr/lib/libclang.so"
 let g:deoplete#sources#clang#clang_header="/usr/include/clang"
 
 "autocmd FileType rust call deoplete#initialize()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       Nvim completion manager config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" don't give |ins-completion-menu| messages.  For example,
+" '-- XXX completion (YYY)', 'match 1 of 2', 'The only match',
+set shortmess+=c
+
+" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" let g:cm_matcher = {'module': 'cm_matchers.abbrev_matcher'}
+let g:cm_matcher = {'module': 'cm_matchers.fuzzy_matcher', 'case': 'smartcase'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      Statusline config
