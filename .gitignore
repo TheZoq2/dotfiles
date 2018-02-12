@@ -5,6 +5,7 @@
 # Generated files
 .config/tint2/tint2rc
 .config/xfce4/terminal/terminalrc
+.config/xfce4/terminal/accels.scm
 
 # Vim things
 .vim/autoload
