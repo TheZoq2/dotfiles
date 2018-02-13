@@ -1,0 +1,54 @@
+set nocompatible
+" Vundle setup
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'Raimondi/delimitMate'
+Plugin 'FooSoft/vim-argwrap'
+Plugin 'tpope/vim-surround'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'thezoq2/papyrus'
+Plugin 'ctrlpvim/ctrlp.vim'
+call vundle#end()
+
+filetype plugin indent on
+
+let mapleader = "\<space>"
+imap jk <Esc>
+map ; :
+map J 10j
+map K 10k
+" Remap normal shift J,K behaviour to ctrl
+map <C-j> :join<Cr>
+map <C-k> k:join<Cr>
+map <C-c> "+y
+map <C-p> "+p
+" Switch between files with ctrlp
+map <Leader>j :CtrlPBuffer<CR>
+" Switch between buffers
+map <Leader>l :bn<CR>
+map <Leader>h :bp<CR>
+
+
+let g:EasyMotion_do_mapping = 0
+nmap <Leader><Leader> <Plug>(easymotion-overwin-f)
+
+
+
+syntax on
+set number
+set relativenumber
+
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set list
+set listchars=tab:¬-,trail:~,extends:>,precedes:<
+set mouse=a
+set autoindent
+set hidden
+
+colorscheme Papyrus
+
+let g:ctrlp_map = '<Leader>e'
+
