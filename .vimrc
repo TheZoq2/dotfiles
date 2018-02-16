@@ -246,7 +246,8 @@ set wildmenu
 "match OverLength /\%>85v.\+/
 set colorcolumn=80
 
-
+set title
+autocmd BufEnter * let &titlestring = expand("%:@")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Keybindings
