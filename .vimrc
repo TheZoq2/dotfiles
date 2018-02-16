@@ -125,6 +125,7 @@ Plugin 'pbogut/deoplete-elm'
 "Python
 Plugin 'zchee/deoplete-jedi'
 Plugin 'zchee/deoplete-clang'
+Plugin 'leafgarland/typescript-vim'
 
 
 "Colors
@@ -537,6 +538,7 @@ set noshowmode
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'typescript': ['tsserver']
     \ }
 
 " Automatically start language servers.
