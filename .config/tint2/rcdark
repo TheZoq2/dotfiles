@@ -172,12 +172,12 @@ systray_monitor = 1
 # Clock
 time1_format = %H %M
 time2_format = 
-time1_font = Ubuntu Condensed Bold 10
+time1_font = Liberation Sans normal 9.0
 time1_timezone = 
 time2_timezone = 
 time2_font = Sans 12
 clock_font_color = #ffffff 100
-clock_padding = 4 5
+clock_padding = 4 3
 clock_background_id = 8
 clock_tooltip = %a, %d. %b %Y
 clock_tooltip_timezone = 
