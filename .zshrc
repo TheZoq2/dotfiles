@@ -100,12 +100,12 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 
 # Replacing commands with alternatives if they are installed
-exa_not_installed=$(which exa 2>/dev/null | grep -v "not found" | wc -l)
-if [ ${exa_not_installed} -eq 0 ]; then
-    alias ls=/bin/ls --color=auto
-else
-    alias ls=exa
-fi
+# exa_not_installed=$(which exa 2>/dev/null | grep -v "not found" | wc -l)
+# if [ ${exa_not_installed} -eq 0 ]; then
+     alias ls=/bin/ls --color=auto
+# else
+#     alias ls=exa
+# fi
 
 ##Completion stuff
 ####################################################################
