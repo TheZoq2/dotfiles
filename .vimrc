@@ -59,6 +59,8 @@ Plugin 'vim-airline/vim-airline-themes'
 
 "Jumping around
 Plugin 'easymotion/vim-easymotion'
+" Incremental f
+Plugin 'rhysd/clever-f.vim'
 
 "Incremental and fuzzy searching
 Plugin 'haya14busa/incsearch.vim'
