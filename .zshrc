@@ -251,7 +251,8 @@ export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
 
 #Enable 256 bit colors over ssh
-export TERM=xterm-256color
+#export TERM=xterm-256color
+export TERM=xterm
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 ######################################################################
