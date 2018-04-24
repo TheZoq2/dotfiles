@@ -8,7 +8,7 @@ super + q
 	bspc node -c
 
 super + b
-	bspc node -B || \
+	bspc node -B; \
     bspc node -f @1
 
 # alternate between the tiled and monocle layout
@@ -122,8 +122,8 @@ super + space ; {d,D}
 #
 
 super + Return
-    xfce4-terminal
-    #konsole
+    konsole
+    #xfce4-terminal
     #urxvt
 
 
