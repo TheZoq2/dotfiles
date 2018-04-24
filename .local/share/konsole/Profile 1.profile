@@ -5,7 +5,7 @@ Font=Hasklug Nerd Font,12,-1,5,63,0,0,0,0,0
 
 [General]
 Command=/bin/zsh
-Icon=final-term
+Icon=terminal
 Name=Profile 1
 Parent=FALLBACK/
 ShowTerminalSizeHint=false
