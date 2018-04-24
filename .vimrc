@@ -103,6 +103,8 @@ Plugin 'vim-ruby/vim-ruby'
 "sxkhd highlighting
 Plugin 'baskerville/vim-sxhkdrc'
 
+" Matlab highlighting
+Plugin 'daeyun/vim-matlab'
 "Glsl
 Plugin 'tikhomirov/vim-glsl'
 "Python syntax highlight
@@ -560,6 +562,5 @@ endif
 
 let g:clever_f_fix_key_direction = 1
 let g:clever_f_across_no_line = 1
-
 
 
