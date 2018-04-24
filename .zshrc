@@ -1,5 +1,10 @@
 #source "${HOME}/.config/zsh/antigen/antigen.zsh"
 
+KONSOLE_PROFILE_LOCATION=/tmp/colors/konsole
+if [ -f $KONSOLE_PROFILE_LOCATION ]; then
+    konsoleprofile colors="$(cat $KONSOLE_PROFILE_LOCATION)"
+fi
+
 ###########################################################
 #                      Plugin stuff
 ###########################################################
@@ -252,7 +257,7 @@ export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
 #Enable 256 bit colors over ssh
 #export TERM=xterm-256color
-export TERM=xterm
+#export TERM=xterm
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 ######################################################################
