@@ -1,1 +1,0 @@
-/home/frans/.dotfiles/.vimrc
