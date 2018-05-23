@@ -84,6 +84,10 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Add :Bdelete to close buffers without messing with window layout
 Plugin 'moll/vim-bbye.git'
 
+" Pandoc workflow and syntax
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+
 
 "Language plugins
 "Openscad support
@@ -121,14 +125,7 @@ Plugin 'cespare/vim-toml'
 "Deoplete language support plugins
 "Rust
 Plugin 'rust-lang/rust.vim'
-" Plugin 'racer-rust/vim-racer.git'
-"Ruby
-Plugin 'fishbullet/deoplete-ruby.git'
-"Elm
-Plugin 'pbogut/deoplete-elm'
 "Python
-Plugin 'zchee/deoplete-jedi'
-Plugin 'zchee/deoplete-clang'
 Plugin 'leafgarland/typescript-vim'
 
 
@@ -564,3 +561,12 @@ let g:clever_f_fix_key_direction = 1
 let g:clever_f_across_no_line = 1
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       Pandoc config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+let g:pandoc#modules#disabled = ["keyboard"]
+let g:pandoc#syntax#conceal#use=0
+
+autocmd FileType markdown map <Leader>b :w<Cr>:!pandoc notes.md -o notes.pdf<Cr>
