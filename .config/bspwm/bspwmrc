@@ -19,19 +19,6 @@ function conditional_run {
 
 export MOZ_USE_XINPUT2=1
 
-if [ $1 = "tablet" ]; then
-    echo 'export IS_TABLET=1' > /tmp/wm_settings
-
-    echo 'export RIGHT_PADDING=0' >> /tmp/wm_settings
-    echo 'export BOTTOM_PADDING=0' >> /tmp/wm_settings
-    echo 'export REST_PADDING=0' >> /tmp/wm_settings
-else 
-    echo 'export IS_TABLET=0' > /tmp/wm_settings
-
-    echo 'export RIGHT_PADDING=27' >> /tmp/wm_settings
-    echo 'export BOTTOM_PADDING=3' >> /tmp/wm_settings
-    echo 'export REST_PADDING=3' >> /tmp/wm_settings
-fi
 
 source /tmp/wm_settings
 
@@ -109,6 +96,7 @@ setxkbmap us -variant altgr-intl -option caps:ctrl_modifier
 #Reset the working directory
 cd
 
+conditional_run konsoletheme
 conditional_run xfce4-power-manager
 conditional_run volumeicon
 conditional_run nm-applet
