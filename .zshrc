@@ -227,8 +227,6 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 #####################################################################
 
-export MAKEFLAGS="j5"
-
 
 ######################################################################
 #History stuff
@@ -317,3 +315,7 @@ z() { zeus $*; stty sane }
 
 
 CARGO_INCREMENTAL=1
+
+export BROWSER=firefox-nightly
+export _JAVA_AWT_WM_NONREPARENTING=1
+
