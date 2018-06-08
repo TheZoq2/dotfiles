@@ -6,7 +6,7 @@
 # Background 1: Panel
 rounded = 0
 border_width = 0
-background_color = #ffffff 100
+background_color = #ffffff 0
 border_color = #d8d8d8 0
 background_color_hover = #ff0000 40
 border_color_hover = #d8d8d8 0
@@ -16,7 +16,7 @@ border_color_pressed = #d8d8d8 0
 # Background 2: 
 rounded = 1
 border_width = 0
-background_color = #ffffff 100
+background_color = #ffffff 0
 border_color = #d8d8d8 0
 background_color_hover = #ffffff 100
 border_color_hover = #d8d8d8 0
@@ -49,15 +49,15 @@ border_width = 1
 background_color = #000000 0
 border_color = #000000 0
 background_color_hover = #000000 0
-background_color_hover = #7E57C2 100
+background_color_hover = #7E57C2 0
 background_color_pressed = #000000 0
 border_color_pressed = #000000 0
 
 # Background 6: Active taskbar
 rounded = 0
-border_width = 3
+border_width = 4
 border_sides = L
-background_color = #000000 0
+background_color = #ffffff 10
 border_color = #7E57C2 100
 background_color_hover = #7E57C2 100
 border_color_hover = #42A5F5 90
@@ -78,7 +78,7 @@ border_color_pressed = #222222 90
 rounded = 0
 border_width = 0
 border_sides = B
-background_color = #7E57C2 100
+background_color = #7E57C2 0
 border_color = #ffffff 0
 background_color_hover = #7E57C2 100
 border_color_hover = #ffffff 0
@@ -176,7 +176,7 @@ time1_font = Ubuntu Condensed Bold 10
 time1_timezone = 
 time2_timezone = 
 time2_font = Sans 12
-clock_font_color = #ffffff 100
+clock_font_color = #000000 100
 clock_padding = 4 5
 clock_background_id = 8
 clock_tooltip = %a, %d. %b %Y
