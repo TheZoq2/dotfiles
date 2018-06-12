@@ -19,8 +19,12 @@ function conditional_run {
 
 export MOZ_USE_XINPUT2=1
 
+export IS_TABLET=0
 
-source /tmp/wm_settings
+export RIGHT_PADDING=27
+export BOTTOM_PADDING=3
+export REST_PADDING=3
+
 
 OLD_PATH=$PATH
 PATH=$PATH:$HOME/bin/:$HOME/.cargo/bin
