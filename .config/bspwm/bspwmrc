@@ -21,9 +21,11 @@ export MOZ_USE_XINPUT2=1
 
 export IS_TABLET=0
 
-export RIGHT_PADDING=27
-export BOTTOM_PADDING=3
-export REST_PADDING=3
+echo 'export RIGHT_PADDING=27' > /tmp/wm_settings
+echo 'export BOTTOM_PADDING=3' >> /tmp/wm_settings
+echo 'export REST_PADDING=3' >> /tmp/wm_settings
+
+source /tmp/wm_settings
 
 
 OLD_PATH=$PATH
