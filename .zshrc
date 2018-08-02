@@ -1,10 +1,5 @@
 #source "${HOME}/.config/zsh/antigen/antigen.zsh"
 
-KONSOLE_PROFILE_LOCATION=/tmp/colors/konsole
-if [ -f $KONSOLE_PROFILE_LOCATION ]; then
-    konsoleprofile colors="$(cat $KONSOLE_PROFILE_LOCATION)"
-fi
-
 ###########################################################
 #                      Plugin stuff
 ###########################################################
@@ -187,6 +182,11 @@ local BG_COLOR="%{$reset_color%}"
 if [ -z ${SSH_CLIENT+x} ]; then
 	#If $SSH_CLIENT is unset
 	BG_COLOR="%{$reset_color%}"
+    # Set konsole colors
+    KONSOLE_PROFILE_LOCATION=/tmp/colors/konsole
+    if [ -f $KONSOLE_PROFILE_LOCATION ]; then
+        konsoleprofile colors="$(cat $KONSOLE_PROFILE_LOCATION)"
+    fi
 else
 	BG_COLOR='%{$bg[cyan]%}'
 fi
