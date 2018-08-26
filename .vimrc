@@ -10,8 +10,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Autocompletion
-" Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-completion-manager'
+" Plugin 'roxma/nvim-completion-manager'
+Plugin 'ncm2/ncm2'
+Plugin 'roxma/nvim-yarp'
+Plugin 'ncm2/ncm2-bufword'
+Plugin 'ncm2/ncm2-tmux'
+Plugin 'ncm2/ncm2-path'
+Plugin 'ncm2/ncm2-pyclang'
+Plugin 'ncm2/ncm2-ultisnips'
 
 "Language client plugins
 Plugin 'prabirshrestha/async.vim'
@@ -364,6 +370,13 @@ inoremap <expr> <Nul> Auto_complete_string()
 inoremap <expr> <C-Space> Auto_complete_string()
 
 
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANTE: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "					Elm stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -470,26 +483,6 @@ let g:ctrlp_extensions=['tag']
 nnoremap <Leader>t :CtrlPTag<Cr>
 "Use current working directory for starting ctrlp
 let g:ctrlp_working_path_mode = 'a'
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       Deoplete config
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:deoplete#enable_at_startup = 1
-
-"Always ignore case when matching
-let g:deoplete#enable_ignore_case = 1
-
-"Rust
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-
-
-let g:deoplete#sources#clang#libclang_path="/usr/lib/libclang.so"
-let g:deoplete#sources#clang#clang_header="/usr/include/clang"
-
-"autocmd FileType rust call deoplete#initialize()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Nvim completion manager config
