@@ -187,6 +187,13 @@ if [ -z ${SSH_CLIENT+x} ]; then
     if [ -f $KONSOLE_PROFILE_LOCATION ]; then
         konsoleprofile colors="$(cat $KONSOLE_PROFILE_LOCATION)"
     fi
+    # Set kitty colors
+    if [ "$IS_KITTY" = "1" ]; then
+        KITTY_COLOR_LOCATION=/tmp/colors/kittycolors
+        if [ -f $KITTY_COLOR_LOCATION ]; then
+            kitty @ set-colors $KITTY_COLOR_LOCATION
+        fi
+    fi
 else
 	BG_COLOR='%{$bg[cyan]%}'
 fi
