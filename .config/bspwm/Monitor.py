@@ -178,13 +178,20 @@ class Monitor:
         return getWindowsFromWindowString(windowStr)
 
 
+class MonitorSetup:
+    def __init__(self, active, disconnected):
+        self.active = active
+        self.disconnected = disconnected
+
 def getMonitorSetup():
     monitors = [];
+    disconnected = []
 
     #Find monitor layout using xrandr
     xrandrResult = subprocess.check_output(["xrandr"], universal_newlines=True)
 
     size_regex = re.compile("\d+x\d+\+\d+\+\d+")
+    disconnected_regex = re.compile("\w* disconnected")
 
     #Look for the usefull parts of that data
     xrandrSplit = xrandrResult.split("\n")
@@ -207,9 +214,14 @@ def getMonitorSetup():
             posY = int(plus_split[2])
             monitor = Monitor(name, util.Vec2d(width,height), util.Vec2d(posX,posY))
             monitors.append(monitor)
-    
+        else:
+            disconnected_match = disconnected_regex.search(line)
+            if regex_match is not None:
+                name = line.split(" ")[0]
+                disconnected.append(name)
+
     #print(monitors.__len__());
-    return monitors
+    return MonitorSetup(monitors, disconnected)
 
 
 def getWindowsFromWindowString(windowString):
