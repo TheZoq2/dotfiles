@@ -24,4 +24,5 @@
     ~/.jupyter: ./.jupyter
     ~/.gitignore_global: ./.gitignore_global
     ~/.local/share/konsole: .local/share/konsole
+    ~/.config/kitty: .config/kitty
 
