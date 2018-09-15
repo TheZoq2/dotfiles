@@ -7,7 +7,7 @@ import style
 #Locate screens
 screens = Monitor.getMonitorSetup()
 
-desktopsPerScreen = 9
+desktopsPerScreen = 7
 
 for s in screens:
     #s.name = s.name.replace("\n", "")
@@ -15,8 +15,9 @@ for s in screens:
 
     desktopList = []
     for i in range(desktopsPerScreen):
-        # desktopList.append(str(i+1) + "_" + s.getName())
-        desktopList.append(str(i+1))
+        desktopList.append(str(i+1) + "_" + s.getName())
+        # print(str(i+1) + "_" + s.getName())
+        # desktopList.append(str(i+1))
 
     callList = ["bspc", "monitor", s.getName(), "-d"] + desktopList
     #Reset the desktops
