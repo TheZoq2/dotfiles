@@ -9,7 +9,12 @@ screens = Monitor.getMonitorSetup()
 
 desktopsPerScreen = 7
 
-for s in screens:
+# Reset disconnected monitors
+for name in screens.disconnected:
+    callList = ["bspc", "monitor", name, "-r"]
+
+# Add desktops to active monitors
+for s in screens.active:
     #s.name = s.name.replace("\n", "")
     print(s.name)
 

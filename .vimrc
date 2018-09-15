@@ -4,159 +4,159 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 "Vundle
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 " Autocompletion
-" Plugin 'roxma/nvim-completion-manager'
-Plugin 'ncm2/ncm2'
-Plugin 'roxma/nvim-yarp'
-Plugin 'ncm2/ncm2-bufword'
-Plugin 'ncm2/ncm2-tmux'
-Plugin 'ncm2/ncm2-path'
-Plugin 'ncm2/ncm2-pyclang'
-Plugin 'ncm2/ncm2-ultisnips'
+" Plug 'roxma/nvim-completion-manager'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-pyclang'
+Plug 'ncm2/ncm2-ultisnips'
 
 "Language client plugins
-Plugin 'prabirshrestha/async.vim'
-"Plugin 'prabirshrestha/vim-lsp'
-Plugin 'autozimu/LanguageClient-neovim'
+Plug 'prabirshrestha/async.vim'
+"Plug 'prabirshrestha/vim-lsp'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh'}
 
 " Bracket auto completion
-Plugin 'Raimondi/delimitMate'
-" Plugin 'cohama/lexima.vim'
+Plug 'Raimondi/delimitMate'
+" Plug 'cohama/lexima.vim'
 
 "Latex preview
-Plugin 'xuhdev/vim-latex-live-preview'
+Plug 'xuhdev/vim-latex-live-preview'
 
 "Git integration
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 "Alignment
-Plugin 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
 " Spliting and merging multi-line things
-Plugin 'FooSoft/vim-argwrap'
+Plug 'FooSoft/vim-argwrap'
 
 "Table formating
-Plugin 'godlygeek/tabular'
-Plugin 'dhruvasagar/vim-table-mode'
+Plug 'godlygeek/tabular'
+Plug 'dhruvasagar/vim-table-mode'
 
 " Mappings on surroud things
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Case coercion
-Plugin 'tpope/tpope-vim-abolish'
+Plug 'tpope/tpope-vim-abolish'
 " Repeating plugin commands
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " Asyncronous linting
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 
 " Statusbar
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 
 " Show bars to highlight indentation
-" Plugin 'Yggdroot/indentLine'
-" Plugin 'nathanaelkane/vim-indent-guides'
+" Plug 'Yggdroot/indentLine'
+" Plug 'nathanaelkane/vim-indent-guides'
 
 "Jumping around
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 " Incremental f
-Plugin 'rhysd/clever-f.vim'
+Plug 'rhysd/clever-f.vim'
 
 "Incremental and fuzzy searching
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 
 "Fuzzy search
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim'
-Plugin 'fisadev/vim-ctrlp-cmdpalette'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'fisadev/vim-ctrlp-cmdpalette'
 
 
 "Shifting function arguments
-Plugin 'PeterRincker/vim-argumentative'
+Plug 'PeterRincker/vim-argumentative'
 
 "File explorer
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 "Fancy icons
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 
 "Add :Bdelete to close buffers without messing with window layout
-Plugin 'moll/vim-bbye.git'
+Plug 'moll/vim-bbye'
 
 " Pandoc workflow and syntax
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 
 "Language plugins
 "Openscad support
-Plugin 'choffee/openscad.vim'
+Plug 'choffee/openscad.vim'
 "Elm support
-Plugin 'ElmCast/elm-vim.git'
+Plug 'ElmCast/elm-vim'
 "Haskell support
-Plugin 'neovimhaskell/haskell-vim'
+Plug 'neovimhaskell/haskell-vim'
 "GMPL syntax
-Plugin 'maelvalais/gmpl.vim'
+Plug 'maelvalais/gmpl.vim'
 "Coffeescript support
-Plugin 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script'
 "Slim support
-Plugin 'slim-template/vim-slim.git'
+Plug 'slim-template/vim-slim'
 "ruby linting
-Plugin 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 "sxkhd highlighting
-Plugin 'baskerville/vim-sxhkdrc'
+Plug 'baskerville/vim-sxhkdrc'
 
 " Matlab highlighting
-Plugin 'daeyun/vim-matlab'
+Plug 'daeyun/vim-matlab'
 "Glsl
-Plugin 'tikhomirov/vim-glsl'
+Plug 'tikhomirov/vim-glsl'
 "Python syntax highlight
-Plugin 'hdima/python-syntax.git'
+Plug 'hdima/python-syntax'
 "Scala support
-Plugin 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala'
 "TOML
-Plugin 'cespare/vim-toml'
+Plug 'cespare/vim-toml'
 
 "github markdown support
-" Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
+" Plug 'git@github.com:jtratner/vim-flavored-markdown'
 
 
 "Deoplete language support plugins
 "Rust
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 "Python
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 
 
 "Colors
-"Plugin 'atweiden/vim-colors-behelit'
-Plugin 'TheZoq2/papercolor-theme'
-Plugin 'TheZoq2/badwolf'
-Plugin 'TheZoq2/Papyrus'
-Plugin 'tyrannicaltoucan/vim-quantum'
+"Plug 'atweiden/vim-colors-behelit'
+Plug 'TheZoq2/papercolor-theme'
+Plug 'TheZoq2/badwolf'
+Plug 'TheZoq2/Papyrus'
+Plug 'tyrannicaltoucan/vim-quantum'
 
 
 " Code snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'TheZoq2/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'TheZoq2/vim-snippets'
 
 
 
 "Nvim autoread
-Plugin 'git@github.com:TheZoq2/neovim-auto-autoread.git'
+Plug 'git@github.com:TheZoq2/neovim-auto-autoread'
 
 " Colortheme changer
-Plugin 'git@github.com:TheZoq2/neovim-colortheme-changer.git'
+Plug 'git@github.com:TheZoq2/neovim-colortheme-changer'
 
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'
 
