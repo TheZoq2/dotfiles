@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
 ColorScheme=blue
-Font=Hasklug Nerd Font,12,-1,5,63,0,0,0,0,0
+Font=Hasklug Nerd Font,11,-1,5,63,0,0,0,0,0
 
 [General]
 Command=/bin/zsh
