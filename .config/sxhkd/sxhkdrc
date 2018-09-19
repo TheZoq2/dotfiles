@@ -122,8 +122,8 @@ super + space ; {d,D}
 #
 
 super + Return
-    start_kitty
-    #konsole
+    konsole
+    # start_kitty
     #xfce4-terminal
     #urxvt
 
