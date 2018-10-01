@@ -216,7 +216,7 @@ def getMonitorSetup():
             monitors.append(monitor)
         else:
             disconnected_match = disconnected_regex.search(line)
-            if regex_match is not None:
+            if disconnected_match is not None:
                 name = line.split(" ")[0]
                 disconnected.append(name)
 
