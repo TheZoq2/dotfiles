@@ -257,6 +257,8 @@ setopt completeinword
 
 export PATH=$PATH:~/bin/wallpaperManager:~/bin:~/.cargo/bin
 export PATH=$PATH:~/.gem/ruby/2.3.0/bin
+# Haskell and stack
+export PATH=$PATH:~/.local/bin
 #export PATH=$PATH:~/.config/bspwm
 
 

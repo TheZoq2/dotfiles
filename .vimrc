@@ -463,8 +463,10 @@ autocmd BufWrite *.elm :silent! exec "!ctags -R src"
 let g:ale_linters = {
 \   'rust': ['rls'],
 \   'ghmarkdown': ['mdl'],
-\   'haskell': ['stack-ghc-mod', 'hdevtools', 'hlint', 'stack-build', 'stack-ghc'],
+\   'haskell': ['hdevtools'],
+\   'python': []
 \}
+"   'haskell': ['stack-ghc-mod', 'hdevtools', 'hlint', 'stack-build', 'stack-ghc'],
 
 let g:ale_cpp_clangcheck_options='-std=c++14 -Wall'
 
