@@ -12,6 +12,7 @@ desktopsPerScreen = 7
 # Reset disconnected monitors
 for name in screens.disconnected:
     callList = ["bspc", "monitor", name, "-r"]
+    subprocess.call(callList, universal_newlines = True)
 
 # Add desktops to active monitors
 for s in screens.active:
