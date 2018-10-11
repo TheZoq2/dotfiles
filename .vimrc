@@ -18,6 +18,7 @@ Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-pyclang'
 Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-jedi'
 
 "Language client plugins
 Plug 'prabirshrestha/async.vim'
