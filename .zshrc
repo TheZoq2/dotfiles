@@ -188,8 +188,8 @@ if [ -z ${SSH_CLIENT+x} ]; then
         konsoleprofile colors="$(cat $KONSOLE_PROFILE_LOCATION)"
     fi
     # Set kitty colors
-    if [ "$IS_KITTY" = "1" ]; then
-        KITTY_COLOR_LOCATION=/tmp/colors/kittycolors
+    if [ "$TERM" = "xterm-kitty" ]; then
+        KITTY_COLOR_LOCATION=.config/kitty/colors
         if [ -f $KITTY_COLOR_LOCATION ]; then
             kitty @ set-colors $KITTY_COLOR_LOCATION
         fi
