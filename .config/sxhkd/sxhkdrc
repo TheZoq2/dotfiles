@@ -107,15 +107,11 @@ super + space ; {r,R}
 super + space ; {d,D}
     ~/.config/bspwm/configure_padding {normal,df}
 
-# Volume keys
-# XF86AudioRaiseVolume
-#     amixer set Master 2%+
-# 
-# XF86AudioLowerVolume
-#     amixer set Master 2%-
-# 
-# XF86AudioMute
-#     amixer -D pulse set Master 1+ toggle
+ctrl + F6
+    pactl set-sink-mute $(pactl list sinks short | grep combined | cut -f 1) toggle
+
+XF86AudioMute
+    pactl set-sink-mute $(pactl list sinks short | grep alsa | cut -f 1) toggle
 
 #
 # wm independent hotkeys
