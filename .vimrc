@@ -3,12 +3,9 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
 "Vundle
-Plug 'VundleVim/Vundle.vim'
-
 " Autocompletion
 " Plug 'roxma/nvim-completion-manager'
 Plug 'ncm2/ncm2'
