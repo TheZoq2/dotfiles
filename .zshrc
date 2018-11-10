@@ -149,6 +149,8 @@ alias f='bfs | rg'
 alias g=git
 alias m=make
 alias l=ls
+alias la="ls -la"
+alias ll="ls -l"
 alias v=vim
 alias c=cd
 alias ca=cargo
@@ -188,8 +190,8 @@ if [ -z ${SSH_CLIENT+x} ]; then
         konsoleprofile colors="$(cat $KONSOLE_PROFILE_LOCATION)"
     fi
     # Set kitty colors
-    if [ "$IS_KITTY" = "1" ]; then
-        KITTY_COLOR_LOCATION=/tmp/colors/kittycolors
+    if [ "$TERM" = "xterm-kitty" ]; then
+        KITTY_COLOR_LOCATION=.config/kitty/colors
         if [ -f $KITTY_COLOR_LOCATION ]; then
             kitty @ set-colors $KITTY_COLOR_LOCATION
         fi

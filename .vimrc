@@ -15,6 +15,7 @@ Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-pyclang'
 Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2-jedi'
 
 "Language client plugins
 Plug 'prabirshrestha/async.vim'
@@ -99,6 +100,7 @@ Plug 'choffee/openscad.vim'
 Plug 'ElmCast/elm-vim'
 "Haskell support
 Plug 'neovimhaskell/haskell-vim'
+Plug 'bitc/vim-hdevtools'
 "GMPL syntax
 Plug 'maelvalais/gmpl.vim'
 "Coffeescript support
@@ -328,6 +330,10 @@ map <Leader>lr :call LanguageClient_textDocument_rename()<CR>
 
 " Wrap or unwrap arguments
 nnoremap <silent> gS :ArgWrap<CR>
+
+
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 
 
 "Reload file when changes happen
