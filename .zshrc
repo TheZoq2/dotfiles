@@ -144,6 +144,7 @@ autoload -U colors && colors
 alias fork='pwd | xfce4-terminal &'
 alias r='~/.scripts/runAfterMake.sh'
 alias :q=exit
+alias q=exit
 alias rg='rg --colors path:fg:green'
 alias f='bfs | rg'
 alias g=git
