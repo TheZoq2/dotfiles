@@ -506,10 +506,7 @@ let g:ctrlp_working_path_mode = 'a'
 " '-- XXX completion (YYY)', 'match 1 of 2', 'The only match',
 set shortmess+=c
 
-" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
-" let g:cm_matcher = {'module': 'cm_matchers.abbrev_matcher'}
-let g:cm_matcher = {'module': 'cm_matchers.fuzzy_matcher', 'case': 'smartcase'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      Statusline config
