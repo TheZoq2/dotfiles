@@ -467,11 +467,18 @@ let g:ale_linters = {
 \   'rust': ['rls'],
 \   'ghmarkdown': ['mdl'],
 \   'haskell': ['hdevtools'],
-\   'python': []
+\   'python': [],
+\   'cpp': ['clang']
 \}
 "   'haskell': ['stack-ghc-mod', 'hdevtools', 'hlint', 'stack-build', 'stack-ghc'],
 
 let g:ale_cpp_clangcheck_options='-std=c++14 -Wall'
+"
+" a list of relative paths for compile_commands.json
+let g:ncm2_pyclang#database_path = [
+            \ 'compile_commands.json',
+            \ 'build/compile_commands.json'
+            \ ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           Ctrl P mappings
