@@ -9,6 +9,17 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'thezoq2/papyrus'
 Plug 'ctrlpvim/ctrlp.vim'
+
+" Autocompletion
+Plug 'ncm2/ncm2'
+" If this is normal vim, we need some support libs
+if !has('nvim')
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+" Plugins for some basic completion
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
 call plug#end()
 
 filetype plugin indent on
@@ -52,3 +63,13 @@ colorscheme Papyrus
 
 let g:ctrlp_map = '<Leader>e'
 
+" Enable nvim completion manager
+autocmd BufEnter * call ncm2#enable_for_buffer()
+" Fuzzy completion ('fobr' -> 'foo_bar' etc.)
+let g:ncm2#matcher = "substrfuzzy"
+
+" Prevent automatic insertion of completions
+set completeopt=noinsert,menuone,noselect
+" Prevent preview window from appearing at the top of the editor when
+" completion menu is open
+set completeopt-=preview
