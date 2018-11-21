@@ -9,9 +9,14 @@ call plug#begin('~/.vim/plugged')
 "Vundle
 Plug 'VundleVim/Vundle.vim'
 
+Plug 'ncm2/ncm2'
+if !has('nvim')
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 " Autocompletion
 " Plug 'roxma/nvim-completion-manager'
-Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
@@ -377,6 +382,9 @@ inoremap <expr> <C-Space> Auto_complete_string()
 
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
+let g:ncm2#matcher = "substrfuzzy"
+
+
 
 " IMPORTANTE: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
