@@ -1,13 +1,20 @@
+" Dsiable vi compatibility
 set nocompatible
-" Vundle setup
+
+" Plugin setup setup
 filetype off
-" set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
+" Automatically insert matching brackets
 Plug 'Raimondi/delimitMate'
+" Transform single line function calls to multi line function calls using gS
 Plug 'FooSoft/vim-argwrap'
+" Allow things like 'surround word by ()' by pressing ysiw)
 Plug 'tpope/vim-surround'
+" Quickly jump to specific characters on screen
 Plug 'easymotion/vim-easymotion'
+" My own colour scheme
 Plug 'thezoq2/papyrus'
+" Quickly open files by typing parts of their filenames
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Autocompletion
@@ -24,43 +31,67 @@ call plug#end()
 
 filetype plugin indent on
 
+" Use space as the 'leader' key
 let mapleader = "\<space>"
+" Exit insert mode with jk
 imap jk <Esc>
+" Avoid shift key to enter command line
 map ; :
+" Jump 10 steps up or down with shift+j or k. This causes issues if you get
+" used to it and have to use an unconfigured vim
 map J 10j
 map K 10k
 " Remap normal shift J,K behaviour to ctrl
 map <C-j> :join<Cr>
 map <C-k> k:join<Cr>
+" Copy and paste to system clipboard using Ctrl+c and Ctrl+p Requires vim to
+" be compiled with clipboard suppport
 map <C-c> "+y
 map <C-p> "+p
 " Switch between files with ctrlp
 map <Leader>j :CtrlPBuffer<CR>
-" Switch between buffers
+" Switch between open in the order that they were used buffers
 map <Leader>l :bn<CR>
 map <Leader>h :bp<CR>
 
 
+" Configure easymotion
 let g:EasyMotion_do_mapping = 0
+" Press space twice followed by any character on screen to jump there
 nmap <Leader><Leader> <Plug>(easymotion-overwin-f)
 
 
 
+" Enable syntax highlighting
 syntax on
+" Enable line numbers, then enable relative numbers to easily jump up and down
+" using <n>j or <n>k
 set number
 set relativenumber
 
+
+" Set one indentation level to be 4 spaces, set tabs to be drawn as 4 spaces
+" and insert 4 spaces when pressing the tab key instead of a tab character
 set shiftwidth=4
 set tabstop=4
 set expandtab
+" Render some whitespace to find trailing spaces and to tell tabs apart from
+" spaces
 set list
-set listchars=tab:¬-,trail:~,extends:>,precedes:<
+" Use a ~ for trailing spaces, use ¬--- for a tab
+set listchars=tab:¬-,trail:~
+" Allow mouse clicks and better scroll
 set mouse=a
+" Automatically indent new lines to the same level as the previous line
 set autoindent
+" Enable keeping modified files open in the background when changing files
+" with :e or :b
 set hidden
 
+" Set color scheme to the one that 
 colorscheme Papyrus
 
+" Open ctrlp when pressing space+e
 let g:ctrlp_map = '<Leader>e'
 
 " Enable nvim completion manager
