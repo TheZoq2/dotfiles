@@ -1,15 +1,15 @@
 set nocompatible
 " Vundle setup
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'Raimondi/delimitMate'
-Plugin 'FooSoft/vim-argwrap'
-Plugin 'tpope/vim-surround'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'thezoq2/papyrus'
-Plugin 'ctrlpvim/ctrlp.vim'
-call vundle#end()
+" set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
+Plug 'Raimondi/delimitMate'
+Plug 'FooSoft/vim-argwrap'
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'thezoq2/papyrus'
+Plug 'ctrlpvim/ctrlp.vim'
+call plug#end()
 
 filetype plugin indent on
 
