@@ -9,13 +9,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'VundleVim/Vundle.vim'
 
 Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
 if !has('nvim')
-  Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 " Autocompletion
-Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
@@ -481,6 +480,8 @@ let g:ale_linters = {
 "   'haskell': ['stack-ghc-mod', 'hdevtools', 'hlint', 'stack-build', 'stack-ghc'],
 
 let g:ale_cpp_clangcheck_options='-std=c++14 -Wall'
+
+let g:ale_verilog_iverilog_options='-c .verilog_config'
 "
 " a list of relative paths for compile_commands.json
 let g:ncm2_pyclang#database_path = [
