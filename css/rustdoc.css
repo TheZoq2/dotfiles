@@ -1,0 +1,19 @@
+
+.sidebar {
+    width: 32px;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    width: 200px;
+    z-index: 1;
+}
+
+nav.sub, .content {
+    /* margin-left: 30px;*/
+    margin: 0px auto;
+}
+
+div.container-rustdoc {
+    max-width: none;
+}
