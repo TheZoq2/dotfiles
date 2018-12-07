@@ -1,7 +1,7 @@
-
 .sidebar {
     width: 32px;
     overflow: hidden;
+    z-index: 1;
 }
 
 .sidebar:hover {
@@ -9,7 +9,11 @@
     z-index: 1;
 }
 
-nav.sub, .content {
+
+nav.sub, #main {
+    margin-left: 40px;
+}
+.content {
     /* margin-left: 30px;*/
     margin: 0px auto;
 }
