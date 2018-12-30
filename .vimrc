@@ -94,8 +94,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'moll/vim-bbye'
 
 " Pandoc workflow and syntax
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 
 
 "Language plugins
@@ -284,10 +284,9 @@ map <C-p> "+p
 map Ö :
 map ; :
 
-map J 10j
-map K 10k
-map <C-j> :join<Cr>
-map <C-k> k:join<Cr>
+map <c-d> 10j
+map <c-u> 10k
+map K k:join<Cr>
 
 "Buffer stuff
 "map <Leader>j :Buffers<CR>
@@ -494,13 +493,14 @@ let g:ncm2_pyclang#database_path = [
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CtrlP stuff
 let g:ctrlp_map = '<Leader>e'
+let g:ctrlp_show_hidden = 1
 
 
 map <Leader>; :CtrlPCmdPalette<Cr>
 
 "ctrlp configuration
 "Allow searching through tags with <space>t
-let g:ctrlp_extensions=['tag']
+let g:ctrlp_extensions=['tag', 'autoignore']
 nnoremap <Leader>t :CtrlPTag<Cr>
 "Use current working directory for starting ctrlp
 let g:ctrlp_working_path_mode = 'a'
