@@ -34,9 +34,6 @@ Plug 'Raimondi/delimitMate'
 "Latex preview
 Plug 'xuhdev/vim-latex-live-preview'
 
-"Git integration
-Plug 'tpope/vim-fugitive'
-
 "Alignment
 Plug 'junegunn/vim-easy-align'
 
@@ -53,6 +50,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/tpope-vim-abolish'
 " Repeating plugin commands
 Plug 'tpope/vim-repeat'
+" Git integration
+Plug 'tpope/vim-fugitive'
+" Comment operations using `gc`
+Plug 'tpope/vim-commentary'
 
 " Asyncronous linting
 Plug 'w0rp/ale'
