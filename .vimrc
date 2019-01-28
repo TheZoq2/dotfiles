@@ -343,6 +343,10 @@ au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 "Reload file when changes happen
 au CursorHold * if getcmdwintype() == '' | checktime | endif
 
+"Resize windows when the host window is resized
+autocmd VimResized * wincmd =
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        Delimitmate settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -402,13 +406,15 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Latex stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tex_flavor = "latex"
 let g:livepreview_previewer = 'evince'
 
 " Neovim seems to autoload a latex plugin which conceals certain symbols
 autocmd FileType tex set conceallevel=0
 
-"Resize windows when the host window is resized
-autocmd VimResized * wincmd =
+" Enable spell check and set the language to the only true english
+autocmd FileType tex set spell spelllang=en_gb
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           easymotion stuff
