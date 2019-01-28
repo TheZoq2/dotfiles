@@ -146,6 +146,7 @@ Plug 'TheZoq2/papercolor-theme'
 Plug 'TheZoq2/badwolf'
 Plug 'TheZoq2/Papyrus'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'challenger-deep-theme/vim'
 
 
 " Code snippets
