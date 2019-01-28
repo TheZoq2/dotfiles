@@ -190,16 +190,14 @@ set autoindent      " Copy indent from current line when starting a new line
 set ruler           " Show the line and column number of the cursor position,
                     " separated by a comma.
 
-"set background=dark " When set to "dark", Vim will try to use colors that look
-                    " good on a dark background. When set to "light", Vim will
-                    " try to use colors that look good on a light background.
-                    " Any other value is illegal.
-
 set mouse=a         " Enable the use of the mouse.
 
 set hidden          "Allow unsaved buffers to be in the background
 
 set cursorline		"Highlight the current line
+
+" Prevent comments from being inserted on new lines created with `o`
+autocmd BufEnter * set formatoptions-=o
 
 "Tab handling and listing
 set list
