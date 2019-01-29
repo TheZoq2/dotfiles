@@ -23,6 +23,9 @@ super + {comma,period}
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+super + {t,shift + t,s,f, ctrl+t}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen,fullscreen}
+
 super + grave
 	bspc node -f last.local
 
@@ -76,8 +79,8 @@ super + alt + shift + {h,j,k,l}
 
 
 #Send nodes between desktops and focus other desktops
-super + {_,shift + ,ctrl} + {1-9,0}
-	bspc {desktop -f,node -d,desktop -s} focused:^{1-9,10}
+super + {_,shift + ,ctrl} + {1-9}
+	bspc {desktop -f,node -d,desktop -s} focused:^{1-9}
 
 #Mouse stuff
 # start move/resize
