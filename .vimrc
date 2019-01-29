@@ -34,9 +34,6 @@ Plug 'Raimondi/delimitMate'
 "Latex preview
 Plug 'xuhdev/vim-latex-live-preview'
 
-"Git integration
-Plug 'tpope/vim-fugitive'
-
 "Alignment
 Plug 'junegunn/vim-easy-align'
 
@@ -53,6 +50,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/tpope-vim-abolish'
 " Repeating plugin commands
 Plug 'tpope/vim-repeat'
+" Git integration
+Plug 'tpope/vim-fugitive'
+" Comment operations using `gc`
+Plug 'tpope/vim-commentary'
 
 " Asyncronous linting
 Plug 'w0rp/ale'
@@ -145,6 +146,7 @@ Plug 'TheZoq2/papercolor-theme'
 Plug 'TheZoq2/badwolf'
 Plug 'TheZoq2/Papyrus'
 Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'challenger-deep-theme/vim'
 
 
 " Code snippets
@@ -188,16 +190,14 @@ set autoindent      " Copy indent from current line when starting a new line
 set ruler           " Show the line and column number of the cursor position,
                     " separated by a comma.
 
-"set background=dark " When set to "dark", Vim will try to use colors that look
-                    " good on a dark background. When set to "light", Vim will
-                    " try to use colors that look good on a light background.
-                    " Any other value is illegal.
-
 set mouse=a         " Enable the use of the mouse.
 
 set hidden          "Allow unsaved buffers to be in the background
 
 set cursorline		"Highlight the current line
+
+" Prevent comments from being inserted on new lines created with `o`
+autocmd BufEnter * set formatoptions-=o
 
 "Tab handling and listing
 set list
