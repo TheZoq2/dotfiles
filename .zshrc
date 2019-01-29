@@ -333,6 +333,6 @@ z() { zeus $*; stty sane }
 
 CARGO_INCREMENTAL=1
 
-export BROWSER=firefox-nightly
+export BROWSER=firefox
 export _JAVA_AWT_WM_NONREPARENTING=1
 
