@@ -7,7 +7,12 @@
 .config/xfce4/terminal/terminalrc
 .config/xfce4/terminal/accels.scm
 
+# Konsole unused files
+.local/share/konsole/bookmarks.xml*
+
 # Vim things
 .vim/autoload
 .vim/bundle
+.vim/init.vim
+.vim/plugged
 
