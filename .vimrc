@@ -79,6 +79,7 @@ Plug 'haya14busa/incsearch-fuzzy.vim'
 "Fuzzy search
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'fisadev/vim-ctrlp-cmdpalette'
+Plug 'junegunn/fzf.vim'
 
 
 "Shifting function arguments
@@ -498,7 +499,7 @@ let g:ncm2_pyclang#database_path = [
 "                           Ctrl P mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CtrlP stuff
-let g:ctrlp_map = '<Leader>e'
+let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_show_hidden = 1
 
 
@@ -510,6 +511,28 @@ let g:ctrlp_extensions=['tag', 'autoignore']
 nnoremap <Leader>t :CtrlPTag<Cr>
 "Use current working directory for starting ctrlp
 let g:ctrlp_working_path_mode = 'a'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           FZF config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>e :FZF<CR>
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Nvim completion manager config
