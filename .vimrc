@@ -33,6 +33,8 @@ Plug 'Raimondi/delimitMate'
 
 "Latex preview
 Plug 'xuhdev/vim-latex-live-preview'
+" Synctex integration
+Plug 'peder2tm/sved'
 
 "Alignment
 Plug 'junegunn/vim-easy-align'
