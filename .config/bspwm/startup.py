@@ -7,7 +7,7 @@ import style
 #Locate screens
 screens = Monitor.getMonitorSetup()
 
-desktopsPerScreen = 7
+desktopsPerScreen = 9
 
 # Reset disconnected monitors
 for name in screens.disconnected:
