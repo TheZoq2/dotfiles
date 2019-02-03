@@ -415,6 +415,9 @@ let g:livepreview_previewer = 'evince'
 " Neovim seems to autoload a latex plugin which conceals certain symbols
 autocmd FileType tex set conceallevel=0
 
+" Surround word with a tag when <Leader>s is pressed
+autocmd BufEnter *.tex map <Leader>s ysiw}i\
+
 " Enable spell check and set the language to the only true english
 autocmd FileType tex set spell spelllang=en_gb
 
@@ -581,7 +584,8 @@ set noshowmode
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'typescript': ['tsserver']
+    \ 'typescript': ['tsserver'],
+    \ 'cpp': ['clangd']
     \ }
 
 " Automatically start language servers.
