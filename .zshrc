@@ -146,6 +146,7 @@ alias rg='rg --colors path:fg:green'
 alias f='bfs | rg'
 alias g=git
 alias m=make
+alias mp='make -j4'
 alias l=ls
 alias la="ls -la"
 alias ll="ls -l"
