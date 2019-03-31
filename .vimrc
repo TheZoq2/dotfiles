@@ -415,7 +415,7 @@ let g:livepreview_previewer = 'evince'
 autocmd FileType tex set conceallevel=0
 
 " Surround word with a tag when <Leader>s is pressed
-autocmd BufEnter *.tex map <Leader>s ysiw}i\
+autocmd BufEnter *.tex nmap <Leader>s ysiw}i\
 
 " Enable spell check and set the language to the only true english
 autocmd FileType tex set spell spelllang=en_gb
