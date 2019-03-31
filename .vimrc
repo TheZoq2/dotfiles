@@ -400,9 +400,9 @@ let g:elm_setup_keybindings = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Ultisnips keys
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="ii"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
