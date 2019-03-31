@@ -324,15 +324,6 @@ bindkey "^S" history-incremental-pattern-search-forward
 
 export EDITOR=nvim
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-z() { zeus $*; stty sane }
-
-
-CARGO_INCREMENTAL=1
-
 export BROWSER=firefox
 export _JAVA_AWT_WM_NONREPARENTING=1
 
