@@ -190,9 +190,11 @@ if [ -z ${SSH_CLIENT+x} ]; then
     fi
     # Set kitty colors
     if [ "$TERM" = "xterm-kitty" ]; then
-        KITTY_COLOR_LOCATION=.config/kitty/colors
+        KITTY_COLOR_LOCATION=/tmp/colors/kittycolors
         if [ -f $KITTY_COLOR_LOCATION ]; then
-            kitty @ set-colors $KITTY_COLOR_LOCATION
+            set +m
+            { {kitty @ set-colors $KITTY_COLOR_LOCATION} 2>&3 & } 3>&2 2>/dev/null
+            # kitty @ set-colors $KITTY_COLOR_LOCATION >&- &
         fi
     fi
 else
