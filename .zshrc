@@ -116,15 +116,12 @@ zstyle :compinstall filename '${HOME}/.zshrc'
 
 
 zstyle ':completion:*:pacman:*' force-list always
-zstyle ':completion:*:*:pacman:*' menu yes select
 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*'   force-list always
 
 zstyle ':completion:*:*:killall:*' menu yes select
-zstyle ':completion:*:killall:*'   force-list always
 
 #- complete pacman-color the same as pacman
 compdef _pacman pacman-color=pacman
@@ -149,6 +146,7 @@ alias rg='rg --colors path:fg:green'
 alias f='bfs | rg'
 alias g=git
 alias m=make
+alias mp='make -j4'
 alias l=ls
 alias la="ls -la"
 alias ll="ls -l"
@@ -192,9 +190,11 @@ if [ -z ${SSH_CLIENT+x} ]; then
     fi
     # Set kitty colors
     if [ "$TERM" = "xterm-kitty" ]; then
-        KITTY_COLOR_LOCATION=.config/kitty/colors
+        KITTY_COLOR_LOCATION=/tmp/colors/kittycolors
         if [ -f $KITTY_COLOR_LOCATION ]; then
-            kitty @ set-colors $KITTY_COLOR_LOCATION
+            set +m
+            { {kitty @ set-colors $KITTY_COLOR_LOCATION} 2>&3 & } 3>&2 2>/dev/null
+            # kitty @ set-colors $KITTY_COLOR_LOCATION >&- &
         fi
     fi
 else
@@ -323,15 +323,6 @@ bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
 export EDITOR=nvim
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-z() { zeus $*; stty sane }
-
-
-CARGO_INCREMENTAL=1
 
 export BROWSER=firefox
 export _JAVA_AWT_WM_NONREPARENTING=1

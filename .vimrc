@@ -18,9 +18,8 @@ endif
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-pyclang'
+" Plug 'ncm2/ncm2-pyclang'
 Plug 'ncm2/ncm2-ultisnips'
-Plug 'ncm2/ncm2-jedi'
 
 "Language client plugins
 Plug 'prabirshrestha/async.vim'
@@ -355,6 +354,7 @@ autocmd VimResized * wincmd =
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_balance_matchpairs=1
+autocmd FileType verilog let b:delimitMate_quotes = ""
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -401,9 +401,9 @@ let g:elm_setup_keybindings = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Ultisnips keys
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="ii"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -416,7 +416,7 @@ let g:livepreview_previewer = 'evince'
 autocmd FileType tex set conceallevel=0
 
 " Surround word with a tag when <Leader>s is pressed
-autocmd BufEnter *.tex map <Leader>s ysiw}i\
+autocmd BufEnter *.tex nmap <Leader>s ysiw}i\
 
 " Enable spell check and set the language to the only true english
 autocmd FileType tex set spell spelllang=en_gb
@@ -486,19 +486,14 @@ let g:ale_linters = {
 \   'ghmarkdown': ['mdl'],
 \   'haskell': ['hdevtools'],
 \   'python': [],
-\   'cpp': ['clang']
+\   'cpp': []
 \}
+" 'cpp': ['clangcheck']
 "   'haskell': ['stack-ghc-mod', 'hdevtools', 'hlint', 'stack-build', 'stack-ghc'],
 
-let g:ale_cpp_clangcheck_options='-std=c++14 -Wall'
+let g:ale_cpp_clangcheck_options='-std=c++17 -Wall'
 
 let g:ale_verilog_iverilog_options='-c .verilog_config'
-"
-" a list of relative paths for compile_commands.json
-let g:ncm2_pyclang#database_path = [
-            \ 'compile_commands.json',
-            \ 'build/compile_commands.json'
-            \ ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           Ctrl P mappings
@@ -585,7 +580,8 @@ set noshowmode
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'typescript': ['tsserver'],
-    \ 'cpp': ['clangd']
+    \ 'cpp': ['clangd'],
+    \ 'python': ['pyls']
     \ }
 
 " Automatically start language servers.
