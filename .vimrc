@@ -333,6 +333,8 @@ map q: :q
 map <Leader>i :call LanguageClient_textDocument_hover()<CR>
 map gd :call LanguageClient_textDocument_definition()<CR>
 map <Leader>lr :call LanguageClient_textDocument_rename()<CR>
+map <leader>lc :call LanguageClient_contextMenu()<CR>
+map <leader>lj :call LanguageClient_textDocument_documentSymbol()<CR>
 
 " Wrap or unwrap arguments
 nnoremap <silent> gS :ArgWrap<CR>
