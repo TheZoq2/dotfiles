@@ -31,7 +31,6 @@ if ! zgen saved; then
     # save all to init script
     zgen save
 fi
-source /usr/share/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
 ##########################################################
 
 # Lines configured by zsh-newuser-install
