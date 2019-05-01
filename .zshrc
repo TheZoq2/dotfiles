@@ -23,16 +23,17 @@ if ! zgen saved; then
     #Git prompt stuff
     zgen load olivierverdier/zsh-git-prompt
 
-	zgen load Tarrasch/zsh-bd
 
-    zgen load bobthecow/git-flow-completion.git
+    # Send a notification when long running command exits
+    zgen load marzocchi/zsh-notify
 
 
     # save all to init script
     zgen save
 fi
-###########################################################
-    
+source /usr/share/zsh/plugins/history-search-multi-word/history-search-multi-word.plugin.zsh
+##########################################################
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -235,7 +236,12 @@ function zle-keymap-select
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+
 #####################################################################
+# Notification on long running exit
+
+zstyle ':notify:*' error-title "Command failed (in #{time_elapsed} seconds)"
+zstyle ':notify:*' success-title "Command finished (in #{time_elapsed} seconds)"
 
 
 ######################################################################
