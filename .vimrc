@@ -420,6 +420,10 @@ autocmd FileType tex set conceallevel=0
 " Surround word with a tag when <Leader>s is pressed
 autocmd BufEnter *.tex nmap <Leader>s ysiw}i\
 
+" Synctex forward search on <Leader>g
+autocmd BufEnter *.tex nmap <Leader>s ysiw}i\
+autocmd BufEnter *.tex nmap <Leader>dg :call SVED_Sync()<CR>
+
 " Enable spell check and set the language to the only true english
 autocmd FileType tex set spell spelllang=en_gb
 
@@ -437,8 +441,6 @@ let g:EasyMotion_smartcase = 1
 
 "Activate using space+space
 nmap <Leader><Leader> <Plug>(easymotion-overwin-f)
-nmap <Leader>l <Plug>(easymotion-lineforward)
-nmap <Leader>h <Plug>(easymotion-linebackward)
 
 "'Search' for space+g
 "nmap <Leader>g <Plug>(easymotion-sn)
@@ -478,7 +480,10 @@ let g:DevIconsEnableFoldersOpenClose = 1
 "Generate tags on write in rust
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
+" And in elm
 autocmd BufWrite *.elm :silent! exec "!ctags -R src"
+" And in tex
+autocmd BufWrite *.tex :silent! exec "!ctags -R src"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           Linter (ale) config
@@ -509,8 +514,8 @@ map <Leader>; :CtrlPCmdPalette<Cr>
 
 "ctrlp configuration
 "Allow searching through tags with <space>t
-let g:ctrlp_extensions=['tag', 'autoignore']
-nnoremap <Leader>t :CtrlPTag<Cr>
+" let g:ctrlp_extensions=['tag', 'autoignore']
+nnoremap <Leader>T :CtrlPTag<Cr>
 "Use current working directory for starting ctrlp
 let g:ctrlp_working_path_mode = 'a'
 
