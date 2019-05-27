@@ -583,7 +583,8 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'typescript': ['tsserver'],
     \ 'cpp': ['clangd'],
-    \ 'python': ['pyls']
+    \ 'python': ['pyls'],
+    \ 'tex': ['java', '-jar', '/usr/share/java/texlab/texlab.jar']
     \ }
 
 " Automatically start language servers.
