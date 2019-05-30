@@ -4,8 +4,6 @@
 [push]
 	default = simple
 [alias]
-	pso = push origin
-	plo = pull origin
 	c = commit
 	a = add
 	s = status
@@ -13,9 +11,11 @@
 	ps = push
 	co = checkout
 	b = branch
-	lol = log --oneline
+	lol = log --oneline --graph
 	l = log
 	r = remote
 	m = merge
+    d = diff
+    r = remote
 [core]
 	excludesfile = /home/frans/.gitignore_global
