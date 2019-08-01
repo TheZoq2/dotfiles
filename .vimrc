@@ -55,6 +55,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 " Comment operations using `gc`
 Plug 'tpope/vim-commentary'
+" Detect indentation style 
+Plug 'tpope/vim-sleuth'
 
 " Asyncronous linting
 Plug 'w0rp/ale'
