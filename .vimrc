@@ -119,6 +119,8 @@ Plug 'slim-template/vim-slim'
 Plug 'vim-ruby/vim-ruby'
 "sxkhd highlighting
 Plug 'baskerville/vim-sxhkdrc'
+" Gnuplot
+Plug 'vlaadbrain/gnuplot.vim'
 
 " Matlab highlighting
 Plug 'daeyun/vim-matlab'
@@ -426,6 +428,8 @@ autocmd BufEnter *.tex nmap <Leader>dg :call SVED_Sync()<CR>
 
 " Enable spell check and set the language to the only true english
 autocmd FileType tex set spell spelllang=en_gb
+" And for markdown as well
+autocmd FileType markdown set spell spelllang=en_gb
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
