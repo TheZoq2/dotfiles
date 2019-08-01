@@ -112,6 +112,7 @@ conditional_run /home/frans/.cargo/bin/rspwm
 conditional_run touchegg
 conditional_run xfce4-clipman
 conditional_run sxhkd
+conditional_run indicator-kdeconnect
 
 # Move tint2 behind fullscreen windows
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" $(xdo id -n tint2)
