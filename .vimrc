@@ -588,7 +588,7 @@ set noshowmode
 
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'rust': ['rls'],
     \ 'typescript': ['tsserver'],
     \ 'cpp': ['clangd'],
     \ 'python': ['pyls'],
