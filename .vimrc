@@ -55,6 +55,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 " Comment operations using `gc`
 Plug 'tpope/vim-commentary'
+" Detect indentation style 
+Plug 'tpope/vim-sleuth'
 
 " Asyncronous linting
 Plug 'w0rp/ale'
@@ -402,6 +404,7 @@ set completeopt=noinsert,menuone,noselect
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:elm_setup_keybindings = 0
+let g:elm_format_autosave = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Ultisnips keys
@@ -589,7 +592,7 @@ set noshowmode
 
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'rust': ['rls'],
     \ 'typescript': ['tsserver'],
     \ 'cpp': ['clangd'],
     \ 'python': ['pyls'],
