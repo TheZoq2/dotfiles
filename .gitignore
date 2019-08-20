@@ -6,6 +6,7 @@
 .config/tint2/tint2rc
 .config/xfce4/terminal/terminalrc
 .config/xfce4/terminal/accels.scm
+.config/alacritty/alacritty.yml
 
 # Konsole unused files
 .local/share/konsole/bookmarks.xml*

@@ -125,8 +125,10 @@ super + shift + m
 #
 
 super + Return
-    konsole
-    # start_kitty
+    alacritty
+    # konsole
+    #start_kitty
+    #konsole
     #xfce4-terminal
     #urxvt
 
