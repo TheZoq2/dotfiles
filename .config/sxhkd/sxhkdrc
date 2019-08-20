@@ -116,6 +116,10 @@ ctrl + F6
 XF86AudioMute
     pactl set-sink-mute $(pactl list sinks short | grep alsa | cut -f 1) toggle
 
+
+super + shift + m
+    toggle_mic
+
 #
 # wm independent hotkeys
 #
