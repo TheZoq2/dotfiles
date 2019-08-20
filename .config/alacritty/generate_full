@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat main_config.yml dark_color.yml > dark.yml
+cat main_config.yml light_color.yml > light.yml
