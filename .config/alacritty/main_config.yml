@@ -146,7 +146,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 7.0
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -464,6 +464,18 @@ key_bindings:
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   - { key: Return,   mods: Alt,           action: ToggleFullscreen }
 
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance}
+  - { key: J, mods: Control,       action: ScrollLineDown}
+  - { key: J, mods: Control,       action: ScrollLineDown}
+  - { key: J, mods: Control,       action: ScrollLineDown}
+  - { key: J, mods: Control,       action: ScrollLineDown}
+  - { key: J, mods: Control,       action: ScrollLineDown}
+  - { key: K, mods: Control,       action: ScrollLineUp}
+  - { key: K, mods: Control,       action: ScrollLineUp}
+  - { key: K, mods: Control,       action: ScrollLineUp}
+  - { key: K, mods: Control,       action: ScrollLineUp}
+  - { key: K, mods: Control,       action: ScrollLineUp}
+
   # (macOS only)
   #- { key: Key0,   mods: Command,         action: ResetFontSize    }
   #- { key: Equals, mods: Command,         action: IncreaseFontSize }
@@ -477,9 +489,6 @@ key_bindings:
   #- { key: Q,      mods: Command,         action: Quit             }
   #- { key: W,      mods: Command,         action: Quit             }
   #- { key: F,      mods: Command|Control, action: ToggleFullscreen }
-  - { key: N, mods: Control|Shift, action: SpawnNewInstance}
-  - { key: J, mods: Control,       action: ScrollPageDown}
-  - { key: K, mods: Control,       action: ScrollPageUp}
 
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
