@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export WINIT_HIDPI_FACTOR=1
+
 # Runs a program unless that program is already running
 function conditional_run {
     local program_name=$1
