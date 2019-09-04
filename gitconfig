@@ -18,5 +18,6 @@
     d = diff
     r = remote
 	ff = merge --ff-only
+    sub = submodule
 [core]
 	excludesfile = /home/frans/.gitignore_global
