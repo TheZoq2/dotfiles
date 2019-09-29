@@ -131,7 +131,7 @@ font:
     # value specified for the normal font.
     family: "Hasklig"
 
-    style: "Black,Regular"
+    style: "Bold"
 
   # Italic font face
   #italic:
@@ -353,6 +353,7 @@ mouse:
 # - `mods` (see key bindings)
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
+  - { mouse: Right, action: Copy }
 
 # Key bindings
 #

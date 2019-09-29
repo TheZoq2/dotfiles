@@ -56,7 +56,9 @@ Plug 'tpope/vim-fugitive'
 " Comment operations using `gc`
 Plug 'tpope/vim-commentary'
 " Detect indentation style 
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
+
+Plug 'junegunn/goyo.vim'
 
 " Asyncronous linting
 Plug 'w0rp/ale'
@@ -123,6 +125,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'baskerville/vim-sxhkdrc'
 " Gnuplot
 Plug 'vlaadbrain/gnuplot.vim'
+" Markdown
+Plug 'tpope/vim-markdown'
 
 " Matlab highlighting
 Plug 'daeyun/vim-matlab'
@@ -431,8 +435,16 @@ autocmd BufEnter *.tex nmap <Leader>dg :call SVED_Sync()<CR>
 
 " Enable spell check and set the language to the only true english
 autocmd FileType tex set spell spelllang=en_gb
-" And for markdown as well
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Latex stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable spell check
 autocmd FileType markdown set spell spelllang=en_gb
+
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'rust', 'cpp']
+let g:markdown_syntax_conceal = 0
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -627,3 +639,23 @@ let g:pandoc#modules#disabled = ["keyboard"]
 let g:pandoc#syntax#conceal#use=0
 
 autocmd FileType markdown map <Leader>b :w<Cr>:!pandoc notes.md -o notes.pdf<Cr>
+
+function s:MDSettings()
+    if version < 508
+      command! -nargs=+ HiLink hi link <args>
+    else
+      command! -nargs=+ HiLink hi def link <args>
+    endif
+    " adjust syntax highlighting for LaTeX parts
+    "   inline formulas:
+    syntax region Statement oneline matchgroup=Delimiter start="\$" end="\$"
+    "   environments:
+    syntax region Statement matchgroup=Delimiter start="\\begin{.*}" end="\\end{.*}" contains=Statement
+    syntax region texBlock matchgroup=Delimiter start="\$\$" end="\$\$" contains=Statement
+    "   commands:
+    syntax region Statement matchgroup=Delimiter start="{" end="}" contains=Statement
+    HiLink texBlock tex
+endfunction
+
+" autocmd BufRead,BufNewFile *.md setfiletype markdown
+autocmd FileType markdown :call <SID>MDSettings()
