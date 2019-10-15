@@ -608,7 +608,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['tsserver'],
     \ 'cpp': ['clangd'],
     \ 'python': ['pyls'],
-    \ 'tex': ['java', '-jar', '/usr/share/java/texlab/texlab.jar']
+    \ 'tex': ['texlab']
     \ }
 
 " Automatically start language servers.
