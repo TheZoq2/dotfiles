@@ -54,7 +54,6 @@ CONFIG_DIR="/home/frans/.config/bspwm"
 # compton --config ~/.config/compton/comptonrc & #Transparent windows
 #feh --bg-fill --no-xinerama /home/frans/Pictures/wallpapers/current.png #set background
 #feh --bg-fill /home/frans/Pictures/wallpapers/current.png #set background
-./wallpaper
 
 echo "Bottom padding ${BOTTOM_PADDING}, right padding: ${RIGHT_PADDING}"
 
@@ -66,15 +65,13 @@ bspc config window_gap         4
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
-bspc config focus_by_distance   true
 bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
-bspc config auto_cancel true
 bspc config normal_border_color "#000000"
 bspc config pointer_modifier mod4
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_corner
-bspc config sinngle_monocle true
+# bspc config single_monocle true
 
 #change working directory to allow relative paths in python and bash
 cd $CONFIG_DIR
@@ -97,7 +94,7 @@ fi
 # Reload xresources
 xrdb ~/.Xresources
 # Run autostart configured in ~/bin
-autostart
+# autostart
 # Set the keyboard layout
 setxkbmap us -variant altgr-intl -option caps:ctrl_modifier
 
