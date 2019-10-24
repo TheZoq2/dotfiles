@@ -6,20 +6,22 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 "Vundle
-Plug 'VundleVim/Vundle.vim'
+" Plug 'VundleVim/Vundle.vim'
 
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-if !has('nvim')
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
+" if !has('nvim')
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" 
+" " Autocompletion
+" Plug 'ncm2/ncm2-bufword'
+" Plug 'ncm2/ncm2-tmux'
+" Plug 'ncm2/ncm2-path'
+" " Plug 'ncm2/ncm2-pyclang'
+" Plug 'ncm2/ncm2-ultisnips'
 
-" Autocompletion
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-pyclang'
-Plug 'ncm2/ncm2-ultisnips'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Language client plugins
 Plug 'prabirshrestha/async.vim'
@@ -301,8 +303,6 @@ map K k:join<Cr>
 "Buffer stuff
 "map <Leader>j :Buffers<CR>
 map <Leader>j :CtrlPBuffer<CR>
-map <Leader>l :bn<CR>
-map <Leader>h :bp<CR>
 "map <Leader>e :e<Space>
 "Close a buffer with space-q
 map <Leader>q :Bdelete<CR>
@@ -338,11 +338,27 @@ nmap ga <Plug>(EasyAlign)
 "Quit when q: is pressed aswell
 map q: :q
 
-map <Leader>i :call LanguageClient_textDocument_hover()<CR>
-map gd :call LanguageClient_textDocument_definition()<CR>
-map <Leader>lr :call LanguageClient_textDocument_rename()<CR>
-map <leader>lc :call LanguageClient_contextMenu()<CR>
-map <leader>lj :call LanguageClient_textDocument_documentSymbol()<CR>
+" map <Leader>i :call LanguageClient_textDocument_hover()<CR>
+" map gd :call LanguageClient_textDocument_definition()<CR>
+" map <Leader>lr :call LanguageClient_textDocument_rename()<CR>
+" map <leader>lc :call LanguageClient_contextMenu()<CR>
+" map <leader>lj :call LanguageClient_textDocument_documentSymbol()<CR>
+map gd <plug>(coc-definition)
+map <Leader>i :call CocAction('doHover')<CR>
+map <leader>lr <plug>(coc-rename)
+" Find symbol of current document
+nnoremap <silent> <space>lj  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>lJ  :<C-u>CocList -I symbols<cr>
+" Confirm completion, `<C-g>u` means break undo chain at current position.
+inoremap <expr> <C-i> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use <C-l> for trigger snippet expand.
+imap ii <Plug>(coc-snippets-expand)
+vmap <C-j> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-l>'
+let g:coc_snippet_prev = '<c-h>'
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-l> <Plug>(coc-snippets-expand-jump)
 
 " Wrap or unwrap arguments
 nnoremap <silent> gS :ArgWrap<CR>
@@ -389,18 +405,9 @@ function! Auto_complete_opened()
     return ""
 endfunction
 
-inoremap <expr> <Nul> Auto_complete_string()
-inoremap <expr> <C-Space> Auto_complete_string()
 
-
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-let g:ncm2#matcher = "substrfuzzy"
-
-
-
-" IMPORTANTE: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
+" For better diagnostic messages with coc
+set updatetime=300
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -411,10 +418,10 @@ let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Ultisnips keys
-let g:UltiSnipsExpandTrigger="ii"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" "Ultisnips keys
+" let g:UltiSnipsExpandTrigger="ii"
+" let g:UltiSnipsJumpForwardTrigger="<c-l>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -508,12 +515,13 @@ autocmd BufWrite *.tex :silent! exec "!ctags -R src"
 "                           Linter (ale) config
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
-\   'rust': ['rls'],
+\   'rust': ['ra_lsp_server'],
 \   'ghmarkdown': ['mdl'],
 \   'haskell': ['hdevtools'],
 \   'python': [],
 \   'cpp': []
 \}
+"\   'rust': ['rls'],
 " 'cpp': ['clangcheck']
 "   'haskell': ['stack-ghc-mod', 'hdevtools', 'hlint', 'stack-build', 'stack-ghc'],
 
@@ -608,7 +616,7 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['tsserver'],
     \ 'cpp': ['clangd'],
     \ 'python': ['pyls'],
-    \ 'tex': ['texlab']
+    \ 'tex': ['texlab_log']
     \ }
 
 " Automatically start language servers.
