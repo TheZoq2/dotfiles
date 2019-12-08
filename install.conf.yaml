@@ -4,6 +4,7 @@
     ~/.vim: .vim/
     ~/.vimrc: .vimrc
     ~/.config/nvim/init.vim: .vimrc
+    ~/.config/nvim/coc-settings.json: .config/nvim/coc-settings.json
     ~/.config/bspwm: .config/bspwm
     ~/.config/sxhkd: .config/sxhkd
     ~/.config/tint2: .config/tint2
