@@ -17,16 +17,6 @@ Plug 'thezoq2/papyrus'
 " Quickly open files by typing parts of their filenames
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Autocompletion
-Plug 'ncm2/ncm2'
-" If this is normal vim, we need some support libs
-if !has('nvim')
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-" Plugins for some basic completion
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
 call plug#end()
 
 filetype plugin indent on
