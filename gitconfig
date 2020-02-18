@@ -13,11 +13,12 @@
 	b = branch
 	lol = log --oneline --graph
 	l = log
-	r = remote
 	m = merge
     d = diff
-    r = remote
 	ff = merge --ff-only
     sub = submodule
+    r = rebase
+    rem = remote
+    f = fetch
 [core]
 	excludesfile = /home/frans/.gitignore_global
