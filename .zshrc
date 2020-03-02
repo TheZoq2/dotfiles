@@ -183,20 +183,6 @@ local BG_COLOR="%{$reset_color%}"
 if [ -z ${SSH_CLIENT+x} ]; then
 	#If $SSH_CLIENT is unset
 	BG_COLOR="%{$reset_color%}"
-    # Set konsole colors
-    # KONSOLE_PROFILE_LOCATION=/tmp/colors/konsole
-    # if [ -f $KONSOLE_PROFILE_LOCATION ]; then
-    #     konsoleprofile colors="$(cat $KONSOLE_PROFILE_LOCATION)"
-    # fi
-    # # Set kitty colors
-    # if [ "$TERM" = "xterm-kitty" ]; then
-    #     KITTY_COLOR_LOCATION=/tmp/colors/kittycolors
-    #     if [ -f $KITTY_COLOR_LOCATION ]; then
-    #         set +m
-    #         { {kitty @ set-colors $KITTY_COLOR_LOCATION} 2>&3 & } 3>&2 2>/dev/null
-    #         # kitty @ set-colors $KITTY_COLOR_LOCATION >&- &
-    #     fi
-    # fi
 else
 	BG_COLOR='%{$bg[cyan]%}'
 fi
