@@ -132,8 +132,6 @@ Plug 'vlaadbrain/gnuplot.vim'
 " Markdown
 Plug 'tpope/vim-markdown'
 
-" Matlab highlighting
-Plug 'daeyun/vim-matlab'
 "Glsl
 Plug 'tikhomirov/vim-glsl'
 "Python syntax highlight
@@ -169,11 +167,11 @@ Plug 'TheZoq2/vim-snippets'
 
 
 
-"Nvim autoread
-Plug 'git@github.com:TheZoq2/neovim-auto-autoread'
+" "Nvim autoread
+" Plug 'TheZoq2/neovim-auto-autoread'
 
 " Colortheme changer
-Plug 'git@github.com:TheZoq2/neovim-colortheme-changer'
+Plug 'TheZoq2/neovim-colortheme-changer'
 
 
 call plug#end()
