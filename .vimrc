@@ -8,20 +8,20 @@ call plug#begin('~/.vim/plugged')
 "Vundle
 " Plug 'VundleVim/Vundle.vim'
 
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
-" if !has('nvim')
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-" 
-" " Autocompletion
-" Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-tmux'
-" Plug 'ncm2/ncm2-path'
-" " Plug 'ncm2/ncm2-pyclang'
-" Plug 'ncm2/ncm2-ultisnips'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+if !has('nvim')
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Autocompletion
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+" Plug 'ncm2/ncm2-pyclang'
+Plug 'ncm2/ncm2-ultisnips'
+
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Language client plugins
 Plug 'prabirshrestha/async.vim'
@@ -335,37 +335,19 @@ map <Leader>n :NERDTreeToggle<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+
 "Quit when q: is pressed aswell
 map q: :q
 
-" map <Leader>i :call LanguageClient_textDocument_hover()<CR>
-" map gd :call LanguageClient_textDocument_definition()<CR>
-" map <Leader>lr :call LanguageClient_textDocument_rename()<CR>
-" map <leader>lc :call LanguageClient_contextMenu()<CR>
-" map <leader>lj :call LanguageClient_textDocument_documentSymbol()<CR>
-map gd <plug>(coc-definition)
-map <Leader>i :call CocAction('doHover')<CR>
-map <leader>lr <plug>(coc-rename)
-" Find symbol of current document
-nnoremap <silent> <space>lj  :<C-u>CocList outline<cr>
-nnoremap <silent> <leader>lJ  :<C-u>CocList -I symbols<cr>
-" Confirm completion, `<C-g>u` means break undo chain at current position.
-inoremap <expr> <C-i> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use <C-l> for trigger snippet expand.
-imap ii <Plug>(coc-snippets-expand)
-vmap <C-j> <Plug>(coc-snippets-select)
-let g:coc_snippet_next = '<c-l>'
-let g:coc_snippet_prev = '<c-h>'
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-l> <Plug>(coc-snippets-expand-jump)
+map <Leader>i :call LanguageClient_textDocument_hover()<CR>
+map gd :call LanguageClient_textDocument_definition()<CR>
+map <Leader>lr :call LanguageClient_textDocument_rename()<CR>
+map <leader>lc :call LanguageClient_contextMenu()<CR>
+map <leader>lj :call LanguageClient_textDocument_documentSymbol()<CR>
 
 " Wrap or unwrap arguments
 nnoremap <silent> gS :ArgWrap<CR>
 
-
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 
 
 "Reload file when changes happen
@@ -389,25 +371,13 @@ autocmd FileType verilog let b:delimitMate_quotes = ""
 " Prevent completion information popup
 set completeopt-=preview
 
-" Map ctrl+space to autocomplete or omnicomplete instead of <Nul>
-function! Auto_complete_string()
-    if pumvisible()
-        return "\<C-n>"
-    else
-        return "\<C-x>\<C-o>\<C-r>=Auto_complete_opened()\<CR>"
-    end
-endfunction
-
-function! Auto_complete_opened()
-    if pumvisible()
-        return "\<Down>"
-    end
-    return ""
-endfunction
-
 
 " For better diagnostic messages with coc
 set updatetime=300
+
+
+" enable ncm2 for all buffer
+autocmd BufEnter * call ncm2#enable_for_buffer()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -419,16 +389,15 @@ let g:elm_format_autosave = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " "Ultisnips keys
-" let g:UltiSnipsExpandTrigger="ii"
-" let g:UltiSnipsJumpForwardTrigger="<c-l>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger="ii"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Latex stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tex_flavor = "latex"
-let g:livepreview_previewer = 'evince'
 
 " Neovim seems to autoload a latex plugin which conceals certain symbols
 autocmd FileType tex set conceallevel=0
@@ -575,6 +544,10 @@ let g:fzf_colors =
 " '-- XXX completion (YYY)', 'match 1 of 2', 'The only match',
 set shortmess+=c
 
+" IMPORTANT: :help Ncm2PopupOpen for more information
+" For better diagnostic messages with coc
+set completeopt=noinsert,menuone,noselect
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -612,7 +585,7 @@ set noshowmode
 
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rls'],
+    \ 'rust': ['ra_lsp_server'],
     \ 'typescript': ['tsserver'],
     \ 'cpp': ['clangd'],
     \ 'python': ['pyls'],
@@ -622,13 +595,13 @@ let g:LanguageClient_serverCommands = {
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        \ 'whitelist': ['rust'],
-        \ })
-endif
+" if executable('rls')
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'rls',
+"         \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+"         \ 'whitelist': ['rust'],
+"         \ })
+" endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Clever-f config
