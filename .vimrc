@@ -265,6 +265,7 @@ endif
 set wildmode=longest,list,full
 set wildmenu
 
+
 "Highlight lines that are longer than 85 characters
 "highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "match OverLength /\%>85v.\+/
@@ -406,7 +407,6 @@ autocmd FileType tex set conceallevel=0
 autocmd BufEnter *.tex nmap <Leader>s ysiw}i\
 
 " Synctex forward search on <Leader>g
-autocmd BufEnter *.tex nmap <Leader>s ysiw}i\
 autocmd BufEnter *.tex nmap <Leader>dg :call SVED_Sync()<CR>
 
 " Enable spell check and set the language to the only true english
@@ -464,21 +464,6 @@ let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Use github flavoured markdown on md files by default
-" augroup markdown
-"     au!
-"     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-" augroup END
-
-"Generate tags on write in rust
-autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
-autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&"
-" And in elm
-autocmd BufWrite *.elm :silent! exec "!ctags -R src"
-" And in tex
-autocmd BufWrite *.tex :silent! exec "!ctags -R src"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           Linter (ale) config
