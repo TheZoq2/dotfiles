@@ -238,7 +238,8 @@ set t_Co=256
 "colorscheme atom-dark-256
 "colorscheme luna-term
 "colorscheme github
-colorscheme PaperColor
+" colorscheme PaperColor
+colorscheme Papyrus
 "colorscheme badwolf
 set background=light
 
