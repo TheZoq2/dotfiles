@@ -1,3 +1,5 @@
+# NOTE: Moved to gitlab https://gitlab.com/TheZoq2/dotfiles
+
 # Dotfiles
 
 My configs for various programs.
